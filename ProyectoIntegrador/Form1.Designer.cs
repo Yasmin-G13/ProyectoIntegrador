@@ -71,14 +71,15 @@
             // textBox1
             // 
             textBox1.BackColor = Color.Sienna;
-            textBox1.Location = new Point(217, 237);
+            textBox1.Location = new Point(326, 237);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(372, 31);
+            textBox1.Size = new Size(172, 31);
             textBox1.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Sienna;
             label2.Location = new Point(338, 240);
             label2.Name = "label2";
             label2.Size = new Size(140, 25);
@@ -89,7 +90,8 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(370, 381);
+            label3.BackColor = Color.Sienna;
+            label3.Location = new Point(352, 367);
             label3.Name = "label3";
             label3.Size = new Size(108, 25);
             label3.TabIndex = 5;
@@ -98,9 +100,9 @@
             // textBox2
             // 
             textBox2.BackColor = Color.Sienna;
-            textBox2.Location = new Point(217, 378);
+            textBox2.Location = new Point(310, 364);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(372, 31);
+            textBox2.Size = new Size(197, 31);
             textBox2.TabIndex = 4;
             // 
             // label4
@@ -138,6 +140,7 @@
             Controls.Add(pictureBox1);
             Name = "Form1";
             Text = "INICIO DE SESION ";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);

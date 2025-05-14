@@ -73,6 +73,16 @@ namespace ProyectoIntegrador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2025_05_12_204154 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2025-05-12 204154", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_pantalla_2025_05_12_211642 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2025-05-12 211642", resourceCulture);
