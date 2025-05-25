@@ -31,7 +31,7 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             button1 = new Button();
-            button2 = new Button();
+            btn_crear_usuario = new Button();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -72,16 +72,18 @@
             button1.TabIndex = 2;
             button1.Text = "REGRESAR";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += btn_regresar_a_bienvenida;
             // 
-            // button2
+            // btn_crear_usuario
             // 
-            button2.BackColor = Color.DarkOrange;
-            button2.Location = new Point(385, 401);
-            button2.Name = "button2";
-            button2.Size = new Size(135, 68);
-            button2.TabIndex = 3;
-            button2.Text = "CREAR USUARIO";
-            button2.UseVisualStyleBackColor = false;
+            btn_crear_usuario.BackColor = Color.DarkOrange;
+            btn_crear_usuario.Location = new Point(385, 401);
+            btn_crear_usuario.Name = "btn_crear_usuario";
+            btn_crear_usuario.Size = new Size(135, 68);
+            btn_crear_usuario.TabIndex = 3;
+            btn_crear_usuario.Text = "Crear";
+            btn_crear_usuario.UseVisualStyleBackColor = false;
+            btn_crear_usuario.Click += this.btn_crear_usuario_Click;
             // 
             // label2
             // 
@@ -160,7 +162,7 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(button2);
+            Controls.Add(btn_crear_usuario);
             Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -178,7 +180,7 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Button button1;
-        private Button button2;
+        private Button btn_crear_usuario;
         private Label label2;
         private Label label3;
         private Label label4;
