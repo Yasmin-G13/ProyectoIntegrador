@@ -44,6 +44,8 @@ namespace ProyectoIntegrador
             {
                 // Establecer conexión a la base de datos MySQL usando la clase ConexionMySQL
                 ConexionMySQL conexionMySQL = new ConexionMySQL();
+                conexionMySQL.insertarUsuario("arantza", "mail", "123", DateTime.Now);
+
                 MessageBox.Show("Conexión exitosa a la base de datos.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

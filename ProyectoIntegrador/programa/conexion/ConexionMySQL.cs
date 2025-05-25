@@ -36,7 +36,7 @@ public class ConexionMySQL
             MessageBox.Show("Error al conectar a la base de datos: " + ex.Message);
             throw new Exception("Error al conectar a la base de datos: " + ex.Message);
         }
-     
+
     }
 
     // Este método cierra la conexión a la base de datos MySQL si está abierta.
@@ -55,5 +55,37 @@ public class ConexionMySQL
         {
             MessageBox.Show("Error al cerrar la conexión: " + ex.Message);
         }
+    }
+
+    // Este método inserta en la base de datos los datos del usuario que se le pasan como parámetros.
+    public void insertarUsuario(string nombre, string correo, string contraseña, DateTime fechaRegistro)
+    {
+        try
+        {
+            establecerConexion();
+
+            string peticion = "INSERT INTO usuarios (nombre, correo, contraseña, fecha_registro, rol) VALUES (@nombre, @correo, @contraseña, @fecha_registro, @rol)";
+
+            MySqlCommand comando = new MySqlCommand(peticion, conexion);
+
+
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            comando.Parameters.AddWithValue("@correo", correo);
+            comando.Parameters.AddWithValue("@contraseña", contraseña);
+            comando.Parameters.AddWithValue("@fecha_registro", fechaRegistro.Date);
+            comando.Parameters.AddWithValue("@rol", 0); // Asignar rol 0 por defecto (usuario admin)
+
+            comando.ExecuteNonQuery();
+
+            // Muestra un mensaje de exito al insertar el usuario.
+            MessageBox.Show("Usuario insertado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al insertar usuario: " + ex.Message);
+        }
+
+        cerrarConexion();
+
     }
 }
