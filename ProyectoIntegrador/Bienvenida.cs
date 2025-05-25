@@ -1,6 +1,5 @@
 using ProyectoIntegrador.Resources;
 using System.Data.SqlClient;
-using MySqlConnecion.Data.MSqlClient;
 
 namespace ProyectoIntegrador
 {
@@ -40,11 +39,6 @@ namespace ProyectoIntegrador
             form2.Show();
         }
 
-        MySqlConnection conexion = new MySqlConnection("server=localhost;user=root;password=;database=muebleria_nyas ");
-        public MySqlConnection Conectar()
-        {
-            return new MySqlConnection(connectionString);
-        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
