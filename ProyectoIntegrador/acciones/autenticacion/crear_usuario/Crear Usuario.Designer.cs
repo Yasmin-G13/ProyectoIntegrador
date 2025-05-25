@@ -1,6 +1,6 @@
 ﻿namespace ProyectoIntegrador
 {
-    partial class Form3
+    partial class FormCrearUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -46,7 +46,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_204154;
-            pictureBox1.Location = new Point(348, 0);
+            pictureBox1.Location = new Point(385, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(120, 108);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -56,7 +56,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(348, 127);
+            label1.Location = new Point(387, 139);
             label1.Name = "label1";
             label1.Size = new Size(108, 25);
             label1.TabIndex = 1;
@@ -76,11 +76,11 @@
             // button2
             // 
             button2.BackColor = Color.DarkOrange;
-            button2.Location = new Point(358, 400);
+            button2.Location = new Point(385, 401);
             button2.Name = "button2";
             button2.Size = new Size(135, 68);
             button2.TabIndex = 3;
-            button2.Text = "ENTRAR";
+            button2.Text = "CREAR USUARIO";
             button2.UseVisualStyleBackColor = false;
             // 
             // label2
@@ -89,15 +89,15 @@
             label2.BackColor = Color.SandyBrown;
             label2.Location = new Point(226, 199);
             label2.Name = "label2";
-            label2.Size = new Size(76, 25);
+            label2.Size = new Size(78, 25);
             label2.TabIndex = 4;
-            label2.Text = "Usuario:";
+            label2.Text = "Nombre";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.SandyBrown;
-            label3.Location = new Point(223, 273);
+            label3.Location = new Point(197, 273);
             label3.Name = "label3";
             label3.Size = new Size(105, 25);
             label3.TabIndex = 5;
@@ -107,7 +107,7 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.SandyBrown;
-            label4.Location = new Point(226, 343);
+            label4.Location = new Point(137, 340);
             label4.Name = "label4";
             label4.Size = new Size(165, 25);
             label4.TabIndex = 6;
@@ -124,7 +124,7 @@
             // textBox2
             // 
             textBox2.BackColor = Color.SandyBrown;
-            textBox2.Location = new Point(334, 270);
+            textBox2.Location = new Point(308, 270);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(273, 31);
             textBox2.TabIndex = 8;
@@ -132,7 +132,7 @@
             // textBox3
             // 
             textBox3.BackColor = Color.SandyBrown;
-            textBox3.Location = new Point(397, 340);
+            textBox3.Location = new Point(308, 334);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(273, 31);
             textBox3.TabIndex = 9;
@@ -147,7 +147,7 @@
             pictureBox2.TabIndex = 10;
             pictureBox2.TabStop = false;
             // 
-            // Form3
+            // FormCrearUsuario
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -164,8 +164,8 @@
             Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
-            Name = "Form3";
-            Text = "LoginForm";
+            Name = "FormCrearUsuario";
+            Text = "Crear Usuario";
             Load += Form3_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

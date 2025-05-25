@@ -1,6 +1,6 @@
 ﻿namespace ProyectoIntegrador
 {
-    partial class Form1
+    partial class FormBienvenida
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBienvenida));
             colorDialog1 = new ColorDialog();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             label4 = new Label();
             pictureBox2 = new PictureBox();
-            button1 = new Button();
-            button2 = new Button();
+            btn_ir_a_iniciar_sesion = new Button();
+            btn_ir_a_crear_usuario = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -80,47 +80,47 @@
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(682, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(170, 68);
+            pictureBox2.Size = new Size(158, 55);
             pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
             // 
-            // button1
+            // btn_ir_a_iniciar_sesion
             // 
-            button1.BackColor = Color.Sienna;
-            button1.Location = new Point(293, 217);
-            button1.Name = "button1";
-            button1.Size = new Size(254, 75);
-            button1.TabIndex = 8;
-            button1.Text = "INICIAR SESION";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btn_ir_a_iniciar_sesion.BackColor = Color.Sienna;
+            btn_ir_a_iniciar_sesion.Location = new Point(293, 217);
+            btn_ir_a_iniciar_sesion.Name = "btn_ir_a_iniciar_sesion";
+            btn_ir_a_iniciar_sesion.Size = new Size(254, 75);
+            btn_ir_a_iniciar_sesion.TabIndex = 8;
+            btn_ir_a_iniciar_sesion.Text = "INICIAR SESION";
+            btn_ir_a_iniciar_sesion.UseVisualStyleBackColor = false;
+            btn_ir_a_iniciar_sesion.Click += button1_Click;
             // 
-            // button2
+            // btn_ir_a_crear_usuario
             // 
-            button2.BackColor = Color.Sienna;
-            button2.Location = new Point(293, 340);
-            button2.Name = "button2";
-            button2.Size = new Size(254, 75);
-            button2.TabIndex = 9;
-            button2.Text = "REGÍSTRATE";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            btn_ir_a_crear_usuario.BackColor = Color.Sienna;
+            btn_ir_a_crear_usuario.Location = new Point(293, 340);
+            btn_ir_a_crear_usuario.Name = "btn_ir_a_crear_usuario";
+            btn_ir_a_crear_usuario.Size = new Size(254, 75);
+            btn_ir_a_crear_usuario.TabIndex = 9;
+            btn_ir_a_crear_usuario.Text = "REGÍSTRATE";
+            btn_ir_a_crear_usuario.UseVisualStyleBackColor = false;
+            btn_ir_a_crear_usuario.Click += btn_ir_a_crear_usuario_Click;
             // 
-            // Form1
+            // FormBienvenida
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(852, 494);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btn_ir_a_crear_usuario);
+            Controls.Add(btn_ir_a_iniciar_sesion);
             Controls.Add(pictureBox2);
             Controls.Add(label4);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
-            Name = "Form1";
-            Text = "INICIO DE SESION ";
+            Name = "FormBienvenida";
+            Text = "BIENVENIDO";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -135,7 +135,7 @@
         private Label label1;
         private Label label4;
         private PictureBox pictureBox2;
-        private Button button1;
-        private Button button2;
+        private Button btn_ir_a_iniciar_sesion;
+        private Button btn_ir_a_crear_usuario;
     }
 }

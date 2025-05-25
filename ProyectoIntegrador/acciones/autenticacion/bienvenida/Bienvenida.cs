@@ -14,9 +14,9 @@ namespace ProyectoIntegrador
     //        return new MySqlConnection(connectionString);
     //    }
     //}
-    public partial class Form1 : Form
+    public partial class FormBienvenida : Form
     {
-        public Form1()
+        public FormBienvenida()
         {
             InitializeComponent();
             
@@ -49,8 +49,12 @@ namespace ProyectoIntegrador
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        // Este método nos abre el Form para que el usuario pueda crear su cuenta.
+        private void btn_ir_a_crear_usuario_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            FormCrearUsuario formCrearUsuario = new FormCrearUsuario();
+            formCrearUsuario.Show();
 
         }
     }

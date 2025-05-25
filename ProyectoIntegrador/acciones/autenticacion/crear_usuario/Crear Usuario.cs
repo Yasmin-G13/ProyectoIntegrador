@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegrador
 {
-    public partial class Form3 : Form
+    public partial class FormCrearUsuario : Form
     {
-        public Form3()
+        public FormCrearUsuario()
         {
             InitializeComponent();
         }
