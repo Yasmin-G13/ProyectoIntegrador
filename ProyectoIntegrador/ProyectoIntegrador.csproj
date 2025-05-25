@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="programa\acciones\home\" />
+    <Folder Include="Programa\Acciones\Home\" />
   </ItemGroup>
 
   <ItemGroup>
