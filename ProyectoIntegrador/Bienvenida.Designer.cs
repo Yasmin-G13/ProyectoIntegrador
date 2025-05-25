@@ -32,12 +32,10 @@
             colorDialog1 = new ColorDialog();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            textBox1 = new TextBox();
-            label2 = new Label();
-            label3 = new Label();
-            textBox2 = new TextBox();
             label4 = new Label();
             pictureBox2 = new PictureBox();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -51,7 +49,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(370, 12);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(128, 126);
+            pictureBox1.Size = new Size(120, 108);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -68,47 +66,10 @@
             label1.Text = "BIENVENIDO A LA MUEBLERIA";
             label1.Click += label1_Click;
             // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.Sienna;
-            textBox1.Location = new Point(326, 237);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(172, 31);
-            textBox1.TabIndex = 2;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Sienna;
-            label2.Location = new Point(338, 240);
-            label2.Name = "label2";
-            label2.Size = new Size(140, 25);
-            label2.TabIndex = 3;
-            label2.Text = "INICIAR SESIÓN";
-            label2.Click += label2_Click;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Sienna;
-            label3.Location = new Point(352, 367);
-            label3.Name = "label3";
-            label3.Size = new Size(108, 25);
-            label3.TabIndex = 5;
-            label3.Text = "REGÍSTRATE";
-            // 
-            // textBox2
-            // 
-            textBox2.BackColor = Color.Sienna;
-            textBox2.Location = new Point(310, 364);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(197, 31);
-            textBox2.TabIndex = 4;
-            // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(310, 327);
+            label4.Location = new Point(318, 312);
             label4.Name = "label4";
             label4.Size = new Size(212, 25);
             label4.TabIndex = 6;
@@ -119,23 +80,43 @@
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(682, 2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(158, 55);
+            pictureBox2.Size = new Size(170, 68);
             pictureBox2.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Sienna;
+            button1.Location = new Point(293, 217);
+            button1.Name = "button1";
+            button1.Size = new Size(254, 75);
+            button1.TabIndex = 8;
+            button1.Text = "INICIAR SESION";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.Sienna;
+            button2.Location = new Point(293, 340);
+            button2.Name = "button2";
+            button2.Size = new Size(254, 75);
+            button2.TabIndex = 9;
+            button2.Text = "REGÍSTRATE";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            ClientSize = new Size(852, 417);
+            ClientSize = new Size(852, 494);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(pictureBox2);
             Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(textBox2);
-            Controls.Add(label2);
-            Controls.Add(textBox1);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name = "Form1";
@@ -152,11 +133,9 @@
         private ColorDialog colorDialog1;
         private PictureBox pictureBox1;
         private Label label1;
-        private TextBox textBox1;
-        private Label label2;
-        private Label label3;
-        private TextBox textBox2;
         private Label label4;
         private PictureBox pictureBox2;
+        private Button button1;
+        private Button button2;
     }
 }
