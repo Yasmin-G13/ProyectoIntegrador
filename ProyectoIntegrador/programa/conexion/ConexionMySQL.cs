@@ -88,4 +88,26 @@ public class ConexionMySQL
         cerrarConexion();
 
     }
+    public bool usuarioExiste(string nombre)
+    {
+        bool existe = false;
+        try
+        {
+            establecerConexion();
+            string query = "SELECT COUNT(*) FROM usuarios WHERE nombre = @nombre";
+            MySqlCommand comando = new MySqlCommand(query, conexion);
+            comando.Parameters.AddWithValue("@nombre", nombre);
+            int count = Convert.ToInt32(comando.ExecuteScalar());
+            existe = count > 0;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al verificar usuario: " + ex.Message);
+        }
+        finally
+        {
+            cerrarConexion();
+        }
+        return existe;
+    }
 }

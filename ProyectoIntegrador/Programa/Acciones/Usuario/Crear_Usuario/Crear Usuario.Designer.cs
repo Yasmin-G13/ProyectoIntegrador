@@ -35,10 +35,12 @@
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            textNombre = new TextBox();
+            textContraseña = new TextBox();
+            textRepetirContraseña = new TextBox();
             pictureBox2 = new PictureBox();
+            textCorreo = new Label();
+            textBox3 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -46,9 +48,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_204154;
-            pictureBox1.Location = new Point(385, 12);
+            pictureBox1.Location = new Point(308, 10);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 108);
+            pictureBox1.Size = new Size(96, 86);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -56,9 +59,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(387, 139);
+            label1.Location = new Point(310, 111);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(108, 25);
+            label1.Size = new Size(90, 20);
             label1.TabIndex = 1;
             label1.Text = "REGÍSTRATE";
             label1.Click += label1_Click;
@@ -67,8 +71,9 @@
             // 
             button1.BackColor = Color.Sienna;
             button1.Location = new Point(0, 0);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(135, 68);
+            button1.Size = new Size(108, 54);
             button1.TabIndex = 2;
             button1.Text = "REGRESAR";
             button1.UseVisualStyleBackColor = false;
@@ -77,21 +82,23 @@
             // btn_crear_usuario
             // 
             btn_crear_usuario.BackColor = Color.DarkOrange;
-            btn_crear_usuario.Location = new Point(385, 401);
+            btn_crear_usuario.Location = new Point(554, 330);
+            btn_crear_usuario.Margin = new Padding(2);
             btn_crear_usuario.Name = "btn_crear_usuario";
-            btn_crear_usuario.Size = new Size(135, 68);
+            btn_crear_usuario.Size = new Size(108, 54);
             btn_crear_usuario.TabIndex = 3;
             btn_crear_usuario.Text = "Crear";
             btn_crear_usuario.UseVisualStyleBackColor = false;
-            btn_crear_usuario.Click += this.btn_crear_usuario_Click;
+            btn_crear_usuario.Click += btn_crear_usuario_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.SandyBrown;
-            label2.Location = new Point(226, 199);
+            label2.Location = new Point(181, 159);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(78, 25);
+            label2.Size = new Size(64, 20);
             label2.TabIndex = 4;
             label2.Text = "Nombre";
             // 
@@ -99,9 +106,10 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.SandyBrown;
-            label3.Location = new Point(197, 273);
+            label3.Location = new Point(156, 243);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(105, 25);
+            label3.Size = new Size(86, 20);
             label3.TabIndex = 5;
             label3.Text = "Contraseña:";
             // 
@@ -109,56 +117,82 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.SandyBrown;
-            label4.Location = new Point(137, 340);
+            label4.Location = new Point(107, 288);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(165, 25);
+            label4.Size = new Size(138, 20);
             label4.TabIndex = 6;
             label4.Text = "Repetir Contraseña:";
             // 
-            // textBox1
+            // textNombre
             // 
-            textBox1.BackColor = Color.SandyBrown;
-            textBox1.Location = new Point(308, 196);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(273, 31);
-            textBox1.TabIndex = 7;
+            textNombre.BackColor = Color.SandyBrown;
+            textNombre.Location = new Point(246, 157);
+            textNombre.Margin = new Padding(2);
+            textNombre.Name = "textNombre";
+            textNombre.Size = new Size(219, 27);
+            textNombre.TabIndex = 7;
             // 
-            // textBox2
+            // textContraseña
             // 
-            textBox2.BackColor = Color.SandyBrown;
-            textBox2.Location = new Point(308, 270);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(273, 31);
-            textBox2.TabIndex = 8;
+            textContraseña.BackColor = Color.SandyBrown;
+            textContraseña.Location = new Point(246, 240);
+            textContraseña.Margin = new Padding(2);
+            textContraseña.Name = "textContraseña";
+            textContraseña.Size = new Size(219, 27);
+            textContraseña.TabIndex = 8;
             // 
-            // textBox3
+            // textRepetirContraseña
             // 
-            textBox3.BackColor = Color.SandyBrown;
-            textBox3.Location = new Point(308, 334);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(273, 31);
-            textBox3.TabIndex = 9;
+            textRepetirContraseña.BackColor = Color.SandyBrown;
+            textRepetirContraseña.Location = new Point(246, 285);
+            textRepetirContraseña.Margin = new Padding(2);
+            textRepetirContraseña.Name = "textRepetirContraseña";
+            textRepetirContraseña.Size = new Size(219, 27);
+            textRepetirContraseña.TabIndex = 9;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_211642;
-            pictureBox2.Location = new Point(680, 0);
+            pictureBox2.Location = new Point(544, 0);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(170, 68);
+            pictureBox2.Size = new Size(136, 54);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 10;
             pictureBox2.TabStop = false;
             // 
+            // textCorreo
+            // 
+            textCorreo.AutoSize = true;
+            textCorreo.BackColor = Color.SandyBrown;
+            textCorreo.Location = new Point(181, 203);
+            textCorreo.Name = "textCorreo";
+            textCorreo.Size = new Size(54, 20);
+            textCorreo.TabIndex = 11;
+            textCorreo.Text = "Correo";
+            textCorreo.Click += label5_Click;
+            // 
+            // textBox3
+            // 
+            textBox3.BackColor = Color.FromArgb(255, 192, 128);
+            textBox3.Location = new Point(246, 200);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(216, 27);
+            textBox3.TabIndex = 12;
+            // 
             // FormCrearUsuario
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            ClientSize = new Size(852, 494);
-            Controls.Add(pictureBox2);
+            ClientSize = new Size(682, 395);
             Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textCorreo);
+            Controls.Add(pictureBox2);
+            Controls.Add(textRepetirContraseña);
+            Controls.Add(textContraseña);
+            Controls.Add(textNombre);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -166,6 +200,7 @@
             Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
+            Margin = new Padding(2);
             Name = "FormCrearUsuario";
             Text = "Crear Usuario";
             Load += Form3_Load;
@@ -186,7 +221,14 @@
         private Label label4;
         private TextBox textBox1;
         private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox textRepetirContraseña;
         private PictureBox pictureBox2;
+        private TextBox textnombre;
+        private TextBox textNombre;
+        private TextBox textConraseña;
+        private TextBox textContraseña;
+        private Label TextCorreo;
+        private TextBox textBox3;
+        private Label textCorreo;
     }
 }

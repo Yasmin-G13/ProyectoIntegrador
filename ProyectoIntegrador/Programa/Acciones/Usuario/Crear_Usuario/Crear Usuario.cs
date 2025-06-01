@@ -38,21 +38,52 @@ namespace ProyectoIntegrador
 
 
         // Este m�todo nos abre el Form para que el usuario pueda crear su cuenta.
+
         private void btn_crear_usuario_Click(object sender, EventArgs e)
         {
+            string nombre = textNombre.Text.Trim();
+            string correo = textCorreo.Text.Trim();
+            string contraseña = textContraseña.Text.Trim();
+            string repetirContraseña = textRepetirContraseña.Text.Trim();
+
+            // Validar campos vacíos
+            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(correo) || string.IsNullOrEmpty(contraseña) || string.IsNullOrEmpty(repetirContraseña))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validar que las contraseñas coincidan
+            if (contraseña != repetirContraseña)
+            {
+                MessageBox.Show("Las contraseñas no coinciden. Por favor, verifica.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            ConexionMySQL conexion = new ConexionMySQL();
+
+            // Verifica si el usuario ya existe
+            if (conexion.usuarioExiste(nombre))
+            {
+                MessageBox.Show("El usuario ya existe.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Inserta si pasa todo
             try
             {
-                // Establecer conexión a la base de datos MySQL usando la clase ConexionMySQL
-                ConexionMySQL conexionMySQL = new ConexionMySQL();
-                conexionMySQL.insertarUsuario("arantza", "mail", "123", DateTime.Now);
-
-                MessageBox.Show("Conexión exitosa a la base de datos.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexion.insertarUsuario(nombre, " ", contraseña, DateTime.Now);
+                MessageBox.Show("Usuario creado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al conectar a la base de datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show("Error al crear usuario: " + ex.Message);
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

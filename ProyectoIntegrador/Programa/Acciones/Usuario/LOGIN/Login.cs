@@ -42,5 +42,13 @@ namespace ProyectoIntegrador.Resources
         {
 
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            FormBienvenida bienvenida = new FormBienvenida();
+            bienvenida.Show();
+            this.Hide();
+
+        }
     }
 }
