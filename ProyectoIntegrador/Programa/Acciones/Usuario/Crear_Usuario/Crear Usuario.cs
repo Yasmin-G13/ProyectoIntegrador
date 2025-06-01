@@ -42,7 +42,7 @@ namespace ProyectoIntegrador
         private void btn_crear_usuario_Click(object sender, EventArgs e)
         {
             string nombre = textNombre.Text.Trim();
-            string correo = textCorreo.Text.Trim();
+            string correo = textCorreo.Text.Trim(); 
             string contraseña = textContraseña.Text.Trim();
             string repetirContraseña = textRepetirContraseña.Text.Trim();
 
