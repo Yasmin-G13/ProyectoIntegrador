@@ -37,7 +37,7 @@ namespace ProyectoIntegrador
         }
 
 
-        // Este m�todo nos abre el Form para que el usuario pueda crear su cuenta.
+        // Este m�todo nos abre el Form para que el usuario pueda crear su cuenta.0
 
         private void btn_crear_usuario_Click(object sender, EventArgs e)
         {
