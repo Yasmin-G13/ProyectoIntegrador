@@ -67,26 +67,23 @@ public class ConexionMySQL
             string peticion = "INSERT INTO usuarios (nombre, correo, contraseña, fecha_registro, rol) VALUES (@nombre, @correo, @contraseña, @fecha_registro, @rol)";
 
             MySqlCommand comando = new MySqlCommand(peticion, conexion);
-
-
             comando.Parameters.AddWithValue("@nombre", nombre);
             comando.Parameters.AddWithValue("@correo", correo);
             comando.Parameters.AddWithValue("@contraseña", contraseña);
-            comando.Parameters.AddWithValue("@fecha_registro", fechaRegistro.Date);
-            comando.Parameters.AddWithValue("@rol", 0); // Asignar rol 0 por defecto (usuario admin)
+            comando.Parameters.AddWithValue("@fecha_registro", fechaRegistro);
+            comando.Parameters.AddWithValue("@rol", 0); // Asumiendo rol predeterminado 0
 
             comando.ExecuteNonQuery();
 
-            // Muestra un mensaje de exito al insertar el usuario.
-            MessageBox.Show("Usuario insertado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         catch (Exception ex)
         {
             MessageBox.Show("Error al insertar usuario: " + ex.Message);
         }
-
-        cerrarConexion();
-
+        finally
+        {
+            cerrarConexion();
+        }
     }
     public bool usuarioExiste(string nombre)
     {

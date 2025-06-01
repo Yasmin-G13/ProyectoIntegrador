@@ -39,8 +39,8 @@
             textContraseña = new TextBox();
             textRepetirContraseña = new TextBox();
             pictureBox2 = new PictureBox();
-            textCorreo = new Label();
-            textBox3 = new TextBox();
+            labelCorreo = new Label();
+            textCorreo = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -126,7 +126,7 @@
             // 
             // textNombre
             // 
-            textNombre.BackColor = Color.SandyBrown;
+            textNombre.BackColor = Color.FromArgb(255, 192, 128);
             textNombre.Location = new Point(246, 157);
             textNombre.Margin = new Padding(2);
             textNombre.Name = "textNombre";
@@ -135,7 +135,7 @@
             // 
             // textContraseña
             // 
-            textContraseña.BackColor = Color.SandyBrown;
+            textContraseña.BackColor = Color.FromArgb(255, 192, 128);
             textContraseña.Location = new Point(246, 240);
             textContraseña.Margin = new Padding(2);
             textContraseña.Name = "textContraseña";
@@ -144,7 +144,7 @@
             // 
             // textRepetirContraseña
             // 
-            textRepetirContraseña.BackColor = Color.SandyBrown;
+            textRepetirContraseña.BackColor = Color.FromArgb(255, 192, 128);
             textRepetirContraseña.Location = new Point(246, 285);
             textRepetirContraseña.Margin = new Padding(2);
             textRepetirContraseña.Name = "textRepetirContraseña";
@@ -162,24 +162,24 @@
             pictureBox2.TabIndex = 10;
             pictureBox2.TabStop = false;
             // 
+            // labelCorreo
+            // 
+            labelCorreo.AutoSize = true;
+            labelCorreo.BackColor = Color.SandyBrown;
+            labelCorreo.Location = new Point(181, 203);
+            labelCorreo.Name = "labelCorreo";
+            labelCorreo.Size = new Size(54, 20);
+            labelCorreo.TabIndex = 11;
+            labelCorreo.Text = "Correo";
+            labelCorreo.Click += label5_Click;
+            // 
             // textCorreo
             // 
-            textCorreo.AutoSize = true;
-            textCorreo.BackColor = Color.SandyBrown;
-            textCorreo.Location = new Point(181, 203);
+            textCorreo.BackColor = Color.FromArgb(255, 192, 128);
+            textCorreo.Location = new Point(246, 200);
             textCorreo.Name = "textCorreo";
-            textCorreo.Size = new Size(54, 20);
-            textCorreo.TabIndex = 11;
-            textCorreo.Text = "Correo";
-            textCorreo.Click += label5_Click;
-            // 
-            // textBox3
-            // 
-            textBox3.BackColor = Color.FromArgb(255, 192, 128);
-            textBox3.Location = new Point(246, 200);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(216, 27);
-            textBox3.TabIndex = 12;
+            textCorreo.Size = new Size(216, 27);
+            textCorreo.TabIndex = 12;
             // 
             // FormCrearUsuario
             // 
@@ -187,8 +187,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(682, 395);
-            Controls.Add(textBox3);
             Controls.Add(textCorreo);
+            Controls.Add(labelCorreo);
             Controls.Add(pictureBox2);
             Controls.Add(textRepetirContraseña);
             Controls.Add(textContraseña);
@@ -228,7 +228,7 @@
         private TextBox textConraseña;
         private TextBox textContraseña;
         private Label TextCorreo;
-        private TextBox textBox3;
-        private Label textCorreo;
+        private TextBox textCorreo;
+        private Label labelCorreo;
     }
 }

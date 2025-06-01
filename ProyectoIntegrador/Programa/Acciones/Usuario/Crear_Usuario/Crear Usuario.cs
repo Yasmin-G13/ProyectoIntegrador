@@ -72,7 +72,7 @@ namespace ProyectoIntegrador
             // Inserta si pasa todo
             try
             {
-                conexion.insertarUsuario(nombre, "", contraseña, DateTime.Now);
+                conexion.insertarUsuario(nombre, correo, contraseña, DateTime.Now);
                 MessageBox.Show("Usuario creado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

@@ -31,10 +31,10 @@
             pictureBox2 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
-            textBox2 = new TextBox();
+            textUsuario = new TextBox();
             label3 = new Label();
             label4 = new Label();
-            textBox3 = new TextBox();
+            textContraseña = new TextBox();
             label5 = new Label();
             pictureBox1 = new PictureBox();
             btnRegresar = new Button();
@@ -48,7 +48,7 @@
             // 
             pictureBox2.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_211642;
             pictureBox2.Location = new Point(546, 2);
-            pictureBox2.Margin = new Padding(2, 2, 2, 2);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(136, 54);
             pictureBox2.TabIndex = 1;
@@ -74,16 +74,14 @@
             label2.TabIndex = 4;
             label2.Text = "INICIAR SESION";
             // 
-            // textBox2
+            // textUsuario
             // 
-            textBox2.BackColor = Color.SandyBrown;
-            textBox2.Location = new Point(268, 176);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(224, 27);
-            textBox2.TabIndex = 5;
-            textBox2.TextChanged += textBox2_TextChanged;
-            // 
+            textUsuario.BackColor = Color.SandyBrown;
+            textUsuario.Location = new Point(268, 176);
+            textUsuario.Margin = new Padding(2);
+            textUsuario.Name = "textUsuario";
+            textUsuario.Size = new Size(224, 27);
+            textUsuario.TabIndex = 5;            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -106,15 +104,15 @@
             label4.TabIndex = 8;
             label4.Text = "CONTRASEÑA:";
             // 
-            // textBox3
+            // textContraseña
             // 
-            textBox3.BackColor = Color.SandyBrown;
-            textBox3.Location = new Point(268, 230);
-            textBox3.Margin = new Padding(2, 2, 2, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(224, 27);
-            textBox3.TabIndex = 7;
-            textBox3.TextChanged += textBox3_TextChanged;
+            textContraseña.BackColor = Color.SandyBrown;
+            textContraseña.Location = new Point(268, 230);
+            textContraseña.Margin = new Padding(2);
+            textContraseña.Name = "textContraseña";
+            textContraseña.Size = new Size(224, 27);
+            textContraseña.TabIndex = 7;
+            textContraseña.TextChanged += textBox3_TextChanged;
             // 
             // label5
             // 
@@ -131,7 +129,7 @@
             // 
             pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_204154;
             pictureBox1.Location = new Point(290, 11);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(96, 86);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -142,7 +140,7 @@
             // 
             btnRegresar.BackColor = Color.Sienna;
             btnRegresar.Location = new Point(-2, 0);
-            btnRegresar.Margin = new Padding(2, 2, 2, 2);
+            btnRegresar.Margin = new Padding(2);
             btnRegresar.Name = "btnRegresar";
             btnRegresar.Size = new Size(108, 54);
             btnRegresar.TabIndex = 14;
@@ -154,7 +152,7 @@
             // 
             button2.BackColor = Color.DarkOrange;
             button2.Location = new Point(268, 330);
-            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(108, 54);
             button2.TabIndex = 15;
@@ -164,7 +162,7 @@
             // button3
             // 
             button3.Location = new Point(364, 283);
-            button3.Margin = new Padding(2, 2, 2, 2);
+            button3.Margin = new Padding(2);
             button3.Name = "button3";
             button3.Size = new Size(128, 27);
             button3.TabIndex = 16;
@@ -183,13 +181,13 @@
             Controls.Add(pictureBox1);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(textBox3);
+            Controls.Add(textContraseña);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(textUsuario);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox2);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Form2";
             Text = "INICIAR SESION";
             TransparencyKey = Color.Transparent;
@@ -215,5 +213,7 @@
         private Button btnRegresar;
         private Button button2;
         private Button button3;
+        private TextBox textUsuario;
+        private TextBox textContraseña;
     }
 }
