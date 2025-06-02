@@ -42,40 +42,43 @@
             panel2 = new Panel();
             dataGridView1 = new DataGridView();
             conexionMySQLBindingSource = new BindingSource(components);
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionMySQLBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.SandyBrown;
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(-2, 1);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(704, 59);
+            panel1.Size = new Size(850, 72);
             panel1.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(275, 16);
+            label1.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(343, 8);
             label1.Name = "label1";
-            label1.Size = new Size(189, 32);
+            label1.Size = new Size(260, 41);
             label1.TabIndex = 0;
             label1.Text = "PRODUCTOS";
             // 
             // btnProductos
             // 
             btnProductos.BackColor = Color.Chocolate;
-            btnProductos.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnProductos.Location = new Point(12, 20);
+            btnProductos.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnProductos.Location = new Point(0, 16);
             btnProductos.Margin = new Padding(3, 2, 3, 2);
             btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(82, 22);
+            btnProductos.Size = new Size(127, 57);
             btnProductos.TabIndex = 2;
             btnProductos.Text = "PRODUCTOS";
             btnProductos.UseVisualStyleBackColor = false;
@@ -83,11 +86,11 @@
             // btnVentas
             // 
             btnVentas.BackColor = Color.Chocolate;
-            btnVentas.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVentas.Location = new Point(12, 58);
+            btnVentas.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnVentas.Location = new Point(0, 93);
             btnVentas.Margin = new Padding(3, 2, 3, 2);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(82, 22);
+            btnVentas.Size = new Size(127, 57);
             btnVentas.TabIndex = 3;
             btnVentas.Text = "VENTAS";
             btnVentas.UseVisualStyleBackColor = false;
@@ -95,11 +98,11 @@
             // btnInventario
             // 
             btnInventario.BackColor = Color.Chocolate;
-            btnInventario.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnInventario.Location = new Point(12, 102);
+            btnInventario.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnInventario.Location = new Point(0, 181);
             btnInventario.Margin = new Padding(3, 2, 3, 2);
             btnInventario.Name = "btnInventario";
-            btnInventario.Size = new Size(82, 22);
+            btnInventario.Size = new Size(127, 57);
             btnInventario.TabIndex = 4;
             btnInventario.Text = "INVENTARIO";
             btnInventario.UseVisualStyleBackColor = false;
@@ -107,11 +110,11 @@
             // btnAjustes
             // 
             btnAjustes.BackColor = Color.Chocolate;
-            btnAjustes.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAjustes.Location = new Point(12, 143);
+            btnAjustes.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAjustes.Location = new Point(-4, 269);
             btnAjustes.Margin = new Padding(3, 2, 3, 2);
             btnAjustes.Name = "btnAjustes";
-            btnAjustes.Size = new Size(82, 22);
+            btnAjustes.Size = new Size(131, 57);
             btnAjustes.TabIndex = 5;
             btnAjustes.Text = "AJUSTES";
             btnAjustes.UseVisualStyleBackColor = false;
@@ -119,10 +122,11 @@
             // btnCerrarSesion
             // 
             btnCerrarSesion.BackColor = Color.Chocolate;
-            btnCerrarSesion.Location = new Point(12, 212);
+            btnCerrarSesion.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCerrarSesion.Location = new Point(0, 349);
             btnCerrarSesion.Margin = new Padding(3, 2, 3, 2);
             btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(82, 46);
+            btnCerrarSesion.Size = new Size(127, 57);
             btnCerrarSesion.TabIndex = 6;
             btnCerrarSesion.Text = "CERRAR SESIÓN";
             btnCerrarSesion.UseVisualStyleBackColor = false;
@@ -130,10 +134,10 @@
             // btnAñadirProducto
             // 
             btnAñadirProducto.BackColor = Color.SandyBrown;
-            btnAñadirProducto.Location = new Point(163, 189);
+            btnAñadirProducto.Location = new Point(144, 320);
             btnAñadirProducto.Margin = new Padding(3, 2, 3, 2);
             btnAñadirProducto.Name = "btnAñadirProducto";
-            btnAñadirProducto.Size = new Size(508, 34);
+            btnAñadirProducto.Size = new Size(696, 57);
             btnAñadirProducto.TabIndex = 7;
             btnAñadirProducto.Text = "AÑADIR PRODUCTOS";
             btnAñadirProducto.UseVisualStyleBackColor = false;
@@ -141,10 +145,10 @@
             // btnModificarProducto
             // 
             btnModificarProducto.BackColor = Color.SandyBrown;
-            btnModificarProducto.Location = new Point(163, 230);
+            btnModificarProducto.Location = new Point(144, 381);
             btnModificarProducto.Margin = new Padding(3, 2, 3, 2);
             btnModificarProducto.Name = "btnModificarProducto";
-            btnModificarProducto.Size = new Size(508, 36);
+            btnModificarProducto.Size = new Size(696, 57);
             btnModificarProducto.TabIndex = 8;
             btnModificarProducto.Text = "MODIFICAR PRODUCTO";
             btnModificarProducto.UseVisualStyleBackColor = false;
@@ -152,10 +156,10 @@
             // btnDarBaja
             // 
             btnDarBaja.BackColor = Color.SandyBrown;
-            btnDarBaja.Location = new Point(163, 276);
+            btnDarBaja.Location = new Point(144, 442);
             btnDarBaja.Margin = new Padding(3, 2, 3, 2);
             btnDarBaja.Name = "btnDarBaja";
-            btnDarBaja.Size = new Size(508, 34);
+            btnDarBaja.Size = new Size(696, 57);
             btnDarBaja.TabIndex = 9;
             btnDarBaja.Text = "DAR DE BAJA PRODUCTO";
             btnDarBaja.UseVisualStyleBackColor = false;
@@ -169,10 +173,10 @@
             panel2.Controls.Add(btnInventario);
             panel2.Controls.Add(btnAjustes);
             panel2.Controls.Add(btnCerrarSesion);
-            panel2.Location = new Point(-2, 58);
+            panel2.Location = new Point(-2, 77);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(124, 287);
+            panel2.Size = new Size(127, 422);
             panel2.TabIndex = 10;
             // 
             // dataGridView1
@@ -180,22 +184,32 @@
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.DataSource = conexionMySQLBindingSource;
-            dataGridView1.Location = new Point(163, 78);
+            dataGridView1.Location = new Point(144, 78);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(508, 92);
+            dataGridView1.Size = new Size(696, 237);
             dataGridView1.TabIndex = 11;
             // 
             // conexionMySQLBindingSource
             // 
             conexionMySQLBindingSource.DataSource = typeof(ConexionMySQL);
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_204154;
+            pictureBox1.Location = new Point(0, -1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(87, 72);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
             // Productos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(852, 494);
             Controls.Add(dataGridView1);
             Controls.Add(panel2);
             Controls.Add(btnDarBaja);
@@ -211,6 +225,7 @@
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)conexionMySQLBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -228,5 +243,6 @@
         private Panel panel2;
         private DataGridView dataGridView1;
         private BindingSource conexionMySQLBindingSource;
+        private PictureBox pictureBox1;
     }
 }
