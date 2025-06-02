@@ -87,7 +87,7 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.SandyBrown;
-            label3.Location = new Point(155, 176);
+            label3.Location = new Point(155, 183);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(78, 20);
@@ -151,7 +151,7 @@
             // 
             // btnEntrar
             // 
-            btnEntrar.BackColor = Color.DarkOrange;
+            btnEntrar.BackColor = Color.Sienna;
             btnEntrar.Location = new Point(268, 330);
             btnEntrar.Margin = new Padding(2);
             btnEntrar.Name = "btnEntrar";

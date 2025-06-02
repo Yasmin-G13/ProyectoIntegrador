@@ -87,7 +87,7 @@ namespace ProyectoIntegrador.Resources
                     if (contrasenaAlmacenada == contraseña)
                     {
                         // Contraseña correcta, abre formulario productos
-                        FormProductos productos = new FormProductos(); 
+                        Productos productos = new Productos(); 
                         productos.Show();
                         this.Hide(); // Ocultar login
                     }

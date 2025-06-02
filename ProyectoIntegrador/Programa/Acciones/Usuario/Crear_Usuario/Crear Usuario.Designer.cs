@@ -81,13 +81,13 @@
             // 
             // btn_crear_usuario
             // 
-            btn_crear_usuario.BackColor = Color.DarkOrange;
+            btn_crear_usuario.BackColor = Color.Sienna;
             btn_crear_usuario.Location = new Point(554, 330);
             btn_crear_usuario.Margin = new Padding(2);
             btn_crear_usuario.Name = "btn_crear_usuario";
             btn_crear_usuario.Size = new Size(108, 54);
             btn_crear_usuario.TabIndex = 3;
-            btn_crear_usuario.Text = "Crear";
+            btn_crear_usuario.Text = "CREAR";
             btn_crear_usuario.UseVisualStyleBackColor = false;
             btn_crear_usuario.Click += btn_crear_usuario_Click;
             // 

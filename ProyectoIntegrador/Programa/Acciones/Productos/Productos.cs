@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegrador.Programa.Acciones.Productos
 {
-    public partial class FormProductos : Form
+    public partial class Productos : Form
     {
-        public FormProductos()
+        public Productos()
         {
             InitializeComponent();
         }
 
         private void btnAñadirProducto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
         {
 
         }
