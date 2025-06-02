@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoIntegrador.Programa.Acciones.Productos;
 
 namespace ProyectoIntegrador.Resources
 {
@@ -55,9 +56,55 @@ namespace ProyectoIntegrador.Resources
             this.Close(); // o this.Hide();
         }
 
+       
         private void btnEntrar_Click(object sender, EventArgs e)
         {
+            string nombre = textUsuario.Text.Trim();
+            string contraseña = textContraseña.Text.Trim();
 
+            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(contraseña))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.", "Validación");
+                return;
+            }
+
+            ConexionMySQL conexion = new ConexionMySQL();
+
+            try
+            {
+                // Verifica si el usuario existe
+                if (conexion.usuarioExiste(nombre))
+                {
+                    // Obtener contraseña almacenada
+                    string contrasenaAlmacenada = conexion.obtenerContraseñaUsuario(nombre);
+
+                    if (contrasenaAlmacenada == null)
+                    {
+                        MessageBox.Show("Error al verificar contraseña.");
+                        return;
+                    }
+
+                    if (contrasenaAlmacenada == contraseña)
+                    {
+                        // Contraseña correcta, abre formulario productos
+                        FormProductos productos = new FormProductos(); 
+                        productos.Show();
+                        this.Hide(); // Ocultar login
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña incorrecta");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Usuario no encontrado");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

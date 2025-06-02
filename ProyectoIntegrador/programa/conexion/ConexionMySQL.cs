@@ -107,4 +107,30 @@ public class ConexionMySQL
         }
         return existe;
     }
+    public string obtenerContraseñaUsuario(string usuario)
+    {
+        string contrasena = null;
+        try
+        {
+            establecerConexion();
+            string query = "SELECT contraseña FROM usuarios WHERE nombre = @nombre";
+            MySqlCommand cmd = new MySqlCommand(query, conexion);
+            cmd.Parameters.AddWithValue("@nombre", usuario);
+            var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                contrasena = reader["contraseña"].ToString();
+            }
+            reader.Close();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al obtener contraseña: " + ex.Message);
+        }
+        finally
+        {
+            cerrarConexion();
+        }
+        return contrasena;
+    }
 }
