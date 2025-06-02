@@ -36,10 +36,10 @@
             label4 = new Label();
             textContraseña = new TextBox();
             label5 = new Label();
-            pictureBox1 = new PictureBox();
             btnRegresar = new Button();
             btnEntrar = new Button();
             btnRecuperar_Contraseña = new Button();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -126,17 +126,6 @@
             label5.Text = "¿OLVIDASTE TU CONTRASEÑA?";
             label5.Click += label5_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_204154;
-            pictureBox1.Location = new Point(290, 11);
-            pictureBox1.Margin = new Padding(2);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(96, 86);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 13;
-            pictureBox1.TabStop = false;
-            // 
             // btnRegresar
             // 
             btnRegresar.BackColor = Color.Sienna;
@@ -170,6 +159,17 @@
             btnRecuperar_Contraseña.TabIndex = 16;
             btnRecuperar_Contraseña.Text = "Recuperala";
             btnRecuperar_Contraseña.UseVisualStyleBackColor = true;
+            btnRecuperar_Contraseña.Click += btnRecuperar_Contraseña_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_204154;
+            pictureBox1.Location = new Point(290, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(96, 86);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 17;
+            pictureBox1.TabStop = false;
             // 
             // FormLogin
             // 
@@ -177,10 +177,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(682, 395);
+            Controls.Add(pictureBox1);
             Controls.Add(btnRecuperar_Contraseña);
             Controls.Add(btnEntrar);
             Controls.Add(btnRegresar);
-            Controls.Add(pictureBox1);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(textContraseña);
@@ -210,11 +210,11 @@
         private Label label4;
         private TextBox textBox3;
         private Label label5;
-        private PictureBox pictureBox1;
         private Button btnRegresar;
         private Button btnEntrar;
         private Button btnRecuperar_Contraseña;
         private TextBox textUsuario;
         private TextBox textContraseña;
+        private PictureBox pictureBox1;
     }
 }

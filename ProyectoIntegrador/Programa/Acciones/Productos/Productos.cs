@@ -26,5 +26,12 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
         {
 
         }
+
+        private void btnAñadirProducto_Click_1(object sender, EventArgs e)
+        {
+            Añadir_Productos añadir = new Añadir_Productos();
+            añadir.Show();
+            this.Close(); // o this.Hide();
+        }
     }
 }

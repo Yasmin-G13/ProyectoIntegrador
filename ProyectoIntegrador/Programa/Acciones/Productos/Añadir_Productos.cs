@@ -34,7 +34,9 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
 
         private void btn_Catálogo_Productos_Click(object sender, EventArgs e)
         {
-
+            Productos productos = new Productos();
+            productos.Show();
+            this.Close(); // o this.Hide();
         }
     }
 }

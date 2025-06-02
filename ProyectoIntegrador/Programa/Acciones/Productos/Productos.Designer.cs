@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             label1 = new Label();
             btnProductos = new Button();
             btnVentas = new Button();
@@ -42,12 +43,11 @@
             panel2 = new Panel();
             dataGridView1 = new DataGridView();
             conexionMySQLBindingSource = new BindingSource(components);
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionMySQLBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -61,13 +61,23 @@
             panel1.Size = new Size(850, 72);
             panel1.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_204154;
+            pictureBox1.Location = new Point(0, -1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(87, 72);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(343, 8);
             label1.Name = "label1";
-            label1.Size = new Size(260, 41);
+            label1.Size = new Size(216, 35);
             label1.TabIndex = 0;
             label1.Text = "PRODUCTOS";
             // 
@@ -141,6 +151,7 @@
             btnAñadirProducto.TabIndex = 7;
             btnAñadirProducto.Text = "AÑADIR PRODUCTOS";
             btnAñadirProducto.UseVisualStyleBackColor = false;
+            btnAñadirProducto.Click += btnAñadirProducto_Click_1;
             // 
             // btnModificarProducto
             // 
@@ -194,19 +205,9 @@
             // 
             conexionMySQLBindingSource.DataSource = typeof(ConexionMySQL);
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_204154;
-            pictureBox1.Location = new Point(0, -1);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(87, 72);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
             // Productos
             // 
-            AutoScaleDimensions = new SizeF(9F, 19F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(852, 494);
@@ -222,10 +223,10 @@
             Text = "FormProductos";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)conexionMySQLBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

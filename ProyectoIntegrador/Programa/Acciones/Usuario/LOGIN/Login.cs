@@ -56,7 +56,7 @@ namespace ProyectoIntegrador.Resources
             this.Close(); // o this.Hide();
         }
 
-       
+
         private void btnEntrar_Click(object sender, EventArgs e)
         {
             string nombre = textUsuario.Text.Trim();
@@ -87,7 +87,7 @@ namespace ProyectoIntegrador.Resources
                     if (contrasenaAlmacenada == contraseña)
                     {
                         // Contraseña correcta, abre formulario productos
-                        Productos productos = new Productos(); 
+                        Productos productos = new Productos();
                         productos.Show();
                         this.Hide(); // Ocultar login
                     }
@@ -105,6 +105,11 @@ namespace ProyectoIntegrador.Resources
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void btnRecuperar_Contraseña_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
