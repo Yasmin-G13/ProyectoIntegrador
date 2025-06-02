@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -109,7 +110,7 @@ public class ConexionMySQL
     }
     public string obtenerContraseñaUsuario(string usuario)
     {
-        string contrasena = null;
+        string contraseña = null;
         try
         {
             establecerConexion();
@@ -119,7 +120,7 @@ public class ConexionMySQL
             var reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                contrasena = reader["contraseña"].ToString();
+                contraseña = reader["contraseña"].ToString();
             }
             reader.Close();
         }
@@ -131,6 +132,29 @@ public class ConexionMySQL
         {
             cerrarConexion();
         }
-        return contrasena;
+        return contraseña;
     }
+    // Método en tu clase de acceso a base de datos
+    public DataTable ObtenerTodosProductos()
+    {
+        DataTable dt = new DataTable();
+        try
+        {
+            establecerConexion();
+            string query = "SELECT * FROM productos"; // ajusta a tu tabla
+            MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexion);
+            adapter.Fill(dt);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al obtener datos: " + ex.Message);
+        }
+        finally
+        {
+            cerrarConexion();
+        }
+        return dt;
+    }
+
+   
 }
