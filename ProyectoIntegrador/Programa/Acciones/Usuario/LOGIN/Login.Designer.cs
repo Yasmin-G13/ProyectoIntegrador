@@ -1,6 +1,6 @@
 ﻿namespace ProyectoIntegrador.Resources
 {
-    partial class Form2
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -38,8 +38,8 @@
             label5 = new Label();
             pictureBox1 = new PictureBox();
             btnRegresar = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnEntrar = new Button();
+            btnRecuperar_Contraseña = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -81,7 +81,8 @@
             textUsuario.Margin = new Padding(2);
             textUsuario.Name = "textUsuario";
             textUsuario.Size = new Size(224, 27);
-            textUsuario.TabIndex = 5;            // 
+            textUsuario.TabIndex = 5;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -148,35 +149,36 @@
             btnRegresar.UseVisualStyleBackColor = false;
             btnRegresar.Click += btnRegresar_Click;
             // 
-            // button2
+            // btnEntrar
             // 
-            button2.BackColor = Color.DarkOrange;
-            button2.Location = new Point(268, 330);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(108, 54);
-            button2.TabIndex = 15;
-            button2.Text = "ENTRAR";
-            button2.UseVisualStyleBackColor = false;
+            btnEntrar.BackColor = Color.DarkOrange;
+            btnEntrar.Location = new Point(268, 330);
+            btnEntrar.Margin = new Padding(2);
+            btnEntrar.Name = "btnEntrar";
+            btnEntrar.Size = new Size(108, 54);
+            btnEntrar.TabIndex = 15;
+            btnEntrar.Text = "ENTRAR";
+            btnEntrar.UseVisualStyleBackColor = false;
+            btnEntrar.Click += btnEntrar_Click;
             // 
-            // button3
+            // btnRecuperar_Contraseña
             // 
-            button3.Location = new Point(364, 283);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(128, 27);
-            button3.TabIndex = 16;
-            button3.Text = "Recuperala";
-            button3.UseVisualStyleBackColor = true;
+            btnRecuperar_Contraseña.Location = new Point(364, 283);
+            btnRecuperar_Contraseña.Margin = new Padding(2);
+            btnRecuperar_Contraseña.Name = "btnRecuperar_Contraseña";
+            btnRecuperar_Contraseña.Size = new Size(128, 27);
+            btnRecuperar_Contraseña.TabIndex = 16;
+            btnRecuperar_Contraseña.Text = "Recuperala";
+            btnRecuperar_Contraseña.UseVisualStyleBackColor = true;
             // 
-            // Form2
+            // FormLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(682, 395);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btnRecuperar_Contraseña);
+            Controls.Add(btnEntrar);
             Controls.Add(btnRegresar);
             Controls.Add(pictureBox1);
             Controls.Add(label5);
@@ -188,8 +190,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox2);
             Margin = new Padding(2);
-            Name = "Form2";
-            Text = "INICIAR SESION";
+            Name = "FormLogin";
             TransparencyKey = Color.Transparent;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -211,8 +212,8 @@
         private Label label5;
         private PictureBox pictureBox1;
         private Button btnRegresar;
-        private Button button2;
-        private Button button3;
+        private Button btnEntrar;
+        private Button btnRecuperar_Contraseña;
         private TextBox textUsuario;
         private TextBox textContraseña;
     }

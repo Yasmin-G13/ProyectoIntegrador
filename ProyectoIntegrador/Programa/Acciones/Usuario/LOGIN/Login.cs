@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegrador.Resources
 {
-    public partial class Form2 : Form
+    public partial class FormLogin : Form
     {
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -43,11 +43,16 @@ namespace ProyectoIntegrador.Resources
 
         }
 
+
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             FormBienvenida bienvenida = new FormBienvenida();
             bienvenida.Show();
-            this.Hide();
+            this.Close(); // o this.Hide();
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
 
         }
     }

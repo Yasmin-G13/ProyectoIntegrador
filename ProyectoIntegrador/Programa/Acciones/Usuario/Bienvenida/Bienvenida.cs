@@ -34,9 +34,7 @@ namespace ProyectoIntegrador
 
         private void label2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form2 form2 = new Form2();
-            form2.Show();
+          
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -44,9 +42,12 @@ namespace ProyectoIntegrador
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+   
+        private void btn_ir_a_iniciar_sesion_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
         }
 
         // Este método nos abre el Form para que el usuario pueda crear su cuenta.

@@ -94,7 +94,7 @@
             btn_ir_a_iniciar_sesion.TabIndex = 8;
             btn_ir_a_iniciar_sesion.Text = "INICIAR SESION";
             btn_ir_a_iniciar_sesion.UseVisualStyleBackColor = false;
-            btn_ir_a_iniciar_sesion.Click += button1_Click;
+            btn_ir_a_iniciar_sesion.Click += btn_ir_a_iniciar_sesion_Click;
             // 
             // btn_ir_a_crear_usuario
             // 
