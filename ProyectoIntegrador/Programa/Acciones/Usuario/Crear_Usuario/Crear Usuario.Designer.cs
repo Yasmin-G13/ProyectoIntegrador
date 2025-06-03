@@ -84,6 +84,8 @@
             // btn_crear_usuario
             // 
             btn_crear_usuario.BackColor = Color.Sienna;
+            btn_crear_usuario.Font = new Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_crear_usuario.ForeColor = Color.White;
             btn_crear_usuario.Location = new Point(692, 412);
             btn_crear_usuario.Margin = new Padding(2);
             btn_crear_usuario.Name = "btn_crear_usuario";

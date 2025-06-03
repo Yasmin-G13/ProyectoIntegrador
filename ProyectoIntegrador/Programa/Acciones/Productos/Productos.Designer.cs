@@ -43,6 +43,7 @@
             panel2 = new Panel();
             dataGridView1 = new DataGridView();
             conexionMySQLBindingSource = new BindingSource(components);
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -85,7 +86,7 @@
             // 
             btnProductos.BackColor = Color.Chocolate;
             btnProductos.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnProductos.Location = new Point(0, 16);
+            btnProductos.Location = new Point(0, 1);
             btnProductos.Margin = new Padding(3, 2, 3, 2);
             btnProductos.Name = "btnProductos";
             btnProductos.Size = new Size(127, 57);
@@ -97,7 +98,7 @@
             // 
             btnVentas.BackColor = Color.Chocolate;
             btnVentas.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVentas.Location = new Point(0, 93);
+            btnVentas.Location = new Point(0, 62);
             btnVentas.Margin = new Padding(3, 2, 3, 2);
             btnVentas.Name = "btnVentas";
             btnVentas.Size = new Size(127, 57);
@@ -109,7 +110,7 @@
             // 
             btnInventario.BackColor = Color.Chocolate;
             btnInventario.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnInventario.Location = new Point(0, 181);
+            btnInventario.Location = new Point(0, 132);
             btnInventario.Margin = new Padding(3, 2, 3, 2);
             btnInventario.Name = "btnInventario";
             btnInventario.Size = new Size(127, 57);
@@ -121,7 +122,7 @@
             // 
             btnAjustes.BackColor = Color.Chocolate;
             btnAjustes.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAjustes.Location = new Point(-4, 269);
+            btnAjustes.Location = new Point(-4, 278);
             btnAjustes.Margin = new Padding(3, 2, 3, 2);
             btnAjustes.Name = "btnAjustes";
             btnAjustes.Size = new Size(131, 57);
@@ -179,6 +180,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(btnProductos);
             panel2.Controls.Add(btnVentas);
             panel2.Controls.Add(btnInventario);
@@ -204,6 +206,17 @@
             // conexionMySQLBindingSource
             // 
             conexionMySQLBindingSource.DataSource = typeof(ConexionMySQL);
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Chocolate;
+            button1.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(3, 205);
+            button1.Name = "button1";
+            button1.Size = new Size(124, 57);
+            button1.TabIndex = 12;
+            button1.Text = "PEDIDOS";
+            button1.UseVisualStyleBackColor = false;
             // 
             // Productos
             // 
@@ -245,5 +258,6 @@
         private DataGridView dataGridView1;
         private BindingSource conexionMySQLBindingSource;
         private PictureBox pictureBox1;
+        private Button button1;
     }
 }
