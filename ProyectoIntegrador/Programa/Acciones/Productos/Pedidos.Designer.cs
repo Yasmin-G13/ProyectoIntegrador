@@ -103,10 +103,16 @@
             // btn_Cerrar_Sesion
             // 
             btn_Cerrar_Sesion.BackColor = Color.Chocolate;
+<<<<<<< HEAD
             btn_Cerrar_Sesion.Location = new Point(0, 266);
             btn_Cerrar_Sesion.Margin = new Padding(2, 2, 2, 2);
             btn_Cerrar_Sesion.Name = "btn_Cerrar_Sesion";
             btn_Cerrar_Sesion.Size = new Size(99, 62);
+=======
+            btn_Cerrar_Sesion.Location = new Point(0, 333);
+            btn_Cerrar_Sesion.Name = "btn_Cerrar_Sesion";
+            btn_Cerrar_Sesion.Size = new Size(124, 77);
+>>>>>>> datawritview no funciona
             btn_Cerrar_Sesion.TabIndex = 5;
             btn_Cerrar_Sesion.Text = "CERRAR SESIÓN";
             btn_Cerrar_Sesion.UseVisualStyleBackColor = false;
@@ -165,7 +171,10 @@
             btn_Catálogo_Productos.TabIndex = 0;
             btn_Catálogo_Productos.Text = "CATÁLOGO/\r\nPRODUCTO\r\n";
             btn_Catálogo_Productos.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
             btn_Catálogo_Productos.Click += btn_Catálogo_Productos_Click;
+=======
+>>>>>>> datawritview no funciona
             // 
             // dataGridView1
             // 
@@ -175,7 +184,11 @@
             dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
+<<<<<<< HEAD
             dataGridView1.Size = new Size(630, 133);
+=======
+            dataGridView1.Size = new Size(945, 166);
+>>>>>>> datawritview no funciona
             dataGridView1.TabIndex = 2;
             // 
             // NOMBRE_CLIENTE
@@ -183,7 +196,11 @@
             NOMBRE_CLIENTE.HeaderText = "NOMBRE CLIENTE";
             NOMBRE_CLIENTE.MinimumWidth = 8;
             NOMBRE_CLIENTE.Name = "NOMBRE_CLIENTE";
+<<<<<<< HEAD
             NOMBRE_CLIENTE.Width = 125;
+=======
+            NOMBRE_CLIENTE.Width = 150;
+>>>>>>> datawritview no funciona
             // 
             // CANTIDAD
             // 
@@ -197,7 +214,11 @@
             PRODUCTO.HeaderText = "PRODUCTO";
             PRODUCTO.MinimumWidth = 8;
             PRODUCTO.Name = "PRODUCTO";
+<<<<<<< HEAD
             PRODUCTO.Width = 125;
+=======
+            PRODUCTO.Width = 150;
+>>>>>>> datawritview no funciona
             // 
             // DETALLES
             // 
@@ -232,7 +253,11 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
+<<<<<<< HEAD
             ClientSize = new Size(686, 395);
+=======
+            ClientSize = new Size(1023, 494);
+>>>>>>> datawritview no funciona
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(dataGridView1);

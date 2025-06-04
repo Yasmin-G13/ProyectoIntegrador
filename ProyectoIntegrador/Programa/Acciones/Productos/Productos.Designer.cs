@@ -41,13 +41,18 @@
             btnModificarProducto = new Button();
             btnDarBaja = new Button();
             panel2 = new Panel();
+<<<<<<< HEAD
             btnPedidos = new Button();
             dataGridView1 = new DataGridView();
+=======
+            button1 = new Button();
+            MiDridView = new DataGridView();
+>>>>>>> datawritview no funciona
             conexionMySQLBindingSource = new BindingSource(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MiDridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionMySQLBindingSource).BeginInit();
             SuspendLayout();
             // 
@@ -61,6 +66,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(850, 72);
             panel1.TabIndex = 1;
+            panel1.Paint += panel1_Paint;
             // 
             // pictureBox1
             // 
@@ -78,7 +84,7 @@
             label1.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(343, 8);
             label1.Name = "label1";
-            label1.Size = new Size(216, 35);
+            label1.Size = new Size(260, 41);
             label1.TabIndex = 0;
             label1.Text = "PRODUCTOS";
             // 
@@ -194,6 +200,7 @@
             panel2.Size = new Size(127, 422);
             panel2.TabIndex = 10;
             // 
+<<<<<<< HEAD
             // btnPedidos
             // 
             btnPedidos.BackColor = Color.Chocolate;
@@ -216,6 +223,31 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(696, 237);
             dataGridView1.TabIndex = 11;
+=======
+            // button1
+            // 
+            button1.BackColor = Color.Chocolate;
+            button1.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(3, 205);
+            button1.Name = "button1";
+            button1.Size = new Size(124, 57);
+            button1.TabIndex = 12;
+            button1.Text = "PEDIDOS";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // MiDridView
+            // 
+            MiDridView.AutoGenerateColumns = false;
+            MiDridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            MiDridView.DataSource = conexionMySQLBindingSource;
+            MiDridView.Location = new Point(144, 78);
+            MiDridView.Name = "MiDridView";
+            MiDridView.RowHeadersWidth = 51;
+            MiDridView.Size = new Size(696, 237);
+            MiDridView.TabIndex = 11;
+            MiDridView.CellContentClick += MiDridView_CellContentClick;
+            MiDridView.Click += productos_load;
+>>>>>>> datawritview no funciona
             // 
             // conexionMySQLBindingSource
             // 
@@ -223,11 +255,11 @@
             // 
             // Productos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(852, 494);
-            Controls.Add(dataGridView1);
+            Controls.Add(MiDridView);
             Controls.Add(panel2);
             Controls.Add(btnDarBaja);
             Controls.Add(btnModificarProducto);
@@ -237,11 +269,12 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "Productos";
             Text = "FormProductos";
+            Load += productos_load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MiDridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)conexionMySQLBindingSource).EndInit();
             ResumeLayout(false);
         }
@@ -261,6 +294,11 @@
         private DataGridView dataGridView1;
         private BindingSource conexionMySQLBindingSource;
         private PictureBox pictureBox1;
+//<<<<<<< HEAD
         private Button btnPedidos;
+//=======
+        private Button button1;
+        private DataGridView MiDridView;
+//>>>>>>> datawritview no funciona
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
 // Esta clase establece una conexión a una base de datos MySQL utilizando la biblioteca MySql.Data.MySqlClient.
@@ -13,13 +14,15 @@ public class ConexionMySQL
 {
     private MySqlConnection? conexion;
 
-    private static String servidor = "localhost";
-    private static String usuario = "root";
-    private static String password = "tics";
-    private static String bd = "nyas";
-    private static String puerto = "3306";
+    private static string servidor = "localhost";//"192.168.0.246";
+    private static string usuario = "root";
+    private static string password = "tics";
+    private static string bd = "nyas2";
+    private static string puerto = "3306";
+    MySqlDataAdapter MiAdap;
+    DataTable MiData;
 
-    private static String cadenaConexion = $"Server={servidor};Port={puerto};Database={bd};Uid={usuario}; Pwd={password}";
+    private static string cadenaConexion = $"Server={servidor};Port={puerto};Database={bd};Uid={usuario}; Pwd={password}";
 
     // Es un método que establece la conexión a la base de datos MySQL
     // y devuelve un objeto MySqlConnection.
@@ -86,6 +89,33 @@ public class ConexionMySQL
             cerrarConexion();
         }
     }
+    public void añadirProducto(string Nombre, string Cantidad, decimal Precio, string Descripcion, string Detalles)
+    {
+        try
+        {
+            establecerConexion();
+
+            string peticion = "INSERT INTO productos (Nombre, Cantidad, Precio, Descripcion, Detalles) VALUES (@Nombre, @Cantidad, @Precio, @Descripcion, @Detalles)";
+
+            MySqlCommand comando = new MySqlCommand(peticion, conexion);
+            comando.Parameters.AddWithValue("@Nombre", Nombre);
+            comando.Parameters.AddWithValue("@Cantidad", Cantidad);
+            comando.Parameters.AddWithValue("@Precio", Precio);
+            comando.Parameters.AddWithValue("@Descripcion", Descripcion);
+            comando.Parameters.AddWithValue("@Detalles", Detalles);
+
+            comando.ExecuteNonQuery();
+
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al añadir el Producto: " + ex.Message);
+        }
+        finally
+        {
+            cerrarConexion();
+        }
+    }
     public bool usuarioExiste(string nombre)
     {
         bool existe = false;
@@ -101,6 +131,28 @@ public class ConexionMySQL
         catch (Exception ex)
         {
             MessageBox.Show("Error al verificar usuario: " + ex.Message);
+        }
+        finally
+        {
+            cerrarConexion();
+        }
+        return existe;
+    }
+    public bool productoExiste(string Nombre)
+    {
+        bool existe = false;
+        try
+        {
+            establecerConexion();
+            string query = "SELECT COUNT(*) FROM productos WHERE Nombre = @Nombre";
+            MySqlCommand comando = new MySqlCommand(query, conexion);
+            comando.Parameters.AddWithValue("@Nombre", Nombre);
+            int count = Convert.ToInt32(comando.ExecuteScalar());
+            existe = count > 0;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error el producto ya existe: " + ex.Message);
         }
         finally
         {
@@ -135,26 +187,17 @@ public class ConexionMySQL
         return contraseña;
     }
     // Método en tu clase de acceso a base de datos
-    public DataTable ObtenerTodosProductos()
-    {
-        DataTable dt = new DataTable();
-        try
-        {
-            establecerConexion();
-            string query = "SELECT * FROM productos"; // ajusta a tu tabla
-            MySqlDataAdapter adapter = new MySqlDataAdapter(query, conexion);
-            adapter.Fill(dt);
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show("Error al obtener datos: " + ex.Message);
-        }
-        finally
-        {
-            cerrarConexion();
-        }
-        return dt;
-    }
+    public void CargarDatos(DataGridView MiDridView, string sqlString)
 
-   
+    { 
+        MySqlConnection connection = establecerConexion ();
+        MiAdap = new MySqlDataAdapter(sqlString, connection);
+        MiData = new DataTable();
+        MiAdap.Fill(MiData);
+        MessageBox.Show(" ","datos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        MiDridView.DataSource = MiData;
+        connection.Close();
+    
+    }
 }
+ 
