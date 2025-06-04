@@ -33,7 +33,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
             string Nombre = textBox1.Text.Trim();
             string Cantidad = textBox2.Text.Trim();
             string Precio = textBox3.Text.Trim();
-            string Descripcion = textBox4.Text.Trim();
+            string Categoria = textBox4.Text.Trim();
             string Detalles = textBox5.Text.Trim();
             decimal PrecioNum = decimal.Parse(Precio);
 
@@ -56,7 +56,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
             try
             {
                 //conexion.añadirproductos(Nombre, Cantidad, Precio, Descripcion, Detalles);
-                conexion.añadirProducto(Nombre, Cantidad, PrecioNum, Descripcion, Detalles);
+                conexion.añadirProducto(Nombre, Cantidad, PrecioNum, Categoria, Detalles);
                 MessageBox.Show("Producto creado exitosamente ", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

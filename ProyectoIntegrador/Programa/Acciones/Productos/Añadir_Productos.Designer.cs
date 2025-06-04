@@ -161,7 +161,7 @@
             btn_regresar.BackColor = Color.Chocolate;
             btn_regresar.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_regresar.Location = new Point(2, -2);
-            btn_regresar.Margin = new Padding(2, 2, 2, 2);
+            btn_regresar.Margin = new Padding(2);
             btn_regresar.Name = "btn_regresar";
             btn_regresar.Size = new Size(102, 58);
             btn_regresar.TabIndex = 9;
@@ -266,9 +266,9 @@
             label6.Location = new Point(110, 218);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(108, 19);
+            label6.Size = new Size(85, 19);
             label6.TabIndex = 18;
-            label6.Text = "Descripcion:";
+            label6.Text = "Categoria";
             label6.Click += label6_Click;
             // 
             // label7
@@ -287,7 +287,7 @@
             // textBox1
             // 
             textBox1.Location = new Point(212, 78);
-            textBox1.Margin = new Padding(2, 2, 2, 2);
+            textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(457, 27);
             textBox1.TabIndex = 20;
@@ -296,7 +296,7 @@
             // textBox2
             // 
             textBox2.Location = new Point(212, 118);
-            textBox2.Margin = new Padding(2, 2, 2, 2);
+            textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(457, 27);
             textBox2.TabIndex = 21;
@@ -304,7 +304,7 @@
             // textBox3
             // 
             textBox3.Location = new Point(212, 162);
-            textBox3.Margin = new Padding(2, 2, 2, 2);
+            textBox3.Margin = new Padding(2);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(457, 27);
             textBox3.TabIndex = 22;
@@ -312,7 +312,7 @@
             // textBox4
             // 
             textBox4.Location = new Point(212, 212);
-            textBox4.Margin = new Padding(2, 2, 2, 2);
+            textBox4.Margin = new Padding(2);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(457, 27);
             textBox4.TabIndex = 23;
@@ -320,7 +320,7 @@
             // textBox5
             // 
             textBox5.Location = new Point(212, 272);
-            textBox5.Margin = new Padding(2, 2, 2, 2);
+            textBox5.Margin = new Padding(2);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(457, 27);
             textBox5.TabIndex = 24;

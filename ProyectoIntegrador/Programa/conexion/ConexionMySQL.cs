@@ -89,19 +89,19 @@ public class ConexionMySQL
             cerrarConexion();
         }
     }
-    public void añadirProducto(string Nombre, string Cantidad, decimal Precio, string Descripcion, string Detalles)
+    public void añadirProducto(string Nombre, string Cantidad, decimal Precio, string Categoria, string Detalles)
     {
         try
         {
             establecerConexion();
 
-            string peticion = "INSERT INTO productos (Nombre, Cantidad, Precio, Descripcion, Detalles) VALUES (@Nombre, @Cantidad, @Precio, @Descripcion, @Detalles)";
+            string peticion = "INSERT INTO productos (Nombre, Cantidad, Precio, Categoria, Detalles) VALUES (@Nombre, @Cantidad, @Precio, @Categoria, @Detalles)";
 
             MySqlCommand comando = new MySqlCommand(peticion, conexion);
             comando.Parameters.AddWithValue("@Nombre", Nombre);
             comando.Parameters.AddWithValue("@Cantidad", Cantidad);
             comando.Parameters.AddWithValue("@Precio", Precio);
-            comando.Parameters.AddWithValue("@Descripcion", Descripcion);
+            comando.Parameters.AddWithValue("@Categoria", Categoria);
             comando.Parameters.AddWithValue("@Detalles", Detalles);
 
             comando.ExecuteNonQuery();
