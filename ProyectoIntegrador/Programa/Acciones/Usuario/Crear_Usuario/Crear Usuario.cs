@@ -85,7 +85,7 @@ namespace ProyectoIntegrador
             // Validar que el correo sea válido antes de insertar
             if (!EsCorreoGmailValido(correo))
             {
-                MessageBox.Show("Por favor ingresa un correo Gmail válido que tenga más de 7 caracteres antes del '@' y contenga '@gmail.com'.");
+                MessageBox.Show("Por favor ingresa un correo Gmail válido");
                 return; // Aquí se detiene si el correo no es válido
             }
 

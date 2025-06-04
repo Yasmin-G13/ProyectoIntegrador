@@ -41,7 +41,7 @@
             // 
             pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_204154;
             pictureBox1.Location = new Point(278, 2);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(96, 86);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -52,7 +52,7 @@
             // 
             pictureBox2.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_211642;
             pictureBox2.Location = new Point(544, 2);
-            pictureBox2.Margin = new Padding(2, 2, 2, 2);
+            pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(136, 54);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -76,7 +76,7 @@
             btn_Si.BackColor = Color.Sienna;
             btn_Si.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_Si.Location = new Point(124, 248);
-            btn_Si.Margin = new Padding(2, 2, 2, 2);
+            btn_Si.Margin = new Padding(2);
             btn_Si.Name = "btn_Si";
             btn_Si.Size = new Size(108, 54);
             btn_Si.TabIndex = 3;
@@ -89,12 +89,13 @@
             btn_No.BackColor = Color.Sienna;
             btn_No.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_No.Location = new Point(414, 248);
-            btn_No.Margin = new Padding(2, 2, 2, 2);
+            btn_No.Margin = new Padding(2);
             btn_No.Name = "btn_No";
             btn_No.Size = new Size(108, 54);
             btn_No.TabIndex = 4;
             btn_No.Text = "NO";
             btn_No.UseVisualStyleBackColor = false;
+            btn_No.Click += btn_No_Click;
             // 
             // CerrarSesion
             // 
@@ -107,7 +108,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "CerrarSesion";
             Text = "CerrarSesion";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

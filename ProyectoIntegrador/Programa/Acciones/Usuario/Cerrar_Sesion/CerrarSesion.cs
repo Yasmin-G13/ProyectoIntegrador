@@ -24,5 +24,10 @@ namespace ProyectoIntegrador.Programa.Acciones.Usuario.Cerrar_Sesion
             bienvenida.Show();
             this.Close(); // o this.Hide();
         }
+
+        private void btn_No_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
