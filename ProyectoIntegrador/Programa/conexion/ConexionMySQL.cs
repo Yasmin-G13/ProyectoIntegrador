@@ -17,7 +17,7 @@ public class ConexionMySQL
     private static string servidor = "localhost";//"192.168.0.246";
     private static string usuario = "root";
     private static string password = "tics";
-    private static string bd = "nyas2";
+    private static string bd = "nyas";
     private static string puerto = "3306";
     MySqlDataAdapter MiAdap;
     DataTable MiData;
