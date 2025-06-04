@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoIntegrador.Programa.Acciones.Productos;
 
 namespace ProyectoIntegrador.Programa.Acciones.Usuario.Cerrar_Sesion
 {
@@ -15,6 +16,13 @@ namespace ProyectoIntegrador.Programa.Acciones.Usuario.Cerrar_Sesion
         public CerrarSesion()
         {
             InitializeComponent();
+        }
+
+        private void btn_Si_Click(object sender, EventArgs e)
+        {
+            FormBienvenida bienvenida = new FormBienvenida();
+            bienvenida.Show();
+            this.Close(); // o this.Hide();
         }
     }
 }

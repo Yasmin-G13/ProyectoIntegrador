@@ -41,9 +41,9 @@
             btnModificarProducto = new Button();
             btnDarBaja = new Button();
             panel2 = new Panel();
+            btnPedidos = new Button();
             dataGridView1 = new DataGridView();
             conexionMySQLBindingSource = new BindingSource(components);
-            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -105,6 +105,7 @@
             btnVentas.TabIndex = 3;
             btnVentas.Text = "VENTAS";
             btnVentas.UseVisualStyleBackColor = false;
+            btnVentas.Click += btnVentas_Click;
             // 
             // btnInventario
             // 
@@ -141,6 +142,7 @@
             btnCerrarSesion.TabIndex = 6;
             btnCerrarSesion.Text = "CERRAR SESIÓN";
             btnCerrarSesion.UseVisualStyleBackColor = false;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // btnAñadirProducto
             // 
@@ -180,7 +182,7 @@
             // panel2
             // 
             panel2.BackColor = Color.White;
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(btnPedidos);
             panel2.Controls.Add(btnProductos);
             panel2.Controls.Add(btnVentas);
             panel2.Controls.Add(btnInventario);
@@ -191,6 +193,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(127, 422);
             panel2.TabIndex = 10;
+            // 
+            // btnPedidos
+            // 
+            btnPedidos.BackColor = Color.Chocolate;
+            btnPedidos.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnPedidos.Location = new Point(3, 205);
+            btnPedidos.Name = "btnPedidos";
+            btnPedidos.Size = new Size(124, 57);
+            btnPedidos.TabIndex = 12;
+            btnPedidos.Text = "PEDIDOS";
+            btnPedidos.UseVisualStyleBackColor = false;
+            btnPedidos.Click += btnPedidos_Click;
             // 
             // dataGridView1
             // 
@@ -206,17 +220,6 @@
             // conexionMySQLBindingSource
             // 
             conexionMySQLBindingSource.DataSource = typeof(ConexionMySQL);
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Chocolate;
-            button1.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(3, 205);
-            button1.Name = "button1";
-            button1.Size = new Size(124, 57);
-            button1.TabIndex = 12;
-            button1.Text = "PEDIDOS";
-            button1.UseVisualStyleBackColor = false;
             // 
             // Productos
             // 
@@ -258,6 +261,6 @@
         private DataGridView dataGridView1;
         private BindingSource conexionMySQLBindingSource;
         private PictureBox pictureBox1;
-        private Button button1;
+        private Button btnPedidos;
     }
 }
