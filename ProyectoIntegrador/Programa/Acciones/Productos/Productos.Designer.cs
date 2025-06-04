@@ -41,13 +41,13 @@
             btnModificarProducto = new Button();
             btnDarBaja = new Button();
             panel2 = new Panel();
-<<<<<<< HEAD
+//<<<<<<< HEAD
             btnPedidos = new Button();
             dataGridView1 = new DataGridView();
-=======
+ //======= 
             button1 = new Button();
             MiDridView = new DataGridView();
->>>>>>> datawritview no funciona
+//>>>>>>> datawritview no funciona
             conexionMySQLBindingSource = new BindingSource(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -199,8 +199,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(127, 422);
             panel2.TabIndex = 10;
-            // 
-<<<<<<< HEAD
+            // <<<<<<< HEAD
             // btnPedidos
             // 
             btnPedidos.BackColor = Color.Chocolate;
@@ -223,7 +222,7 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(696, 237);
             dataGridView1.TabIndex = 11;
-=======
+//=======
             // button1
             // 
             button1.BackColor = Color.Chocolate;
@@ -247,7 +246,7 @@
             MiDridView.TabIndex = 11;
             MiDridView.CellContentClick += MiDridView_CellContentClick;
             MiDridView.Click += productos_load;
->>>>>>> datawritview no funciona
+//>>>>>>> datawritview no funciona
             // 
             // conexionMySQLBindingSource
             // 

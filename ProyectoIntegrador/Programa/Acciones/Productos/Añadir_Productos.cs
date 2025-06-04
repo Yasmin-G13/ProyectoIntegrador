@@ -46,7 +46,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
             }
             ConexionMySQL conexion = new ConexionMySQL();
             // Verifica si el usuario ya existe
-          if (conexion.productoExiste(Nombre))
+            if (conexion.productoExiste(Nombre))
             {
                 MessageBox.Show("El producto ya existe ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -94,11 +94,18 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
 
         private void label6_Click(object sender, EventArgs e)
         {
-           
+
         }
         private void label3_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void btn_regresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormBienvenida formBienvenida = new FormBienvenida();
+            formBienvenida.Show();
         }
     }
 

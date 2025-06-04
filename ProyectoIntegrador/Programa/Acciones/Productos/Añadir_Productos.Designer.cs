@@ -50,6 +50,7 @@
             textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox5 = new TextBox();
+            btn_regresar = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -146,6 +147,7 @@
             // panel1
             // 
             panel1.BackColor = Color.SandyBrown;
+            panel1.Controls.Add(btn_regresar);
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(0, 0);
@@ -169,7 +171,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_204154;
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Location = new Point(762, -2);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(88, 72);
@@ -207,56 +209,66 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(144, 93);
+            label2.BackColor = Color.SandyBrown;
+            label2.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label2.Location = new Point(143, 104);
             label2.Name = "label2";
-            label2.Size = new Size(78, 25);
+            label2.Size = new Size(91, 24);
             label2.TabIndex = 14;
-            label2.Text = "Nombre";
+            label2.Text = "Nombre:";
             label2.Click += label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(137, 324);
+            label3.BackColor = Color.SandyBrown;
+            label3.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label3.Location = new Point(143, 347);
             label3.Name = "label3";
-            label3.Size = new Size(79, 25);
+            label3.Size = new Size(98, 24);
             label3.TabIndex = 15;
-            label3.Text = "Detalles ";
+            label3.Text = "Detalles: ";
             label3.Click += label3_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(133, 181);
+            label4.BackColor = Color.SandyBrown;
+            label4.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label4.Location = new Point(144, 210);
             label4.Name = "label4";
-            label4.Size = new Size(60, 25);
+            label4.Size = new Size(83, 24);
             label4.TabIndex = 16;
-            label4.Text = "Precio";
+            label4.Text = "Precio: ";
             label4.Click += label4_Click;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(137, 249);
+            label6.BackColor = Color.SandyBrown;
+            label6.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label6.Location = new Point(137, 272);
             label6.Name = "label6";
-            label6.Size = new Size(104, 25);
+            label6.Size = new Size(129, 24);
             label6.TabIndex = 18;
-            label6.Text = "Descripcion";
+            label6.Text = "Descripcion:";
             label6.Click += label6_Click;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(133, 141);
+            label7.BackColor = Color.SandyBrown;
+            label7.Font = new Font("Arial", 10F, FontStyle.Bold);
+            label7.Location = new Point(144, 155);
             label7.Name = "label7";
-            label7.Size = new Size(83, 25);
+            label7.Size = new Size(107, 24);
             label7.TabIndex = 19;
-            label7.Text = "Cantidad";
+            label7.Text = "Cantidad: ";
             label7.Click += label7_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(228, 93);
+            textBox1.Location = new Point(265, 97);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(570, 31);
             textBox1.TabIndex = 20;
@@ -264,31 +276,43 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(222, 141);
+            textBox2.Location = new Point(265, 148);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(570, 31);
             textBox2.TabIndex = 21;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(222, 183);
+            textBox3.Location = new Point(265, 202);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(570, 31);
             textBox3.TabIndex = 22;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(247, 249);
+            textBox4.Location = new Point(265, 265);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(570, 31);
             textBox4.TabIndex = 23;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(237, 318);
+            textBox5.Location = new Point(265, 340);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(570, 31);
             textBox5.TabIndex = 24;
+            // 
+            // btn_regresar
+            // 
+            btn_regresar.BackColor = Color.Chocolate;
+            btn_regresar.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_regresar.Location = new Point(0, 0);
+            btn_regresar.Name = "btn_regresar";
+            btn_regresar.Size = new Size(128, 73);
+            btn_regresar.TabIndex = 9;
+            btn_regresar.Text = "REGRESAR";
+            btn_regresar.UseVisualStyleBackColor = false;
+            btn_regresar.Click += btn_regresar_Click;
             // 
             // Añadir_Productos
             // 
@@ -346,5 +370,6 @@
         private TextBox textBox3;
         private TextBox textBox4;
         private TextBox textBox5;
+        private Button btn_regresar;
     }
 }
