@@ -41,19 +41,17 @@
             btnModificarProducto = new Button();
             btnDarBaja = new Button();
             panel2 = new Panel();
-//<<<<<<< HEAD
             btnPedidos = new Button();
             dataGridView1 = new DataGridView();
- //======= 
+            conexionMySQLBindingSource = new BindingSource(components);
             button1 = new Button();
             MiDridView = new DataGridView();
-//>>>>>>> datawritview no funciona
-            conexionMySQLBindingSource = new BindingSource(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)MiDridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionMySQLBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)MiDridView).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -81,10 +79,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(343, 8);
+            label1.Font = new Font("Baskerville Old Face", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(343, 17);
             label1.Name = "label1";
-            label1.Size = new Size(260, 41);
+            label1.Size = new Size(189, 32);
             label1.TabIndex = 0;
             label1.Text = "PRODUCTOS";
             // 
@@ -99,6 +97,7 @@
             btnProductos.TabIndex = 2;
             btnProductos.Text = "PRODUCTOS";
             btnProductos.UseVisualStyleBackColor = false;
+            btnProductos.Click += btnProductos_Click;
             // 
             // btnVentas
             // 
@@ -124,6 +123,7 @@
             btnInventario.TabIndex = 4;
             btnInventario.Text = "INVENTARIO";
             btnInventario.UseVisualStyleBackColor = false;
+            btnInventario.Click += btnInventario_Click;
             // 
             // btnAjustes
             // 
@@ -136,6 +136,7 @@
             btnAjustes.TabIndex = 5;
             btnAjustes.Text = "AJUSTES";
             btnAjustes.UseVisualStyleBackColor = false;
+            btnAjustes.Click += btnAjustes_Click;
             // 
             // btnCerrarSesion
             // 
@@ -172,6 +173,7 @@
             btnModificarProducto.TabIndex = 8;
             btnModificarProducto.Text = "MODIFICAR PRODUCTO";
             btnModificarProducto.UseVisualStyleBackColor = false;
+            btnModificarProducto.Click += btnModificarProducto_Click;
             // 
             // btnDarBaja
             // 
@@ -199,7 +201,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(127, 422);
             panel2.TabIndex = 10;
-            // <<<<<<< HEAD
+            // 
             // btnPedidos
             // 
             btnPedidos.BackColor = Color.Chocolate;
@@ -222,7 +224,11 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(696, 237);
             dataGridView1.TabIndex = 11;
-//=======
+            // 
+            // conexionMySQLBindingSource
+            // 
+            conexionMySQLBindingSource.DataSource = typeof(ConexionMySQL);
+            // 
             // button1
             // 
             button1.BackColor = Color.Chocolate;
@@ -246,15 +252,10 @@
             MiDridView.TabIndex = 11;
             MiDridView.CellContentClick += MiDridView_CellContentClick;
             MiDridView.Click += productos_load;
-//>>>>>>> datawritview no funciona
-            // 
-            // conexionMySQLBindingSource
-            // 
-            conexionMySQLBindingSource.DataSource = typeof(ConexionMySQL);
             // 
             // Productos
             // 
-            AutoScaleDimensions = new SizeF(9F, 19F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(852, 494);
@@ -273,8 +274,9 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)MiDridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)conexionMySQLBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)MiDridView).EndInit();
             ResumeLayout(false);
         }
 

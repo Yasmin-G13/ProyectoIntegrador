@@ -40,7 +40,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_204154;
-            pictureBox1.Location = new Point(278, 2);
+            pictureBox1.Location = new Point(300, 42);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(96, 86);
@@ -63,19 +63,19 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.AntiqueWhite;
-            label1.Font = new Font("Times New Roman", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(186, 150);
+            label1.Font = new Font("Baskerville Old Face", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(77, 171);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(284, 52);
+            label1.Size = new Size(526, 26);
             label1.TabIndex = 2;
-            label1.Text = "Estas seguro de que deseas\r\n             cerrar sesión\r\n";
+            label1.Text = "¿ESTÁS SEGURO DE QUERER CERRAR SESIÓN?";
             // 
             // btn_Si
             // 
-            btn_Si.BackColor = Color.Sienna;
-            btn_Si.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_Si.Location = new Point(124, 248);
+            btn_Si.BackColor = Color.Chocolate;
+            btn_Si.Font = new Font("Baskerville Old Face", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_Si.Location = new Point(169, 248);
             btn_Si.Margin = new Padding(2);
             btn_Si.Name = "btn_Si";
             btn_Si.Size = new Size(108, 54);
@@ -86,8 +86,8 @@
             // 
             // btn_No
             // 
-            btn_No.BackColor = Color.Sienna;
-            btn_No.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_No.BackColor = Color.Chocolate;
+            btn_No.Font = new Font("Baskerville Old Face", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_No.Location = new Point(414, 248);
             btn_No.Margin = new Padding(2);
             btn_No.Name = "btn_No";

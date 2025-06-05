@@ -9,6 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Programa\Acciones\Productos\Ajustes_Seguridad\Ajustes_y_Seguridad.cs" />
+    <Compile Remove="Programa\Acciones\Productos\Ajustes_Seguridad\Ajustes_y_Seguridad.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Programa\Acciones\Productos\Ajustes_Seguridad\Ajustes_y_Seguridad.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -25,6 +34,7 @@
 
   <ItemGroup>
     <Folder Include="Programa\Acciones\Home\" />
+    <Folder Include="Programa\Acciones\Usuario\Cambiar_Contraseña\" />
   </ItemGroup>
 
   <ItemGroup>

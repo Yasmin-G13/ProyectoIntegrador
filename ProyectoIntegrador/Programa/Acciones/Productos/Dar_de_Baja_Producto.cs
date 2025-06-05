@@ -10,21 +10,19 @@ using System.Windows.Forms;
 
 namespace ProyectoIntegrador.Programa.Acciones.Productos
 {
-    public partial class ModificarProductos : Form
+    public partial class Dar_de_Baja_Producto : Form
     {
-        public ModificarProductos()
+        public Dar_de_Baja_Producto()
         {
             InitializeComponent();
         }
-
-        private void btnRegresar_Click(object sender, EventArgs e)
+        private void btn_Regresar_Click(object sender, EventArgs e)
         {
             this.Hide();
             Productos productos = new Productos();
             productos.Show();
         }
-
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

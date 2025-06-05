@@ -47,10 +47,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_211642;
-            pictureBox2.Location = new Point(682, 2);
+            pictureBox2.Location = new Point(546, 2);
             pictureBox2.Margin = new Padding(2);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(170, 68);
+            pictureBox2.Size = new Size(136, 54);
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
@@ -58,74 +58,74 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Sienna;
-            label1.Location = new Point(25, 5);
+            label1.Location = new Point(20, 4);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(0, 25);
+            label1.Size = new Size(0, 20);
             label1.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(335, 143);
+            label2.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(268, 114);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(170, 29);
+            label2.Size = new Size(161, 23);
             label2.TabIndex = 4;
-            label2.Text = "Iniciar Sesión";
+            label2.Text = "INICIAR SESIÓN";
             // 
             // textUsuario
             // 
             textUsuario.BackColor = Color.SandyBrown;
-            textUsuario.Location = new Point(335, 220);
+            textUsuario.Location = new Point(268, 176);
             textUsuario.Margin = new Padding(2);
             textUsuario.Name = "textUsuario";
-            textUsuario.Size = new Size(348, 31);
+            textUsuario.Size = new Size(279, 27);
             textUsuario.TabIndex = 5;
             // 
             // label3
             // 
-            label3.AutoSize = true;
             label3.BackColor = Color.SandyBrown;
-            label3.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(179, 220);
+            label3.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(102, 180);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(136, 29);
+            label3.Size = new Size(151, 23);
             label3.TabIndex = 6;
             label3.Text = "USUARIO: ";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.SandyBrown;
-            label4.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(128, 290);
+            label4.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(102, 232);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(187, 29);
+            label4.Size = new Size(151, 23);
             label4.TabIndex = 8;
             label4.Text = "CONTRASEÑA:";
             // 
             // textContraseña
             // 
             textContraseña.BackColor = Color.SandyBrown;
-            textContraseña.Location = new Point(335, 290);
+            textContraseña.Location = new Point(268, 232);
             textContraseña.Margin = new Padding(2);
             textContraseña.Name = "textContraseña";
-            textContraseña.Size = new Size(348, 31);
+            textContraseña.Size = new Size(279, 27);
             textContraseña.TabIndex = 7;
             textContraseña.TextChanged += textBox3_TextChanged;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(128, 351);
+            label5.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(102, 281);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(391, 29);
+            label5.Size = new Size(317, 23);
             label5.TabIndex = 9;
             label5.Text = "¿OLVIDASTE TU CONTRASEÑA?";
             label5.Click += label5_Click;
@@ -138,7 +138,7 @@
             btnRegresar.Location = new Point(-2, 0);
             btnRegresar.Margin = new Padding(2);
             btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(135, 68);
+            btnRegresar.Size = new Size(137, 54);
             btnRegresar.TabIndex = 14;
             btnRegresar.Text = "REGRESAR";
             btnRegresar.UseVisualStyleBackColor = false;
@@ -149,10 +149,10 @@
             btnEntrar.BackColor = Color.Sienna;
             btnEntrar.Font = new Font("Times New Roman", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEntrar.ForeColor = Color.White;
-            btnEntrar.Location = new Point(335, 412);
+            btnEntrar.Location = new Point(268, 330);
             btnEntrar.Margin = new Padding(2);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.Size = new Size(135, 68);
+            btnEntrar.Size = new Size(161, 54);
             btnEntrar.TabIndex = 15;
             btnEntrar.Text = "ENTRAR";
             btnEntrar.UseVisualStyleBackColor = false;
@@ -160,35 +160,35 @@
             // 
             // btnRecuperar_Contraseña
             // 
-            btnRecuperar_Contraseña.BackColor = Color.SandyBrown;
-            btnRecuperar_Contraseña.Font = new Font("Arial", 12F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
-            btnRecuperar_Contraseña.ForeColor = Color.White;
-            btnRecuperar_Contraseña.Location = new Point(523, 344);
+            btnRecuperar_Contraseña.BackColor = Color.AntiqueWhite;
+            btnRecuperar_Contraseña.Font = new Font("Baskerville Old Face", 12F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            btnRecuperar_Contraseña.ForeColor = Color.Black;
+            btnRecuperar_Contraseña.Location = new Point(418, 281);
             btnRecuperar_Contraseña.Margin = new Padding(2);
             btnRecuperar_Contraseña.Name = "btnRecuperar_Contraseña";
-            btnRecuperar_Contraseña.Size = new Size(160, 43);
+            btnRecuperar_Contraseña.Size = new Size(157, 28);
             btnRecuperar_Contraseña.TabIndex = 16;
-            btnRecuperar_Contraseña.Text = "Recuperala";
+            btnRecuperar_Contraseña.Text = "RECUPERALA";
             btnRecuperar_Contraseña.UseVisualStyleBackColor = false;
             btnRecuperar_Contraseña.Click += btnRecuperar_Contraseña_Click;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_204154;
-            pictureBox1.Location = new Point(290, 0);
+            pictureBox1.Location = new Point(299, 11);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(96, 86);
+            pictureBox1.Size = new Size(77, 69);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 17;
             pictureBox1.TabStop = false;
             // 
             // FormLogin
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            ClientSize = new Size(852, 494);
+            ClientSize = new Size(682, 395);
             Controls.Add(pictureBox1);
             Controls.Add(btnRecuperar_Contraseña);
             Controls.Add(btnEntrar);

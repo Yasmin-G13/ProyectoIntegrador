@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoIntegrador.Programa.Acciones.Productos;
+using static System.Windows.Forms.Design.AxImporter;
 
 namespace ProyectoIntegrador.Programa.Acciones.Usuario.Cerrar_Sesion
 {
@@ -27,7 +28,9 @@ namespace ProyectoIntegrador.Programa.Acciones.Usuario.Cerrar_Sesion
 
         private void btn_No_Click(object sender, EventArgs e)
         {
-            
+            ProyectoIntegrador.Programa.Acciones.Productos.Productos productosForm = new ProyectoIntegrador.Programa.Acciones.Productos.Productos();
+            productosForm.Show();
+            this.Close(); // o this.Hide();
         }
     }
 }

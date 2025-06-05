@@ -114,6 +114,11 @@ namespace ProyectoIntegrador
         {
 
         }
+
+        private void textNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

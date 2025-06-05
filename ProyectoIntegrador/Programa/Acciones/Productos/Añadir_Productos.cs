@@ -31,37 +31,60 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
         private void btnAñadirProducto_Click(object sender, EventArgs e)
         {
             string Nombre = textBox1.Text.Trim();
-            string Cantidad = textBox2.Text.Trim();
-            string Precio = textBox3.Text.Trim();
+            string CantidadStr = textBox2.Text.Trim();
+            string PrecioStr = textBox3.Text.Trim();
             string Categoria = textBox4.Text.Trim();
             string Detalles = textBox5.Text.Trim();
-            decimal PrecioNum = decimal.Parse(Precio);
 
-            //MessageBox.Show(""+Nombre+ Precio+ Cantidad ,"datos",MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            // Validar campos vacíos
-            if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(Cantidad) || string.IsNullOrEmpty(Precio))
+            // Validar que no estén vacíos
+            if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(CantidadStr) ||
+                string.IsNullOrEmpty(PrecioStr) || string.IsNullOrEmpty(Categoria) || string.IsNullOrEmpty(Detalles))
             {
-                MessageBox.Show("Por favor, complete todos los campos.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            // Validar que cantidad sea número entero
+            if (!int.TryParse(CantidadStr, out int Cantidad))
+            {
+                MessageBox.Show("La cantidad debe ser un número entero válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validar que precio sea decimal
+            if (!decimal.TryParse(PrecioStr, out decimal PrecioNum))
+            {
+                MessageBox.Show("El precio debe ser un valor numérico válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             ConexionMySQL conexion = new ConexionMySQL();
-            // Verifica si el usuario ya existe
+
+            // Verifica si el producto ya existe
             if (conexion.productoExiste(Nombre))
             {
-                MessageBox.Show("El producto ya existe ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El producto ya existe.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Inserta si pasa todo
+            // Inserta en la base de datos
             try
             {
-                //conexion.añadirproductos(Nombre, Cantidad, Precio, Descripcion, Detalles);
-                conexion.añadirProducto(Nombre, Cantidad, PrecioNum, Categoria, Detalles);
-                MessageBox.Show("Producto creado exitosamente ", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conexion.añadirProducto(Nombre, Cantidad.ToString(), PrecioNum, Categoria, Detalles);
+                MessageBox.Show("Producto creado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Limpia los controles
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
+                textBox5.Clear();
+
+                // Refresca la vista del DataGrid
+                // Asegúrate de tener un método como MostrarProductos()
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al insertar el producto: " + ex.Message);
+                MessageBox.Show("Error al insertar el producto: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btn_Catálogo_Productos_Click(object sender, EventArgs e)
@@ -70,42 +93,18 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
             productos.Show();
             this.Close(); // o this.Hide();
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void Añadir_Productos_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_regresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormBienvenida formBienvenida = new FormBienvenida();
-            formBienvenida.Show();
+            Productos productos = new Productos();
+            productos.Show();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

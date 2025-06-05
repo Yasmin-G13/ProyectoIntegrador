@@ -61,7 +61,7 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(706, 63);
             panel1.TabIndex = 0;
@@ -69,11 +69,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Baskerville Old Face", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(174, 18);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(385, 35);
+            label1.Size = new Size(353, 34);
             label1.TabIndex = 1;
             label1.Text = "REGISTRO DE VENTAS ";
             // 
@@ -81,7 +81,7 @@
             // 
             pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_204154;
             pictureBox1.Location = new Point(626, 2);
-            pictureBox1.Margin = new Padding(2, 2, 2, 2);
+            pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(73, 60);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -99,7 +99,7 @@
             panel3.Controls.Add(btn_Ventas);
             panel3.Controls.Add(btn_Catálogo_Productos);
             panel3.Location = new Point(0, 63);
-            panel3.Margin = new Padding(2, 2, 2, 2);
+            panel3.Margin = new Padding(2);
             panel3.Name = "panel3";
             panel3.Size = new Size(101, 333);
             panel3.TabIndex = 1;
@@ -108,7 +108,7 @@
             // 
             panel2.BackColor = Color.SandyBrown;
             panel2.Location = new Point(103, 281);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(579, 50);
             panel2.TabIndex = 2;
@@ -116,63 +116,74 @@
             // btn_Cerrar_Sesion
             // 
             btn_Cerrar_Sesion.BackColor = Color.Chocolate;
+            btn_Cerrar_Sesion.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Cerrar_Sesion.Location = new Point(0, 281);
-            btn_Cerrar_Sesion.Margin = new Padding(2, 2, 2, 2);
+            btn_Cerrar_Sesion.Margin = new Padding(2);
             btn_Cerrar_Sesion.Name = "btn_Cerrar_Sesion";
             btn_Cerrar_Sesion.Size = new Size(99, 52);
             btn_Cerrar_Sesion.TabIndex = 5;
             btn_Cerrar_Sesion.Text = "CERRAR SESIÓN";
             btn_Cerrar_Sesion.UseVisualStyleBackColor = false;
+            btn_Cerrar_Sesion.Click += btn_Cerrar_Sesion_Click;
             // 
             // btn_Ajustes_Seguridad
             // 
             btn_Ajustes_Seguridad.BackColor = Color.Chocolate;
+            btn_Ajustes_Seguridad.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Ajustes_Seguridad.Location = new Point(-1, 218);
-            btn_Ajustes_Seguridad.Margin = new Padding(2, 2, 2, 2);
+            btn_Ajustes_Seguridad.Margin = new Padding(2);
             btn_Ajustes_Seguridad.Name = "btn_Ajustes_Seguridad";
             btn_Ajustes_Seguridad.Size = new Size(99, 58);
             btn_Ajustes_Seguridad.TabIndex = 4;
             btn_Ajustes_Seguridad.Text = "AJUSTES/\r\nSEGURIDAD\r\n";
             btn_Ajustes_Seguridad.UseVisualStyleBackColor = false;
+            btn_Ajustes_Seguridad.Click += btn_Ajustes_Seguridad_Click;
             // 
             // btn_Pedidos
             // 
             btn_Pedidos.BackColor = Color.Chocolate;
+            btn_Pedidos.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Pedidos.Location = new Point(-1, 167);
-            btn_Pedidos.Margin = new Padding(2, 2, 2, 2);
+            btn_Pedidos.Margin = new Padding(2);
             btn_Pedidos.Name = "btn_Pedidos";
             btn_Pedidos.Size = new Size(99, 46);
             btn_Pedidos.TabIndex = 3;
             btn_Pedidos.Text = "PEDIDOS";
             btn_Pedidos.UseVisualStyleBackColor = false;
+            btn_Pedidos.Click += btn_Pedidos_Click;
             // 
             // btn_Inventario
             // 
             btn_Inventario.BackColor = Color.Chocolate;
+            btn_Inventario.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Inventario.Location = new Point(-1, 117);
-            btn_Inventario.Margin = new Padding(2, 2, 2, 2);
+            btn_Inventario.Margin = new Padding(2);
             btn_Inventario.Name = "btn_Inventario";
             btn_Inventario.Size = new Size(99, 46);
             btn_Inventario.TabIndex = 2;
             btn_Inventario.Text = "INVENTARIO";
             btn_Inventario.UseVisualStyleBackColor = false;
+            btn_Inventario.Click += btn_Inventario_Click;
             // 
             // btn_Ventas
             // 
             btn_Ventas.BackColor = Color.Chocolate;
+            btn_Ventas.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Ventas.Location = new Point(0, 66);
-            btn_Ventas.Margin = new Padding(2, 2, 2, 2);
+            btn_Ventas.Margin = new Padding(2);
             btn_Ventas.Name = "btn_Ventas";
             btn_Ventas.Size = new Size(99, 46);
             btn_Ventas.TabIndex = 1;
             btn_Ventas.Text = "VENTAS";
             btn_Ventas.UseVisualStyleBackColor = false;
+            btn_Ventas.Click += btn_Ventas_Click;
             // 
             // btn_Catálogo_Productos
             // 
             btn_Catálogo_Productos.BackColor = Color.Chocolate;
+            btn_Catálogo_Productos.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Catálogo_Productos.Location = new Point(0, 0);
-            btn_Catálogo_Productos.Margin = new Padding(2, 2, 2, 2);
+            btn_Catálogo_Productos.Margin = new Padding(2);
             btn_Catálogo_Productos.Name = "btn_Catálogo_Productos";
             btn_Catálogo_Productos.Size = new Size(99, 62);
             btn_Catálogo_Productos.TabIndex = 0;
@@ -185,7 +196,7 @@
             panel4.BackColor = Color.SandyBrown;
             panel4.Controls.Add(label2);
             panel4.Location = new Point(103, 344);
-            panel4.Margin = new Padding(2, 2, 2, 2);
+            panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
             panel4.Size = new Size(603, 52);
             panel4.TabIndex = 2;
@@ -204,11 +215,11 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { NOMBRE_CLIENTE, CANTIDAD, PRODUCTOS, DETALLES, PRECIO, FECHA });
-            dataGridView1.Location = new Point(106, 63);
-            dataGridView1.Margin = new Padding(2, 2, 2, 2);
+            dataGridView1.Location = new Point(126, 87);
+            dataGridView1.Margin = new Padding(2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(594, 276);
+            dataGridView1.Size = new Size(547, 233);
             dataGridView1.TabIndex = 3;
             // 
             // NOMBRE_CLIENTE
@@ -263,7 +274,7 @@
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Registro_Ventas";
             Text = "Registro_Ventas";
             panel1.ResumeLayout(false);

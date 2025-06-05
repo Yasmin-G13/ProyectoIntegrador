@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoIntegrador.Programa.Acciones.Usuario.Cerrar_Sesion;
+using Org.BouncyCastle.Pqc.Crypto.Lms;
+using ProyectoIntegrador.Programa.Acciones.Productos.Ajustes_Seguridad;
 
 namespace ProyectoIntegrador.Programa.Acciones.Productos
 {
@@ -20,11 +22,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
             InitializeComponent();
 
         }
-        private void productos_load(object sender, EventArgs e)
-        {
-            CargarProductos();
-        }
-         
+
         private void btnAñadirProducto_Click(object sender, EventArgs e)
         {
 
@@ -32,7 +30,9 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Dar_de_Baja_Producto bajaproductos = new Dar_de_Baja_Producto();
+            bajaproductos.Show();
         }
 
         private void btnAñadirProducto_Click_1(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
             this.Close(); // o this.Hide();
         }
 
-//<<<<<<< HEAD
+        //<<<<<<< HEAD
         private void btnPedidos_Click(object sender, EventArgs e)
         {
             Pedidos pedidos = new Pedidos();
@@ -63,30 +63,42 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
             cerrar.Show();
             this.Close(); // o this.Hide();
         }
-//=======
-        private void CargarProductos()
+        //=======
+        // Método para cargar todos los productos en tu DataGridView
+        public void MostrarProductos()
         {
-            String servidor = "localhost";//"192.168.0.246";
-            String usuario = "root";
-            String password = "tics";
-            String bd = "nyas2";
-            String puerto = "3306";
-            String cadenaConexion = $"Server={servidor};Port={puerto};Database={bd};Uid={usuario}; Pwd={password}";
-            String consulta = "select * from productos";
-         //   return mostrar(MySqlConnection);
-         //   funcion.CargarDatos(MiDridView, consulta);
-            try {
-                using (MySqlConnection cargar = new MySqlConnection(cadenaConexion)) {
-                    using (MySqlDataAdapter sda= new MySqlDataAdapter(consulta,cargar))
+            string servidor = "localhost";
+            string usuario = "root";
+            string password = "tics";
+            string bd = "nyas"; // Asegúrate que sea igual a tu base
+            string puerto = "3306"; // Puerto predeterminado
+            string cadenaConexion = $"Server={servidor};Port={puerto};Database={bd};Uid={usuario}; Pwd={password}";
+
+            string consulta = "SELECT * FROM productos";
+
+            try
+            {
+                using (MySqlConnection cargar = new MySqlConnection(cadenaConexion))
+                {
+                    using (MySqlDataAdapter sda = new MySqlDataAdapter(consulta, cargar))
                     {
                         DataTable dt = new DataTable();
-                      MiDridView.DataSource = dt;
+                        sda.Fill(dt);
+                        MiDridView.DataSource = dt; // tu DataGridView
                     }
                 }
-            }catch(Exception ex){
-                MessageBox.Show("Ocurrio un error al cargar los datos: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al cargar los datos: " + ex.Message);
             }
         }
+
+        private void productos_load(object sender, EventArgs e)
+        {
+            MostrarProductos(); // Aquí llama a tu método que carga en la vista
+        }
+
 
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -97,6 +109,32 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
         private void MiDridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnModificarProducto_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ModificarProductos modificarproductos = new ModificarProductos();
+            modificarproductos.Show();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Inventario inventario = new Inventario();
+            inventario.Show();
+        }
+
+        private void btnAjustes_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Ajustes ajustes = new Ajustes();
+            ajustes.Show();
         }
         //public DataTable ObtenerTodosProductos()
         //{
@@ -119,6 +157,6 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
         //    }
         //    return dt;
         //}
-//>>>>>>> datawritview no funciona
+        //>>>>>>> datawritview no funciona
     }
 }
