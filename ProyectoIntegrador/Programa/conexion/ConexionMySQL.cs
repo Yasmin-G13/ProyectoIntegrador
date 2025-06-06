@@ -199,5 +199,76 @@ public class ConexionMySQL
         connection.Close();
     
     }
+    public void ActualizarContraseña(string nombreUsuario, string nuevaContra)
+    {
+        try
+        {
+            establecerConexion();
+
+            string query = "UPDATE usuarios SET contraseña = @contraseña WHERE nombre = @nombre";
+            MySqlCommand cmd = new MySqlCommand(query, conexion);
+            cmd.Parameters.AddWithValue("@contraseña", nuevaContra);
+            cmd.Parameters.AddWithValue("@nombre", nombreUsuario);
+
+            // Línea de depuración
+            MessageBox.Show("Comando: " + cmd.CommandText);
+
+            cmd.ExecuteNonQuery();
+
+            // Verificación para confirmar
+            string verificarQuery = "SELECT contraseña FROM usuarios WHERE nombre = @nombre";
+            MySqlCommand verificarCmd = new MySqlCommand(verificarQuery, conexion);
+            verificarCmd.Parameters.AddWithValue("@nombre", nombreUsuario);
+            string valorEnBase = verificarCmd.ExecuteScalar()?.ToString();
+
+            MessageBox.Show("Contraseña en base después de actualizar: " + valorEnBase);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error en actualización: " + ex.Message);
+        }
+        finally
+        {
+            cerrarConexion();
+        }
+    }
+    public void ModificarProducto(int idProducto, string nombre, string cantidad, decimal precio, string categoria, string detalles)
+    {
+        try
+        {
+            establecerConexion();
+
+            string query = @"UPDATE productos SET 
+                        Nombre = @nombre, 
+                        Cantidad = @cantidad, 
+                        Precio = @precio, 
+                        Categoria = @categoria, 
+                        Detalles = @detalles
+                        WHERE ID = @id";
+
+            MySqlCommand cmd = new MySqlCommand(query, conexion);
+            cmd.Parameters.AddWithValue("@nombre", nombre);
+            cmd.Parameters.AddWithValue("@cantidad", cantidad);
+            cmd.Parameters.AddWithValue("@precio", precio);
+            cmd.Parameters.AddWithValue("@categoria", categoria);
+            cmd.Parameters.AddWithValue("@detalles", detalles);
+            cmd.Parameters.AddWithValue("@id", idProducto);
+
+            // Opcional: mostrar la consulta generada para depurar
+            MessageBox.Show("Comando: " + cmd.CommandText);
+
+            cmd.ExecuteNonQuery();
+
+            MessageBox.Show("Producto modificado correctamente.");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al modificar: " + ex.Message);
+        }
+        finally
+        {
+            cerrarConexion();
+        }
+    }
 }
  
