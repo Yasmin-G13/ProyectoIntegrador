@@ -37,10 +37,10 @@
             btnInventario = new Button();
             btnVentas = new Button();
             btnProductos = new Button();
-            dataGridView1 = new DataGridView();
+            dgvInventario = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvInventario).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -147,14 +147,14 @@
             btnProductos.UseVisualStyleBackColor = false;
             btnProductos.Click += btnProductos_Click;
             // 
-            // dataGridView1
+            // dgvInventario
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(155, 103);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(619, 312);
-            dataGridView1.TabIndex = 2;
+            dgvInventario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvInventario.Location = new Point(155, 103);
+            dgvInventario.Name = "dgvInventario";
+            dgvInventario.RowHeadersWidth = 51;
+            dgvInventario.Size = new Size(619, 312);
+            dgvInventario.TabIndex = 2;
             // 
             // Inventario
             // 
@@ -162,7 +162,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvInventario);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "Inventario";
@@ -170,7 +170,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvInventario).EndInit();
             ResumeLayout(false);
         }
 
@@ -185,6 +185,6 @@
         private Button btnVentas;
         private Button btnProductos;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvInventario;
     }
 }

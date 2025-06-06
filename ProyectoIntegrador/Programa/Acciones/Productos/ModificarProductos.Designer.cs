@@ -35,11 +35,10 @@
             label1 = new Label();
             btnRegresar = new Button();
             btnModificar = new Button();
-            dataGridViewProductos = new DataGridView();
             NOMBRE = new Label();
             CANTIDAD = new Label();
-            label4 = new Label();
-            label5 = new Label();
+            DETALLES = new Label();
+            PRECIO = new Label();
             label6 = new Label();
             textNombre = new TextBox();
             textCantidad = new TextBox();
@@ -49,7 +48,6 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionMySQLBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -106,27 +104,18 @@
             // 
             btnModificar.BackColor = Color.SandyBrown;
             btnModificar.Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnModificar.Location = new Point(24, 357);
+            btnModificar.Location = new Point(24, 344);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(618, 42);
+            btnModificar.Size = new Size(618, 55);
             btnModificar.TabIndex = 2;
             btnModificar.Text = "MODIFICAR PRODUCTO";
             btnModificar.UseVisualStyleBackColor = false;
-            btnModificar.Click += btnModificar_Click;
-            // 
-            // dataGridViewProductos
-            // 
-            dataGridViewProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProductos.Location = new Point(24, 65);
-            dataGridViewProductos.Name = "dataGridViewProductos";
-            dataGridViewProductos.RowHeadersWidth = 51;
-            dataGridViewProductos.Size = new Size(618, 87);
-            dataGridViewProductos.TabIndex = 3;
+            btnModificar.Click += btnGuardar_Click;
             // 
             // NOMBRE
             // 
             NOMBRE.AutoSize = true;
-            NOMBRE.Location = new Point(38, 172);
+            NOMBRE.Location = new Point(90, 96);
             NOMBRE.Name = "NOMBRE";
             NOMBRE.Size = new Size(70, 20);
             NOMBRE.TabIndex = 4;
@@ -135,34 +124,34 @@
             // CANTIDAD
             // 
             CANTIDAD.AutoSize = true;
-            CANTIDAD.Location = new Point(43, 201);
+            CANTIDAD.Location = new Point(77, 141);
             CANTIDAD.Name = "CANTIDAD";
             CANTIDAD.Size = new Size(83, 20);
             CANTIDAD.TabIndex = 5;
             CANTIDAD.Text = "CANTIDAD";
             // 
-            // label4
+            // DETALLES
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(44, 229);
-            label4.Name = "label4";
-            label4.Size = new Size(75, 20);
-            label4.TabIndex = 6;
-            label4.Text = "DETALLES";
+            DETALLES.AutoSize = true;
+            DETALLES.Location = new Point(85, 187);
+            DETALLES.Name = "DETALLES";
+            DETALLES.Size = new Size(75, 20);
+            DETALLES.TabIndex = 6;
+            DETALLES.Text = "DETALLES";
             // 
-            // label5
+            // PRECIO
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(50, 267);
-            label5.Name = "label5";
-            label5.Size = new Size(58, 20);
-            label5.TabIndex = 7;
-            label5.Text = "PRECIO";
+            PRECIO.AutoSize = true;
+            PRECIO.Location = new Point(102, 234);
+            PRECIO.Name = "PRECIO";
+            PRECIO.Size = new Size(58, 20);
+            PRECIO.TabIndex = 7;
+            PRECIO.Text = "PRECIO";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(44, 304);
+            label6.Location = new Point(73, 278);
             label6.Name = "label6";
             label6.Size = new Size(87, 20);
             label6.TabIndex = 8;
@@ -170,35 +159,35 @@
             // 
             // textNombre
             // 
-            textNombre.Location = new Point(186, 165);
+            textNombre.Location = new Point(185, 93);
             textNombre.Name = "textNombre";
             textNombre.Size = new Size(456, 27);
             textNombre.TabIndex = 9;
             // 
             // textCantidad
             // 
-            textCantidad.Location = new Point(186, 198);
+            textCantidad.Location = new Point(186, 138);
             textCantidad.Name = "textCantidad";
             textCantidad.Size = new Size(456, 27);
             textCantidad.TabIndex = 10;
             // 
             // textPrecio
             // 
-            textPrecio.Location = new Point(186, 264);
+            textPrecio.Location = new Point(185, 231);
             textPrecio.Name = "textPrecio";
             textPrecio.Size = new Size(456, 27);
             textPrecio.TabIndex = 12;
             // 
             // textCategoria
             // 
-            textCategoria.Location = new Point(186, 297);
+            textCategoria.Location = new Point(185, 275);
             textCategoria.Name = "textCategoria";
             textCategoria.Size = new Size(456, 27);
             textCategoria.TabIndex = 13;
             // 
             // textDetalles
             // 
-            textDetalles.Location = new Point(185, 231);
+            textDetalles.Location = new Point(186, 184);
             textDetalles.Name = "textDetalles";
             textDetalles.Size = new Size(457, 27);
             textDetalles.TabIndex = 14;
@@ -215,11 +204,10 @@
             Controls.Add(textCantidad);
             Controls.Add(textNombre);
             Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(label4);
+            Controls.Add(PRECIO);
+            Controls.Add(DETALLES);
             Controls.Add(CANTIDAD);
             Controls.Add(NOMBRE);
-            Controls.Add(dataGridViewProductos);
             Controls.Add(btnModificar);
             Controls.Add(panel1);
             Margin = new Padding(2);
@@ -229,7 +217,6 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)conexionMySQLBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -243,11 +230,10 @@
         private DataGridView dataGridView1;
         private BindingSource conexionMySQLBindingSource;
         private Button btnModificar;
-        private DataGridView dataGridViewProductos;
         private Label NOMBRE;
         private Label CANTIDAD;
-        private Label label4;
-        private Label label5;
+        private Label DETALLES;
+        private Label PRECIO;
         private Label label6;
         private TextBox textNombre;
         private TextBox textCantidad;

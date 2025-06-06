@@ -39,11 +39,11 @@
             label4 = new Label();
             label6 = new Label();
             label7 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            tbNombre = new TextBox();
+            tbCantidad = new TextBox();
+            tbPrecio = new TextBox();
+            tbCategoria = new TextBox();
+            tbDetalles = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -72,6 +72,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(680, 58);
             panel1.TabIndex = 7;
+            panel1.Paint += panel1_Paint;
             // 
             // btn_regresar
             // 
@@ -184,45 +185,46 @@
             label7.Text = "CANTIDAD:";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // tbNombre
             // 
-            textBox1.Location = new Point(186, 99);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(457, 27);
-            textBox1.TabIndex = 20;
+            tbNombre.Location = new Point(186, 99);
+            tbNombre.Margin = new Padding(2);
+            tbNombre.Name = "tbNombre";
+            tbNombre.Size = new Size(457, 27);
+            tbNombre.TabIndex = 20;
             // 
-            // textBox2
+            // tbCantidad
             // 
-            textBox2.Location = new Point(186, 144);
-            textBox2.Margin = new Padding(2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(457, 27);
-            textBox2.TabIndex = 21;
+            tbCantidad.Location = new Point(186, 144);
+            tbCantidad.Margin = new Padding(2);
+            tbCantidad.Name = "tbCantidad";
+            tbCantidad.Size = new Size(457, 27);
+            tbCantidad.TabIndex = 21;
             // 
-            // textBox3
+            // tbPrecio
             // 
-            textBox3.Location = new Point(186, 189);
-            textBox3.Margin = new Padding(2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(457, 27);
-            textBox3.TabIndex = 22;
+            tbPrecio.Location = new Point(186, 189);
+            tbPrecio.Margin = new Padding(2);
+            tbPrecio.Name = "tbPrecio";
+            tbPrecio.Size = new Size(457, 27);
+            tbPrecio.TabIndex = 22;
+            tbPrecio.TextChanged += textBox3_TextChanged;
             // 
-            // textBox4
+            // tbCategoria
             // 
-            textBox4.Location = new Point(186, 232);
-            textBox4.Margin = new Padding(2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(457, 27);
-            textBox4.TabIndex = 23;
+            tbCategoria.Location = new Point(186, 232);
+            tbCategoria.Margin = new Padding(2);
+            tbCategoria.Name = "tbCategoria";
+            tbCategoria.Size = new Size(457, 27);
+            tbCategoria.TabIndex = 23;
             // 
-            // textBox5
+            // tbDetalles
             // 
-            textBox5.Location = new Point(186, 279);
-            textBox5.Margin = new Padding(2);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(457, 27);
-            textBox5.TabIndex = 24;
+            tbDetalles.Location = new Point(186, 279);
+            tbDetalles.Margin = new Padding(2);
+            tbDetalles.Name = "tbDetalles";
+            tbDetalles.Size = new Size(457, 27);
+            tbDetalles.TabIndex = 24;
             // 
             // Añadir_Productos
             // 
@@ -230,11 +232,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(682, 395);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbDetalles);
+            Controls.Add(tbCategoria);
+            Controls.Add(tbPrecio);
+            Controls.Add(tbCantidad);
+            Controls.Add(tbNombre);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label4);
@@ -272,11 +274,11 @@
         private Label label4;
         private Label label6;
         private Label label7;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox tbNombre;
+        private TextBox tbCantidad;
+        private TextBox tbPrecio;
+        private TextBox tbCategoria;
+        private TextBox tbDetalles;
         private Button btn_regresar;
     }
 }

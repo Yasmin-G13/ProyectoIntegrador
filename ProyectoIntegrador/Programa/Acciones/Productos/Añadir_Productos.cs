@@ -30,11 +30,11 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
 
         private void btnAñadirProducto_Click(object sender, EventArgs e)
         {
-            string Nombre = textBox1.Text.Trim();
-            string CantidadStr = textBox2.Text.Trim();
-            string PrecioStr = textBox3.Text.Trim();
-            string Categoria = textBox4.Text.Trim();
-            string Detalles = textBox5.Text.Trim();
+            string Nombre = tbNombre.Text.Trim();
+            string CantidadStr = tbCantidad.Text.Trim();
+            string PrecioStr = tbPrecio.Text.Trim();
+            string Categoria = tbCategoria.Text.Trim();
+            string Detalles = tbDetalles.Text.Trim();
 
             // Validar que no estén vacíos
             if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(CantidadStr) ||
@@ -73,11 +73,11 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
                 conexion.añadirProducto(Nombre, Cantidad.ToString(), PrecioNum, Categoria, Detalles);
                 MessageBox.Show("Producto creado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 // Limpia los controles
-                textBox1.Clear();
-                textBox2.Clear();
-                textBox3.Clear();
-                textBox4.Clear();
-                textBox5.Clear();
+                tbNombre.Clear();
+                tbCantidad.Clear();
+                tbPrecio.Clear();
+                tbCategoria.Clear();
+                tbDetalles.Clear();
 
                 // Refresca la vista del DataGrid
                 // Asegúrate de tener un método como MostrarProductos()
@@ -103,6 +103,16 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }

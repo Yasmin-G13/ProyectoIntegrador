@@ -39,7 +39,7 @@
             btn_Inventario = new Button();
             btn_Ventas = new Button();
             btn_Catálogo_Productos = new Button();
-            dataGridView1 = new DataGridView();
+            dgvPedidos = new DataGridView();
             NOMBRE_CLIENTE = new DataGridViewTextBoxColumn();
             CANTIDAD = new DataGridViewTextBoxColumn();
             PRODUCTO = new DataGridViewTextBoxColumn();
@@ -50,7 +50,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPedidos).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -62,7 +62,7 @@
             panel1.Location = new Point(2, 2);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(842, 61);
+            panel1.Size = new Size(1002, 61);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -192,16 +192,16 @@
             btn_Catálogo_Productos.UseVisualStyleBackColor = false;
             btn_Catálogo_Productos.Click += btn_Catálogo_Productos_Click;
             // 
-            // dataGridView1
+            // dgvPedidos
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { NOMBRE_CLIENTE, CANTIDAD, PRODUCTO, DETALLES, PRECIO, FEC_PED, STATUS });
-            dataGridView1.Location = new Point(51, 67);
-            dataGridView1.Margin = new Padding(2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(775, 334);
-            dataGridView1.TabIndex = 2;
+            dgvPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvPedidos.Columns.AddRange(new DataGridViewColumn[] { NOMBRE_CLIENTE, CANTIDAD, PRODUCTO, DETALLES, PRECIO, FEC_PED, STATUS });
+            dgvPedidos.Location = new Point(115, 65);
+            dgvPedidos.Margin = new Padding(2);
+            dgvPedidos.Name = "dgvPedidos";
+            dgvPedidos.RowHeadersWidth = 62;
+            dgvPedidos.Size = new Size(889, 334);
+            dgvPedidos.TabIndex = 2;
             // 
             // NOMBRE_CLIENTE
             // 
@@ -257,10 +257,10 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            ClientSize = new Size(826, 401);
+            ClientSize = new Size(1057, 556);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvPedidos);
             Margin = new Padding(2);
             Name = "Pedidos";
             Text = "Pedidos";
@@ -268,7 +268,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvPedidos).EndInit();
             ResumeLayout(false);
         }
 
@@ -285,7 +285,7 @@
         private Button btn_Ventas;
         private Button btn_Cerrar_Sesion;
         private Button btn_Catálogo_Productos;
-        private DataGridView dataGridView1;
+        private DataGridView dgvPedidos;
         private DataGridViewTextBoxColumn NOMBRE_CLIENTE;
         private DataGridViewTextBoxColumn CANTIDAD;
         private DataGridViewTextBoxColumn PRODUCTO;

@@ -7,9 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Org.BouncyCastle.Pqc.Crypto.Lms;
 using ProyectoIntegrador.Programa.Acciones.Usuario.Cerrar_Sesion;
-using MySql.Data.MySqlClient; // Para usar MySQL en C#
 
 namespace ProyectoIntegrador.Programa.Acciones.Productos.Ajustes_Seguridad
 {

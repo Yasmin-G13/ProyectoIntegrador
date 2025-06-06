@@ -32,7 +32,7 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            dataGridView2 = new DataGridView();
+            dgvProductos = new DataGridView();
             btnProductos = new Button();
             btnVentas = new Button();
             btnInventario = new Button();
@@ -48,7 +48,7 @@
             button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionMySQLBindingSource).BeginInit();
@@ -62,7 +62,7 @@
             panel1.Location = new Point(-2, 1);
             panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(850, 72);
+            panel1.Size = new Size(945, 72);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
             // 
@@ -80,21 +80,21 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Baskerville Old Face", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(343, 17);
+            label1.Location = new Point(456, 20);
             label1.Name = "label1";
             label1.Size = new Size(189, 32);
             label1.TabIndex = 0;
             label1.Text = "PRODUCTOS";
             // 
-            // dataGridView2
+            // dgvProductos
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(144, 78);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(696, 237);
-            dataGridView2.TabIndex = 2;
-            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
+            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductos.Location = new Point(131, 78);
+            dgvProductos.Name = "dgvProductos";
+            dgvProductos.RowHeadersWidth = 51;
+            dgvProductos.Size = new Size(812, 330);
+            dgvProductos.TabIndex = 2;
+            dgvProductos.CellContentClick += dataGridView2_CellContentClick;
             // 
             // btnProductos
             // 
@@ -113,7 +113,7 @@
             // 
             btnVentas.BackColor = Color.Chocolate;
             btnVentas.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVentas.Location = new Point(0, 62);
+            btnVentas.Location = new Point(3, 79);
             btnVentas.Margin = new Padding(3, 2, 3, 2);
             btnVentas.Name = "btnVentas";
             btnVentas.Size = new Size(127, 57);
@@ -126,7 +126,7 @@
             // 
             btnInventario.BackColor = Color.Chocolate;
             btnInventario.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnInventario.Location = new Point(0, 132);
+            btnInventario.Location = new Point(3, 152);
             btnInventario.Margin = new Padding(3, 2, 3, 2);
             btnInventario.Name = "btnInventario";
             btnInventario.Size = new Size(127, 57);
@@ -139,7 +139,7 @@
             // 
             btnAjustes.BackColor = Color.Chocolate;
             btnAjustes.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAjustes.Location = new Point(-4, 278);
+            btnAjustes.Location = new Point(-1, 314);
             btnAjustes.Margin = new Padding(3, 2, 3, 2);
             btnAjustes.Name = "btnAjustes";
             btnAjustes.Size = new Size(131, 57);
@@ -152,7 +152,7 @@
             // 
             btnCerrarSesion.BackColor = Color.Chocolate;
             btnCerrarSesion.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCerrarSesion.Location = new Point(0, 349);
+            btnCerrarSesion.Location = new Point(3, 387);
             btnCerrarSesion.Margin = new Padding(3, 2, 3, 2);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(127, 57);
@@ -164,10 +164,10 @@
             // btnAñadirProducto
             // 
             btnAñadirProducto.BackColor = Color.SandyBrown;
-            btnAñadirProducto.Location = new Point(144, 320);
+            btnAñadirProducto.Location = new Point(207, 413);
             btnAñadirProducto.Margin = new Padding(3, 2, 3, 2);
             btnAñadirProducto.Name = "btnAñadirProducto";
-            btnAñadirProducto.Size = new Size(696, 57);
+            btnAñadirProducto.Size = new Size(696, 47);
             btnAñadirProducto.TabIndex = 7;
             btnAñadirProducto.Text = "AÑADIR PRODUCTOS";
             btnAñadirProducto.UseVisualStyleBackColor = false;
@@ -176,10 +176,10 @@
             // btnModificarProducto
             // 
             btnModificarProducto.BackColor = Color.SandyBrown;
-            btnModificarProducto.Location = new Point(144, 381);
+            btnModificarProducto.Location = new Point(207, 464);
             btnModificarProducto.Margin = new Padding(3, 2, 3, 2);
             btnModificarProducto.Name = "btnModificarProducto";
-            btnModificarProducto.Size = new Size(696, 57);
+            btnModificarProducto.Size = new Size(696, 47);
             btnModificarProducto.TabIndex = 8;
             btnModificarProducto.Text = "MODIFICAR PRODUCTO";
             btnModificarProducto.UseVisualStyleBackColor = false;
@@ -188,14 +188,14 @@
             // btnDarBaja
             // 
             btnDarBaja.BackColor = Color.SandyBrown;
-            btnDarBaja.Location = new Point(144, 442);
+            btnDarBaja.Location = new Point(207, 515);
             btnDarBaja.Margin = new Padding(3, 2, 3, 2);
             btnDarBaja.Name = "btnDarBaja";
-            btnDarBaja.Size = new Size(696, 57);
+            btnDarBaja.Size = new Size(696, 42);
             btnDarBaja.TabIndex = 9;
             btnDarBaja.Text = "DAR DE BAJA PRODUCTO";
             btnDarBaja.UseVisualStyleBackColor = false;
-            btnDarBaja.Click += button8_Click;
+            btnDarBaja.Click += btnDarBaja_Click;
             // 
             // panel2
             // 
@@ -209,14 +209,14 @@
             panel2.Location = new Point(-2, 77);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(127, 422);
+            panel2.Size = new Size(127, 480);
             panel2.TabIndex = 10;
             // 
             // btnPedidos
             // 
             btnPedidos.BackColor = Color.Chocolate;
             btnPedidos.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPedidos.Location = new Point(3, 205);
+            btnPedidos.Location = new Point(3, 237);
             btnPedidos.Name = "btnPedidos";
             btnPedidos.Size = new Size(124, 57);
             btnPedidos.TabIndex = 12;
@@ -255,8 +255,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            ClientSize = new Size(852, 494);
-            Controls.Add(dataGridView2);
+            ClientSize = new Size(1016, 626);
+            Controls.Add(dgvProductos);
             Controls.Add(panel2);
             Controls.Add(btnDarBaja);
             Controls.Add(btnModificarProducto);
@@ -270,7 +270,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)conexionMySQLBindingSource).EndInit();
@@ -297,7 +297,7 @@
 //=======
         private Button button1;
         private DataGridView MiDridView;
-        private DataGridView dataGridView2;
+        private DataGridView dgvProductos;
         //>>>>>>> datawritview no funciona
     }
 }

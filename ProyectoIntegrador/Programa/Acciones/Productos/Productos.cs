@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoIntegrador.Programa.Acciones.Usuario.Cerrar_Sesion;
-using Org.BouncyCastle.Pqc.Crypto.Lms;
 using ProyectoIntegrador.Programa.Acciones.Productos.Ajustes_Seguridad;
+using MySqlConnector;
 
 namespace ProyectoIntegrador.Programa.Acciones.Productos
 {
@@ -28,12 +27,41 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
         {
 
         }
-
-        private void button8_Click(object sender, EventArgs e)
+        public void cargarDatos()
         {
-            this.Hide();
-            Dar_de_Baja_Producto bajaproductos = new Dar_de_Baja_Producto();
-            bajaproductos.Show();
+            controladores.ControladorProductos controladorProducto = new controladores.ControladorProductos();
+            controladorProducto.consultarProductos(dgvProductos);
+        }
+
+        private void btnDarBaja_Click(object sender, EventArgs e)
+        {
+            if (dgvProductos.SelectedRows.Count > 0)
+            {
+                // Obtener el registro seleccionado
+                DataGridViewRow row = dgvProductos.SelectedRows[0];
+                int id_producto = Convert.ToInt32(row.Cells["id_producto"].Value);
+                string nombreCurso = row.Cells["nombre"].Value.ToString();
+
+                // Mostrar diálogo de confirmación
+                DialogResult respuesta = MessageBox.Show(
+                    $"¿Está seguro que desea eliminar el producto?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    // Proceder con la eliminación si el usuario confirma
+                    controladores.ControladorProductos ControladorBa = new controladores.ControladorProductos();
+                    ControladorBa.DarBaja(id_producto);
+                    cargarDatos();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un curso para eliminar.", "Advertencia",
+                              MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void btnAñadirProducto_Click_1(object sender, EventArgs e)
@@ -79,13 +107,18 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
 
             try
             {
-                using (MySqlConnection cargar = new MySqlConnection(cadenaConexion))
+                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
                 {
-                    using (MySqlDataAdapter sda = new MySqlDataAdapter(consulta, cargar))
+                    conexion.Open(); // Muy importante: abrir la conexión
+
+                    using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
-                        DataTable dt = new DataTable();
-                        sda.Fill(dt);
-                        dataGridView2.DataSource = dt; // tu DataGridView
+                        using (MySqlDataReader lector = comando.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(lector); // Cargar los datos del DataReader al DataTable
+                            dgvProductos.DataSource = dt;
+                        }
                     }
                 }
             }
@@ -114,9 +147,17 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ModificarProductos modificarproductos = new ModificarProductos();
-            modificarproductos.Show();
+            if (dgvProductos.CurrentRow != null)
+            {
+                int idProducto = Convert.ToInt32(dgvProductos.CurrentRow.Cells["id_producto"].Value);
+                ModificarProductos modificar = new ModificarProductos(idProducto);
+                modificar.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un producto primero.");
+            }
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
