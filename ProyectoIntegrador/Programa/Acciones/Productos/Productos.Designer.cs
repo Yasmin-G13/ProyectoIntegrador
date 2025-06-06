@@ -32,6 +32,7 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
+            dataGridView2 = new DataGridView();
             btnProductos = new Button();
             btnVentas = new Button();
             btnInventario = new Button();
@@ -45,13 +46,12 @@
             dataGridView1 = new DataGridView();
             conexionMySQLBindingSource = new BindingSource(components);
             button1 = new Button();
-            MiDridView = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)conexionMySQLBindingSource).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)MiDridView).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -85,6 +85,16 @@
             label1.Size = new Size(189, 32);
             label1.TabIndex = 0;
             label1.Text = "PRODUCTOS";
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(144, 78);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.Size = new Size(696, 237);
+            dataGridView2.TabIndex = 2;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
             // btnProductos
             // 
@@ -240,26 +250,13 @@
             button1.Text = "PEDIDOS";
             button1.UseVisualStyleBackColor = false;
             // 
-            // MiDridView
-            // 
-            MiDridView.AutoGenerateColumns = false;
-            MiDridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            MiDridView.DataSource = conexionMySQLBindingSource;
-            MiDridView.Location = new Point(144, 78);
-            MiDridView.Name = "MiDridView";
-            MiDridView.RowHeadersWidth = 51;
-            MiDridView.Size = new Size(696, 237);
-            MiDridView.TabIndex = 11;
-            MiDridView.CellContentClick += MiDridView_CellContentClick;
-            MiDridView.Click += productos_load;
-            // 
             // Productos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(852, 494);
-            Controls.Add(MiDridView);
+            Controls.Add(dataGridView2);
             Controls.Add(panel2);
             Controls.Add(btnDarBaja);
             Controls.Add(btnModificarProducto);
@@ -273,10 +270,10 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)conexionMySQLBindingSource).EndInit();
-            ((System.ComponentModel.ISupportInitialize)MiDridView).EndInit();
             ResumeLayout(false);
         }
 
@@ -300,6 +297,7 @@
 //=======
         private Button button1;
         private DataGridView MiDridView;
-//>>>>>>> datawritview no funciona
+        private DataGridView dataGridView2;
+        //>>>>>>> datawritview no funciona
     }
 }

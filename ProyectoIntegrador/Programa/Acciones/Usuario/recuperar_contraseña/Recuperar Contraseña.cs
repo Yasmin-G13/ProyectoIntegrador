@@ -20,6 +20,9 @@ namespace ProyectoIntegrador
         private void button2_Click(object sender, EventArgs e)
         {
 
+            FormBienvenida bienvenida = new FormBienvenida();
+            bienvenida.Show();
+            this.Hide();
         }
     }
 }

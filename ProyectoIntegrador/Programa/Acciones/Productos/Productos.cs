@@ -20,6 +20,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
         public Productos()
         {
             InitializeComponent();
+            MostrarProductos();
 
         }
 
@@ -84,7 +85,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
                     {
                         DataTable dt = new DataTable();
                         sda.Fill(dt);
-                        MiDridView.DataSource = dt; // tu DataGridView
+                        dataGridView2.DataSource = dt; // tu DataGridView
                     }
                 }
             }
@@ -135,6 +136,11 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
             this.Hide();
             Ajustes ajustes = new Ajustes();
             ajustes.Show();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
         //public DataTable ObtenerTodosProductos()
         //{

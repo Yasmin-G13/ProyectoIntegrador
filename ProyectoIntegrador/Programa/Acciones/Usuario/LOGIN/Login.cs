@@ -18,36 +18,7 @@ namespace ProyectoIntegrador.Resources
         {
             InitializeComponent();
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
@@ -84,7 +55,8 @@ namespace ProyectoIntegrador.Resources
                         return;
                     }
 
-                    if (contrasenaAlmacenada == contraseña)
+                    // Compara ambas contraseñas eliminando espacios y en minúscula
+                    if (contrasenaAlmacenada.Trim() == contraseña.Trim())
                     {
                         // Contraseña correcta, abre formulario productos
                         Productos productos = new Productos();
@@ -110,6 +82,9 @@ namespace ProyectoIntegrador.Resources
         private void btnRecuperar_Contraseña_Click(object sender, EventArgs e)
         {
 
+            Recuperar_Contraseña recuperar_Contraseña = new Recuperar_Contraseña();
+            recuperar_Contraseña.Show();
+            this.Hide();
         }
     }
 }

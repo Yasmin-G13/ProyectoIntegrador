@@ -116,7 +116,7 @@
             textContraseña.Name = "textContraseña";
             textContraseña.Size = new Size(279, 27);
             textContraseña.TabIndex = 7;
-            textContraseña.TextChanged += textBox3_TextChanged;
+            textContraseña.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -128,7 +128,6 @@
             label5.Size = new Size(317, 23);
             label5.TabIndex = 9;
             label5.Text = "¿OLVIDASTE TU CONTRASEÑA?";
-            label5.Click += label5_Click;
             // 
             // btnRegresar
             // 
@@ -204,7 +203,6 @@
             Margin = new Padding(2);
             Name = "FormLogin";
             TransparencyKey = SystemColors.Control;
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

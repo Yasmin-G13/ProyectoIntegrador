@@ -38,11 +38,10 @@
             btnAjustes = new Button();
             btnProductos = new Button();
             label1 = new Label();
-            textBox1 = new TextBox();
+            textNuevaContraseña = new TextBox();
             textBox2 = new TextBox();
             btnGuardar = new Button();
             btnManual = new Button();
-            btnRespaldos = new Button();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -165,12 +164,12 @@
             label1.TabIndex = 2;
             label1.Text = "CAMBIAR CONTRASEÑA";
             // 
-            // textBox1
+            // textNuevaContraseña
             // 
-            textBox1.Location = new Point(452, 179);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(264, 27);
-            textBox1.TabIndex = 3;
+            textNuevaContraseña.Location = new Point(452, 179);
+            textNuevaContraseña.Name = "textNuevaContraseña";
+            textNuevaContraseña.Size = new Size(264, 27);
+            textNuevaContraseña.TabIndex = 3;
             // 
             // textBox2
             // 
@@ -178,37 +177,29 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(264, 27);
             textBox2.TabIndex = 4;
+            textBox2.UseSystemPasswordChar = true;
             // 
             // btnGuardar
             // 
             btnGuardar.BackColor = Color.SandyBrown;
             btnGuardar.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnGuardar.Location = new Point(557, 278);
+            btnGuardar.Location = new Point(230, 284);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(159, 49);
             btnGuardar.TabIndex = 5;
             btnGuardar.Text = "GUARDAR";
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnManual
             // 
             btnManual.BackColor = Color.SandyBrown;
-            btnManual.Location = new Point(199, 378);
+            btnManual.Location = new Point(544, 389);
             btnManual.Name = "btnManual";
             btnManual.Size = new Size(232, 49);
             btnManual.TabIndex = 6;
             btnManual.Text = "MANUAL DE USUARIO";
             btnManual.UseVisualStyleBackColor = false;
-            // 
-            // btnRespaldos
-            // 
-            btnRespaldos.BackColor = Color.SandyBrown;
-            btnRespaldos.Location = new Point(499, 378);
-            btnRespaldos.Name = "btnRespaldos";
-            btnRespaldos.Size = new Size(217, 49);
-            btnRespaldos.TabIndex = 7;
-            btnRespaldos.Text = "GENERAR RESPALDOS";
-            btnRespaldos.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -234,7 +225,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Baskerville Old Face", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(199, 358);
+            label5.Location = new Point(285, 421);
             label5.Name = "label5";
             label5.Size = new Size(253, 17);
             label5.TabIndex = 10;
@@ -249,11 +240,10 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(btnRespaldos);
             Controls.Add(btnManual);
             Controls.Add(btnGuardar);
             Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textNuevaContraseña);
             Controls.Add(label1);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -278,11 +268,10 @@
         private Button btnProductos;
         private Label label2;
         private Label label1;
-        private TextBox textBox1;
+        private TextBox textNuevaContraseña;
         private TextBox textBox2;
         private Button btnGuardar;
         private Button btnManual;
-        private Button btnRespaldos;
         private Label label3;
         private Label label4;
         private Label label5;

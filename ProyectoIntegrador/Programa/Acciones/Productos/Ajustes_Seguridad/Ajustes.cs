@@ -9,14 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Org.BouncyCastle.Pqc.Crypto.Lms;
 using ProyectoIntegrador.Programa.Acciones.Usuario.Cerrar_Sesion;
+using MySql.Data.MySqlClient; // Para usar MySQL en C#
 
 namespace ProyectoIntegrador.Programa.Acciones.Productos.Ajustes_Seguridad
 {
     public partial class Ajustes : Form
     {
+        string usuarioActual = "nombre_usuario_actual"; // En un sistema real, obtén esto al login
         public Ajustes()
         {
             InitializeComponent();
+            textNuevaContraseña.UseSystemPasswordChar = true;
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
@@ -60,5 +63,22 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos.Ajustes_Seguridad
             cerrarsesion.Show();
             this.Close();
         }
+
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string nuevaContraseña = textNuevaContraseña.Text.Trim();
+
+            if (string.IsNullOrEmpty(nuevaContraseña))
+            {
+                MessageBox.Show("Por favor, ingresa la nueva contraseña.");
+                return;
+            }
+
+            // Llamada para actualizar y verificar en base
+            ConexionMySQL conexion = new ConexionMySQL();
+            conexion.ActualizarContraseña(usuarioActual, nuevaContraseña);
+        }
+
     }
 }

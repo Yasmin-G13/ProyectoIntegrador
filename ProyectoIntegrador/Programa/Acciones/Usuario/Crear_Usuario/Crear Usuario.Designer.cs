@@ -150,6 +150,7 @@
             textContraseña.Name = "textContraseña";
             textContraseña.Size = new Size(265, 27);
             textContraseña.TabIndex = 8;
+            textContraseña.UseSystemPasswordChar = true;
             // 
             // textRepetirContraseña
             // 
@@ -159,6 +160,7 @@
             textRepetirContraseña.Name = "textRepetirContraseña";
             textRepetirContraseña.Size = new Size(265, 27);
             textRepetirContraseña.TabIndex = 9;
+            textRepetirContraseña.UseSystemPasswordChar = true;
             // 
             // pictureBox2
             // 
