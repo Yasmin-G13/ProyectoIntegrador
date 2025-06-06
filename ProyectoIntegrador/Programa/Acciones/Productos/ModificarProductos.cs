@@ -155,7 +155,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
                     using (MySqlConnection cargar = new MySqlConnection(consulta))
                     {
                         using (MySqlDataAdapter sda = new MySqlDataAdapter(consulta, cargar))
-                        {
+                        {GridItem
                             DataTable dt = new DataTable();
                             sda.Fill(dt);
                             dataGridViewProductos.DataSource = dt; // tu DataGridView
