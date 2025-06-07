@@ -39,18 +39,12 @@
             btn_Inventario = new Button();
             btn_Ventas = new Button();
             btn_Catálogo_Productos = new Button();
-            dgvPedidos = new DataGridView();
-            NOMBRE_CLIENTE = new DataGridViewTextBoxColumn();
-            CANTIDAD = new DataGridViewTextBoxColumn();
-            PRODUCTO = new DataGridViewTextBoxColumn();
-            DETALLES = new DataGridViewTextBoxColumn();
-            PRECIO = new DataGridViewTextBoxColumn();
-            FEC_PED = new DataGridViewTextBoxColumn();
-            STATUS = new DataGridViewTextBoxColumn();
+            dataPedidos = new DataGridView();
+            btnAñadirPedido = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvPedidos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataPedidos).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -69,7 +63,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Baskerville Old Face", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(334, 17);
+            label1.Location = new Point(434, 7);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(138, 32);
@@ -129,6 +123,7 @@
             // 
             // btn_Ajustes_Seguridad
             // 
+            btn_Ajustes_Seguridad.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btn_Ajustes_Seguridad.BackColor = Color.Chocolate;
             btn_Ajustes_Seguridad.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btn_Ajustes_Seguridad.Location = new Point(2, 222);
@@ -192,83 +187,46 @@
             btn_Catálogo_Productos.UseVisualStyleBackColor = false;
             btn_Catálogo_Productos.Click += btn_Catálogo_Productos_Click;
             // 
-            // dgvPedidos
+            // dataPedidos
             // 
-            dgvPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPedidos.Columns.AddRange(new DataGridViewColumn[] { NOMBRE_CLIENTE, CANTIDAD, PRODUCTO, DETALLES, PRECIO, FEC_PED, STATUS });
-            dgvPedidos.Location = new Point(115, 65);
-            dgvPedidos.Margin = new Padding(2);
-            dgvPedidos.Name = "dgvPedidos";
-            dgvPedidos.RowHeadersWidth = 62;
-            dgvPedidos.Size = new Size(889, 334);
-            dgvPedidos.TabIndex = 2;
+            dataPedidos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataPedidos.Location = new Point(152, 86);
+            dataPedidos.Name = "dataPedidos";
+            dataPedidos.RowHeadersWidth = 51;
+            dataPedidos.Size = new Size(808, 225);
+            dataPedidos.TabIndex = 2;
             // 
-            // NOMBRE_CLIENTE
+            // btnAñadirPedido
             // 
-            NOMBRE_CLIENTE.HeaderText = "NOMBRE CLIENTE";
-            NOMBRE_CLIENTE.MinimumWidth = 8;
-            NOMBRE_CLIENTE.Name = "NOMBRE_CLIENTE";
-            NOMBRE_CLIENTE.Width = 125;
-            // 
-            // CANTIDAD
-            // 
-            CANTIDAD.HeaderText = "CANTIDAD";
-            CANTIDAD.MinimumWidth = 8;
-            CANTIDAD.Name = "CANTIDAD";
-            CANTIDAD.Width = 125;
-            // 
-            // PRODUCTO
-            // 
-            PRODUCTO.HeaderText = "PRODUCTO";
-            PRODUCTO.MinimumWidth = 8;
-            PRODUCTO.Name = "PRODUCTO";
-            PRODUCTO.Width = 120;
-            // 
-            // DETALLES
-            // 
-            DETALLES.HeaderText = "DETALLES";
-            DETALLES.MinimumWidth = 8;
-            DETALLES.Name = "DETALLES";
-            DETALLES.Width = 125;
-            // 
-            // PRECIO
-            // 
-            PRECIO.HeaderText = "PRECIO";
-            PRECIO.MinimumWidth = 8;
-            PRECIO.Name = "PRECIO";
-            PRECIO.Width = 80;
-            // 
-            // FEC_PED
-            // 
-            FEC_PED.HeaderText = "FECHA PEDIDO";
-            FEC_PED.MinimumWidth = 8;
-            FEC_PED.Name = "FEC_PED";
-            FEC_PED.Width = 120;
-            // 
-            // STATUS
-            // 
-            STATUS.HeaderText = "STATUS";
-            STATUS.MinimumWidth = 8;
-            STATUS.Name = "STATUS";
-            STATUS.Width = 125;
+            btnAñadirPedido.BackColor = Color.SandyBrown;
+            btnAñadirPedido.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAñadirPedido.Location = new Point(152, 337);
+            btnAñadirPedido.Name = "btnAñadirPedido";
+            btnAñadirPedido.Size = new Size(808, 44);
+            btnAñadirPedido.TabIndex = 3;
+            btnAñadirPedido.Text = "AÑADIR PEDIDO";
+            btnAñadirPedido.UseVisualStyleBackColor = false;
+            btnAñadirPedido.Click += btnAñadirPedido_Click;
             // 
             // Pedidos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            ClientSize = new Size(1057, 556);
+            ClientSize = new Size(1001, 401);
+            Controls.Add(btnAñadirPedido);
+            Controls.Add(dataPedidos);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(dgvPedidos);
             Margin = new Padding(2);
             Name = "Pedidos";
             Text = "Pedidos";
+            Load += pedidos_load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvPedidos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataPedidos).EndInit();
             ResumeLayout(false);
         }
 
@@ -293,5 +251,7 @@
         private DataGridViewTextBoxColumn PRECIO;
         private DataGridViewTextBoxColumn FEC_PED;
         private DataGridViewTextBoxColumn STATUS;
+        private DataGridView dataPedidos;
+        private Button btnAñadirPedido;
     }
 }

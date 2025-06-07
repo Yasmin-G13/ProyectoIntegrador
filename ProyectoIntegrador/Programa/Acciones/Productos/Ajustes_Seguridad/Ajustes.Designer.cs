@@ -39,7 +39,7 @@
             btnProductos = new Button();
             label1 = new Label();
             textNuevaContraseña = new TextBox();
-            textBox2 = new TextBox();
+            textRepetirContraseña = new TextBox();
             btnGuardar = new Button();
             btnManual = new Button();
             label3 = new Label();
@@ -171,13 +171,13 @@
             textNuevaContraseña.Size = new Size(264, 27);
             textNuevaContraseña.TabIndex = 3;
             // 
-            // textBox2
+            // textRepetirContraseña
             // 
-            textBox2.Location = new Point(452, 223);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(264, 27);
-            textBox2.TabIndex = 4;
-            textBox2.UseSystemPasswordChar = true;
+            textRepetirContraseña.Location = new Point(452, 223);
+            textRepetirContraseña.Name = "textRepetirContraseña";
+            textRepetirContraseña.Size = new Size(264, 27);
+            textRepetirContraseña.TabIndex = 4;
+            textRepetirContraseña.UseSystemPasswordChar = true;
             // 
             // btnGuardar
             // 
@@ -242,7 +242,7 @@
             Controls.Add(label3);
             Controls.Add(btnManual);
             Controls.Add(btnGuardar);
-            Controls.Add(textBox2);
+            Controls.Add(textRepetirContraseña);
             Controls.Add(textNuevaContraseña);
             Controls.Add(label1);
             Controls.Add(panel2);
@@ -275,5 +275,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
+        private TextBox textRepetirContraseña;
     }
 }

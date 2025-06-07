@@ -18,7 +18,7 @@ namespace ProyectoIntegrador.Resources
         {
             InitializeComponent();
         }
-        
+
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
@@ -85,6 +85,11 @@ namespace ProyectoIntegrador.Resources
             Recuperar_Contraseña recuperar_Contraseña = new Recuperar_Contraseña();
             recuperar_Contraseña.Show();
             this.Hide();
+        }
+
+        private void textUsuario_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

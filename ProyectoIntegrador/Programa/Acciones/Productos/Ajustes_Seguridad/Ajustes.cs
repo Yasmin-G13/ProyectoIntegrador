@@ -66,6 +66,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos.Ajustes_Seguridad
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string nuevaContraseña = textNuevaContraseña.Text.Trim();
+            string repetirContraseña = textRepetirContraseña.Text.Trim();
 
             if (string.IsNullOrEmpty(nuevaContraseña))
             {

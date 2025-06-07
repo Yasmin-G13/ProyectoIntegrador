@@ -83,6 +83,7 @@
             textUsuario.Name = "textUsuario";
             textUsuario.Size = new Size(279, 27);
             textUsuario.TabIndex = 5;
+            textUsuario.TextChanged += textUsuario_TextChanged;
             // 
             // label3
             // 

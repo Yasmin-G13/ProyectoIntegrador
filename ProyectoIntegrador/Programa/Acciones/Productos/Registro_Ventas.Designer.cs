@@ -41,18 +41,13 @@
             btn_Catálogo_Productos = new Button();
             panel4 = new Panel();
             label2 = new Label();
-            dataGridView1 = new DataGridView();
-            NOMBRE_CLIENTE = new DataGridViewTextBoxColumn();
-            CANTIDAD = new DataGridViewTextBoxColumn();
-            PRODUCTOS = new DataGridViewTextBoxColumn();
-            DETALLES = new DataGridViewTextBoxColumn();
-            PRECIO = new DataGridViewTextBoxColumn();
-            FECHA = new DataGridViewTextBoxColumn();
+            dgvVentas = new DataGridView();
+            btnAgregarVenta = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvVentas).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -211,58 +206,26 @@
             label2.TabIndex = 0;
             label2.Text = "                                    Col. Los Pinitos\r\nContacto: 1545340116              mueblesnyas@gmail.com";
             // 
-            // dataGridView1
+            // dgvVentas
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { NOMBRE_CLIENTE, CANTIDAD, PRODUCTOS, DETALLES, PRECIO, FECHA });
-            dataGridView1.Location = new Point(126, 87);
-            dataGridView1.Margin = new Padding(2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(547, 233);
-            dataGridView1.TabIndex = 3;
+            dgvVentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvVentas.Location = new Point(121, 86);
+            dgvVentas.Name = "dgvVentas";
+            dgvVentas.RowHeadersWidth = 51;
+            dgvVentas.Size = new Size(561, 190);
+            dgvVentas.TabIndex = 3;
             // 
-            // NOMBRE_CLIENTE
+            // btnAgregarVenta
             // 
-            NOMBRE_CLIENTE.HeaderText = "NOMBRE CLIENTE";
-            NOMBRE_CLIENTE.MinimumWidth = 8;
-            NOMBRE_CLIENTE.Name = "NOMBRE_CLIENTE";
-            NOMBRE_CLIENTE.Width = 110;
-            // 
-            // CANTIDAD
-            // 
-            CANTIDAD.HeaderText = "CANTIDAD";
-            CANTIDAD.MinimumWidth = 8;
-            CANTIDAD.Name = "CANTIDAD";
-            CANTIDAD.Width = 125;
-            // 
-            // PRODUCTOS
-            // 
-            PRODUCTOS.HeaderText = "PRODUCTOS";
-            PRODUCTOS.MinimumWidth = 8;
-            PRODUCTOS.Name = "PRODUCTOS";
-            PRODUCTOS.Width = 150;
-            // 
-            // DETALLES
-            // 
-            DETALLES.HeaderText = "DETALLES";
-            DETALLES.MinimumWidth = 8;
-            DETALLES.Name = "DETALLES";
-            DETALLES.Width = 150;
-            // 
-            // PRECIO
-            // 
-            PRECIO.HeaderText = "PRECIO";
-            PRECIO.MinimumWidth = 8;
-            PRECIO.Name = "PRECIO";
-            PRECIO.Width = 80;
-            // 
-            // FECHA
-            // 
-            FECHA.HeaderText = "FECHA";
-            FECHA.MinimumWidth = 8;
-            FECHA.Name = "FECHA";
-            FECHA.Width = 125;
+            btnAgregarVenta.BackColor = Color.SandyBrown;
+            btnAgregarVenta.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAgregarVenta.Location = new Point(121, 294);
+            btnAgregarVenta.Name = "btnAgregarVenta";
+            btnAgregarVenta.Size = new Size(561, 34);
+            btnAgregarVenta.TabIndex = 4;
+            btnAgregarVenta.Text = "AGREGAR VENTA ";
+            btnAgregarVenta.UseVisualStyleBackColor = false;
+            btnAgregarVenta.Click += button1_Click;
             // 
             // Registro_Ventas
             // 
@@ -270,20 +233,22 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(702, 397);
-            Controls.Add(dataGridView1);
+            Controls.Add(btnAgregarVenta);
+            Controls.Add(dgvVentas);
             Controls.Add(panel4);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Margin = new Padding(2);
             Name = "Registro_Ventas";
             Text = "Registro_Ventas";
+            Load += ventas_load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvVentas).EndInit();
             ResumeLayout(false);
         }
 
@@ -309,5 +274,7 @@
         private DataGridViewTextBoxColumn DETALLES;
         private DataGridViewTextBoxColumn PRECIO;
         private DataGridViewTextBoxColumn FECHA;
+        private DataGridView dgvVentas;
+        private Button btnAgregarVenta;
     }
 }

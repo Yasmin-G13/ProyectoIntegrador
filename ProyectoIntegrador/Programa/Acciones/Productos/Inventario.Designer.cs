@@ -49,14 +49,14 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(-1, -1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(802, 82);
+            panel1.Size = new Size(910, 82);
             panel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Baskerville Old Face", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(282, 23);
+            label1.Location = new Point(399, 19);
             label1.Name = "label1";
             label1.Size = new Size(191, 32);
             label1.TabIndex = 0;
@@ -153,7 +153,7 @@
             dgvInventario.Location = new Point(155, 103);
             dgvInventario.Name = "dgvInventario";
             dgvInventario.RowHeadersWidth = 51;
-            dgvInventario.Size = new Size(619, 312);
+            dgvInventario.Size = new Size(721, 312);
             dgvInventario.TabIndex = 2;
             // 
             // Inventario
@@ -161,12 +161,13 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(910, 450);
             Controls.Add(dgvInventario);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "Inventario";
             Text = "Inventario";
+            Load += inventario_load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);

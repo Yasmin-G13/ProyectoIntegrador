@@ -498,26 +498,55 @@ public class ConexionMySQL
         }
     }
 
-    public void ActualizarContraseña(string nombreUsuario, string nuevaContra)
+    //public void ActualizarContraseña(string nombreUsuario, string nuevaContra)
+    //{
+    //    try
+    //    {
+    //        establecerConexion();
+
+    //        string sql = "UPDATE usuarios SET contraseña = @nuevaContra WHERE usuario = @usuario";
+    //        MySqlCommand cmd = new MySqlCommand(sql, conexion);
+    //        cmd.Parameters.AddWithValue("@contraseña", nuevaContra);
+    //        cmd.Parameters.AddWithValue("@nombre", nombreUsuario);
+
+    //        cmd.ExecuteNonQuery();
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        MessageBox.Show("Error en actualización: " + ex.Message);
+    //    }
+    //    finally
+    //    {
+    //        cerrarConexion();
+    //    }
+    //}
+    public void ActualizarContraseña(string usuario, string nuevaContraseña)
     {
         try
         {
-            establecerConexion();
+            using (MySqlConnection conn = establecerConexion())
+            {
+                MessageBox.Show($"Correo: {usuario}, Nueva contraseña: {nuevaContraseña}");
+                string query = "UPDATE usuarios SET contraseña = @nuevaContraseña WHERE nombre = @usuario";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nuevaContraseña", nuevaContraseña);
+                cmd.Parameters.AddWithValue("@usuario", usuario);
 
-            string sql = "UPDATE usuarios SET contraseña = @contraseña WHERE nombre = @nombre";
-            MySqlCommand cmd = new MySqlCommand(sql, conexion);
-            cmd.Parameters.AddWithValue("@contraseña", nuevaContra);
-            cmd.Parameters.AddWithValue("@nombre", nombreUsuario);
+                int filasAfectadas = cmd.ExecuteNonQuery();
 
-            cmd.ExecuteNonQuery();
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("Contraseña actualizada correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el usuario o no se actualizó la contraseña.");
+                }
+            }
         }
         catch (Exception ex)
         {
-            MessageBox.Show("Error en actualización: " + ex.Message);
-        }
-        finally
-        {
-            cerrarConexion();
+            MessageBox.Show("Error al actualizar la contraseña: " + ex.Message);
         }
     }
 }
