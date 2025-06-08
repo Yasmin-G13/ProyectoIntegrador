@@ -407,19 +407,57 @@ public class ConexionMySQL
             string sql = "SELECT COUNT(*) FROM usuarios WHERE nombre = @nombre";
             MySqlCommand cmd = new MySqlCommand(sql, conexion);
             cmd.Parameters.AddWithValue("@nombre", nombre);
+
             int count = Convert.ToInt32(cmd.ExecuteScalar());
-            existe = count > 0;
+
+            // Verifica si el conteo es mayor a 0
+            if(count > 0)
+            {
+                existe = true;
+                return existe;
+            }
+            else
+            {
+                existe = false;
+            }
         }
         catch (Exception ex)
         {
-            MessageBox.Show("Error al verificar usuario: " + ex.Message);
+            MessageBox.Show("Error al buscar el usuario: " + ex.Message);
         }
         finally
         {
             cerrarConexion();
         }
+        MessageBox.Show("El usuario insertado no existe");
         return existe;
     }
+
+    public int ObtenerIdProducto(string nombreProducto)
+    {
+        int idProducto = -1;
+        try
+        {
+            establecerConexion();
+            string query = "SELECT id_producto FROM productos WHERE LOWER(TRIM(nombre)) = LOWER(TRIM(@nombre))";
+            MySqlCommand cmd = new MySqlCommand(query, conexion);
+            cmd.Parameters.AddWithValue("@nombre", nombreProducto);
+
+            object result = cmd.ExecuteScalar();
+            if (result != null)
+                idProducto = Convert.ToInt32(result);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al obtener el ID del producto: " + ex.Message);
+        }
+        finally
+        {
+            cerrarConexion();
+        }
+        return idProducto;
+    }
+
 
     public bool productoExiste(string nombre)
     {
@@ -498,36 +536,35 @@ public class ConexionMySQL
         }
     }
 
-    
-    //public void ActualizarContraseña(string usuario, string nuevaContraseña)
-    //{
-    //    try
-    //    {
-    //        using (MySqlConnection conn = establecerConexion())
-    //        {
-    //            MessageBox.Show($"Correo: {usuario}, Nueva contraseña: {nuevaContraseña}");   
-    //            string query = "UPDATE usuarios SET contraseña = @nuevaContraseña WHERE nombre = @usuario";
-    //            MySqlCommand cmd = new MySqlCommand(query, conn);
-    //            cmd.Parameters.AddWithValue("@nuevaContraseña", nuevaContraseña);
-    //            cmd.Parameters.AddWithValue("@usuario", usuario);
 
-    //            int filasAfectadas = cmd.ExecuteNonQuery();
+    public void ActualizarContraseña(string usuario, string nuevaContraseña)
+    {
+        try
+        {
+            using (MySqlConnection conn = establecerConexion())
+            {
+                string query = "UPDATE usuarios SET contraseña = @nuevaContraseña WHERE nombre = @usuario";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@nuevaContraseña", nuevaContraseña);
+                cmd.Parameters.AddWithValue("@usuario", usuario);
 
-    //            if (filasAfectadas > 0)
-    //            {
-    //                MessageBox.Show("Contraseña actualizada correctamente.");
-    //            }
-    //            else
-    //            {
-    //                MessageBox.Show("No se encontró el usuario o no se actualizó la contraseña.");
-    //            }
-    //        }
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        MessageBox.Show("Error al actualizar la contraseña: " + ex.Message);
-    //    }
-    //}
+                int filasAfectadas = cmd.ExecuteNonQuery();
+
+                if (filasAfectadas > 0)
+                {
+                    MessageBox.Show("Contraseña actualizada correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el usuario o no se actualizó la contraseña.");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al actualizar la contraseña: " + ex.Message);
+        }
+    }
     // Métodos para obtener IDs
 
     public int obtenerIdProducto(string nombreProducto)
@@ -558,7 +595,7 @@ public class ConexionMySQL
 
 
 
-    public void añadirVenta(string cliente, int idProducto,  int cantidad, decimal precio, string detalles, DateTime fechaVenta)
+    public void añadirVenta(string cliente, int idProducto, int cantidad, decimal precio, string detalles, DateTime fechaVenta)
     {
         try
         {
@@ -583,6 +620,123 @@ public class ConexionMySQL
             cerrarConexion();
         }
     }
+
+    // Dentro de tu clase ConexionMySQL:
+
+    /// <summary>
+    /// Inserta un nuevo pedido en la tabla `pedidos`, usando NOW() para la fecha.
+    /// </summary>
+    public void AñadirPedido(string cliente, int idProducto, int cantidad, string detalles, string status)
+    {
+        try
+        {
+            using var conn = establecerConexion();  // abre la conexión si no está abierta
+
+            string sql = @"
+            INSERT INTO pedidos
+                (cliente, id_producto, cantidad, detalles, fecha_pedido, status)
+            VALUES
+                (@cliente, @idProducto, @cantidad, @detalles, NOW(), @status);
+        ";
+
+            using var cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@cliente", cliente);
+            cmd.Parameters.AddWithValue("@idProducto", idProducto);
+            cmd.Parameters.AddWithValue("@cantidad", cantidad);
+            cmd.Parameters.AddWithValue("@detalles", detalles);
+            cmd.Parameters.AddWithValue("@status", status);
+
+            int filas = cmd.ExecuteNonQuery();
+            MessageBox.Show(filas > 0
+                ? "Pedido añadido correctamente."
+                : "No se pudo añadir el pedido.",
+                "Resultado", MessageBoxButtons.OK,
+                filas > 0 ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al añadir el pedido: " + ex.Message,
+                            "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    /// <summary>
+    /// Actualiza un pedido existente y asigna NOW() a la fecha_pedido.
+    /// </summary>
+    public void ActualizarPedido(int idPedido, string cliente, int idProducto, int cantidad, string detalles, string status)
+    {
+        try
+        {
+            using var conn = establecerConexion();
+
+            string sql = @"
+            UPDATE pedidos
+            SET
+                cliente      = @cliente,
+                id_producto  = @idProducto,
+                cantidad     = @cantidad,
+                detalles     = @detalles,
+                fecha_pedido = NOW(),
+                status       = @status
+            WHERE id_pedido = @idPedido;
+        ";
+
+            using var cmd = new MySqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@cliente", cliente);
+            cmd.Parameters.AddWithValue("@idProducto", idProducto);
+            cmd.Parameters.AddWithValue("@cantidad", cantidad);
+            cmd.Parameters.AddWithValue("@detalles", detalles);
+            cmd.Parameters.AddWithValue("@status", status);
+            cmd.Parameters.AddWithValue("@idPedido", idPedido);
+
+            int filas = cmd.ExecuteNonQuery();
+            MessageBox.Show(filas > 0
+                ? "Pedido actualizado correctamente."
+                : "No se encontró el pedido o no se actualizó.",
+                "Resultado", MessageBoxButtons.OK,
+                filas > 0 ? MessageBoxIcon.Information : MessageBoxIcon.Warning);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al actualizar el pedido: " + ex.Message,
+                            "Excepción", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    public void actualizarPedido(int idPedido, string cliente, int idProducto, int cantidad, string detalles, string status)
+    {
+        MySqlConnection conexion = establecerConexion();
+
+        string sql = @"UPDATE pedidos 
+                   SET cliente = @cliente,
+                       id_producto = @idProducto,
+                       cantidad = @cantidad,
+                       detalles = @detalles,
+                       status = @status,
+                       fecha_pedido = NOW()
+                   WHERE id_pedido = @idPedido";
+
+        try
+        {
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            comando.Parameters.AddWithValue("@cliente", cliente);
+            comando.Parameters.AddWithValue("@idProducto", idProducto);
+            comando.Parameters.AddWithValue("@cantidad", cantidad);
+            comando.Parameters.AddWithValue("@detalles", detalles);
+            comando.Parameters.AddWithValue("@status", status);
+            comando.Parameters.AddWithValue("@idPedido", idPedido);
+            comando.ExecuteNonQuery();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al actualizar el pedido: " + ex.Message);
+        }
+        finally
+        {
+            cerrarConexion();
+        }
+    }
+
 
 }
 
