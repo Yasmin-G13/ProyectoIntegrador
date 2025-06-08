@@ -34,13 +34,14 @@
             panel2 = new Panel();
             btnCerrarSesion = new Button();
             btn_Cerrar_Sesion = new Button();
-            btn_Ajustes_Seguridad = new Button();
             btn_Pedidos = new Button();
             btn_Inventario = new Button();
             btn_Ventas = new Button();
             btn_Catálogo_Productos = new Button();
             dataPedidos = new DataGridView();
             btnAñadirPedido = new Button();
+            btnEditarPedido = new Button();
+            btnEliminarPedido = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -86,7 +87,6 @@
             panel2.BackColor = Color.White;
             panel2.Controls.Add(btnCerrarSesion);
             panel2.Controls.Add(btn_Cerrar_Sesion);
-            panel2.Controls.Add(btn_Ajustes_Seguridad);
             panel2.Controls.Add(btn_Pedidos);
             panel2.Controls.Add(btn_Inventario);
             panel2.Controls.Add(btn_Ventas);
@@ -120,20 +120,6 @@
             btn_Cerrar_Sesion.TabIndex = 5;
             btn_Cerrar_Sesion.Text = "CERRAR SESIÓN";
             btn_Cerrar_Sesion.UseVisualStyleBackColor = false;
-            // 
-            // btn_Ajustes_Seguridad
-            // 
-            btn_Ajustes_Seguridad.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            btn_Ajustes_Seguridad.BackColor = Color.Chocolate;
-            btn_Ajustes_Seguridad.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Ajustes_Seguridad.Location = new Point(2, 222);
-            btn_Ajustes_Seguridad.Margin = new Padding(2);
-            btn_Ajustes_Seguridad.Name = "btn_Ajustes_Seguridad";
-            btn_Ajustes_Seguridad.Size = new Size(107, 45);
-            btn_Ajustes_Seguridad.TabIndex = 4;
-            btn_Ajustes_Seguridad.Text = "AJUSTES\r\n\r\n";
-            btn_Ajustes_Seguridad.UseVisualStyleBackColor = false;
-            btn_Ajustes_Seguridad.Click += btn_Ajustes_Seguridad_Click;
             // 
             // btn_Pedidos
             // 
@@ -195,6 +181,7 @@
             dataPedidos.RowHeadersWidth = 51;
             dataPedidos.Size = new Size(808, 225);
             dataPedidos.TabIndex = 2;
+            dataPedidos.CellClick += dataPedidos_CellClick;
             // 
             // btnAñadirPedido
             // 
@@ -208,12 +195,38 @@
             btnAñadirPedido.UseVisualStyleBackColor = false;
             btnAñadirPedido.Click += btnAñadirPedido_Click;
             // 
+            // btnEditarPedido
+            // 
+            btnEditarPedido.BackColor = Color.SandyBrown;
+            btnEditarPedido.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEditarPedido.Location = new Point(152, 387);
+            btnEditarPedido.Name = "btnEditarPedido";
+            btnEditarPedido.Size = new Size(808, 44);
+            btnEditarPedido.TabIndex = 4;
+            btnEditarPedido.Text = "EDITAR PEDIDO";
+            btnEditarPedido.UseVisualStyleBackColor = false;
+            btnEditarPedido.Click += btnEditarPedido_Click;
+            // 
+            // btnEliminarPedido
+            // 
+            btnEliminarPedido.BackColor = Color.SandyBrown;
+            btnEliminarPedido.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnEliminarPedido.Location = new Point(152, 437);
+            btnEliminarPedido.Name = "btnEliminarPedido";
+            btnEliminarPedido.Size = new Size(808, 44);
+            btnEliminarPedido.TabIndex = 5;
+            btnEliminarPedido.Text = "ELIMINAR PEDIDO";
+            btnEliminarPedido.UseVisualStyleBackColor = false;
+            btnEliminarPedido.Click += btnEliminarPedido_Click;
+            // 
             // Pedidos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            ClientSize = new Size(1001, 401);
+            ClientSize = new Size(1001, 520);
+            Controls.Add(btnEliminarPedido);
+            Controls.Add(btnEditarPedido);
             Controls.Add(btnAñadirPedido);
             Controls.Add(dataPedidos);
             Controls.Add(panel2);
@@ -221,7 +234,6 @@
             Margin = new Padding(2);
             Name = "Pedidos";
             Text = "Pedidos";
-            Load += pedidos_load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -237,7 +249,6 @@
         private Label label1;
         private Panel panel2;
         private Button btnCerrarSesion;
-        private Button btn_Ajustes_Seguridad;
         private Button btn_Pedidos;
         private Button btn_Inventario;
         private Button btn_Ventas;
@@ -253,5 +264,7 @@
         private DataGridViewTextBoxColumn STATUS;
         private DataGridView dataPedidos;
         private Button btnAñadirPedido;
+        private Button btnEditarPedido;
+        private Button btnEliminarPedido;
     }
 }

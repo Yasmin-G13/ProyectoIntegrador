@@ -51,9 +51,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
 
         private void btnAjustes_Click(object sender, EventArgs e)
         {
-            Ajustes ajustes = new Ajustes();
-            ajustes.Show();
-            this.Close();
+            
         }
 
         private void btnCerrarSesión_Click(object sender, EventArgs e)

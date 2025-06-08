@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoIntegrador.Programa.Acciones.Productos;
+using ProyectoIntegrador.Programa.Acciones.Productos.Ajustes_Seguridad;
 
 namespace ProyectoIntegrador.Resources
 {
@@ -81,10 +82,17 @@ namespace ProyectoIntegrador.Resources
 
         private void btnRecuperar_Contraseña_Click(object sender, EventArgs e)
         {
+            ConexionMySQL conexion = new ConexionMySQL();
+            if (conexion.usuarioExiste(textUsuario.Text))
+            {
+                Ajustes actualizarConta = new Ajustes(textUsuario.Text);
+                actualizarConta.Show();
+                this.Hide();
+                return;
+            }
 
-            Recuperar_Contraseña recuperar_Contraseña = new Recuperar_Contraseña();
-            recuperar_Contraseña.Show();
-            this.Hide();
+
+
         }
 
         private void textUsuario_TextChanged(object sender, EventArgs e)

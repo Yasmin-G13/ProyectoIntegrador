@@ -36,7 +36,6 @@
             btnProductos = new Button();
             btnVentas = new Button();
             btnInventario = new Button();
-            btnAjustes = new Button();
             btnCerrarSesion = new Button();
             btnAñadirProducto = new Button();
             btnModificarProducto = new Button();
@@ -135,19 +134,6 @@
             btnInventario.UseVisualStyleBackColor = false;
             btnInventario.Click += btnInventario_Click;
             // 
-            // btnAjustes
-            // 
-            btnAjustes.BackColor = Color.Chocolate;
-            btnAjustes.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAjustes.Location = new Point(-1, 314);
-            btnAjustes.Margin = new Padding(3, 2, 3, 2);
-            btnAjustes.Name = "btnAjustes";
-            btnAjustes.Size = new Size(131, 57);
-            btnAjustes.TabIndex = 5;
-            btnAjustes.Text = "AJUSTES";
-            btnAjustes.UseVisualStyleBackColor = false;
-            btnAjustes.Click += btnAjustes_Click;
-            // 
             // btnCerrarSesion
             // 
             btnCerrarSesion.BackColor = Color.Chocolate;
@@ -204,7 +190,6 @@
             panel2.Controls.Add(btnProductos);
             panel2.Controls.Add(btnVentas);
             panel2.Controls.Add(btnInventario);
-            panel2.Controls.Add(btnAjustes);
             panel2.Controls.Add(btnCerrarSesion);
             panel2.Location = new Point(-2, 77);
             panel2.Margin = new Padding(3, 2, 3, 2);
@@ -283,7 +268,6 @@
         private Button btnProductos;
         private Button btnVentas;
         private Button btnInventario;
-        private Button btnAjustes;
         private Button btnCerrarSesion;
         private Button btnAñadirProducto;
         private Button btnModificarProducto;

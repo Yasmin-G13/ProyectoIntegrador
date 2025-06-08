@@ -176,9 +176,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
 
         private void btnAjustes_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Ajustes ajustes = new Ajustes();
-            ajustes.Show();
+            
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoIntegrador.Programa.Acciones.Usuario.Cerrar_Sesion;
+using ProyectoIntegrador.Resources;
 
 namespace ProyectoIntegrador.Programa.Acciones.Productos.Ajustes_Seguridad
 {
     public partial class Ajustes : Form
     {
-        public Ajustes()
+        public string usuario;
+        public Ajustes(string nombreU)
         {
+            usuario = nombreU;
             InitializeComponent();
             textNuevaContraseña.UseSystemPasswordChar = true;
         }
@@ -22,7 +25,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos.Ajustes_Seguridad
         private void btnProductos_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Productos productos = new Productos ();
+            Productos productos = new Productos();
             productos.Show();
         }
 
@@ -47,12 +50,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos.Ajustes_Seguridad
             this.Close();
         }
 
-        private void btnAjustes_Click(object sender, EventArgs e)
-        {
-            Ajustes ajustes = new Ajustes();
-            ajustes.Show();
-            this.Close();
-        }
+
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
@@ -69,14 +67,29 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos.Ajustes_Seguridad
 
             if (string.IsNullOrEmpty(nuevaContraseña))
             {
-                MessageBox.Show("Por favor, ingresa la nueva contraseña.");
+                MessageBox.Show("Por favor, ingresa la contraseña contraseña.");
+                return;
+            }
+            if (!nuevaContraseña.Equals(repetirContraseña))
+            {
+                MessageBox.Show("Las contraseñas no son las mismas.");
                 return;
             }
 
-            // Llamada para actualizar y verificar en base
-            //ConexionMySQL conexion = new ConexionMySQL();
-            //conexion.ActualizarContraseña(nuevaContraseña);
+
+            //Llamada para actualizar y verificar en base
+            var conexion = new global::ConexionMySQL();
+            conexion.ActualizarContraseña(usuario, nuevaContraseña);
+            this.Hide();
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
         }
 
+        private void btRegresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+        }
     }
 }

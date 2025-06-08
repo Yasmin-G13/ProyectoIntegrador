@@ -11,72 +11,7 @@ using MySqlConnector;
 
 namespace ProyectoIntegrador.Programa.Acciones.Productos
 {
-    //public partial class AgregarVentas : Form
-    //{
-    //    private string nombreUsuario;
-
-    //    public AgregarVentas()
-    //    {
-    //        InitializeComponent();
-    //    }
-
-    //    private void butnRegresar_Click(object sender, EventArgs e)
-    //    {
-    //        this.Hide();
-    //        Registro_Ventas registroVentas = new Registro_Ventas();
-    //        registroVentas.Show();
-    //    }
-
-    //    private void butnAñadirventa_Click(object sender, EventArgs e)
-    //    {
-    //        string cliente = textCliente.Text.Trim();
-    //        string producto = textProducto.Text.Trim();
-    //        string cantidadStr = textCantidad.Text.Trim();
-    //        string detalles = textDetalles.Text.Trim();
-    //        string precioStr = textPrecio.Text.Trim();
-
-    //        if (string.IsNullOrEmpty(cliente) || string.IsNullOrEmpty(producto) ||
-    //            string.IsNullOrEmpty(cantidadStr) || string.IsNullOrEmpty(precioStr) || string.IsNullOrEmpty(detalles))
-    //        {
-    //            MessageBox.Show("Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-    //            return;
-    //        }
-
-    //        if (!int.TryParse(cantidadStr, out int cantidad))
-    //        {
-    //            MessageBox.Show("La cantidad debe ser un número entero válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-    //            return;
-    //        }
-
-    //        if (!decimal.TryParse(precioStr, out decimal precio))
-    //        {
-    //            MessageBox.Show("El precio debe ser un valor numérico válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-    //            return;
-    //        }
-
-    //        ConexionMySQL conexion = new ConexionMySQL();
-
-    //        int idProducto = conexion.obtenerIdProducto(producto);
-    //        int idUsuario = conexion.obtenerIdUsuario(nombreUsuario);
-
-    //        if (idProducto == -1)
-    //        {
-    //            MessageBox.Show("Producto no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-    //            return;
-    //        }
-
-    //        if (idUsuario == -1)
-    //        {
-    //            MessageBox.Show("Usuario no encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-    //            return;
-    //        }
-
-    //        conexion.añadirVenta(cliente, idProducto, idUsuario, cantidad, precio, detalles, DateTime.Now);
-
-    //        MessageBox.Show("Venta añadida correctamente.");
-    //    }
-
-    //}
+    
     public partial class AgregarVentas : Form
     {
         public AgregarVentas()
@@ -120,7 +55,8 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
                 return;
             }
 
-            ConexionMySQL conexion = new ConexionMySQL();
+            var conexion = new global::ConexionMySQL();
+
 
             int idProducto = conexion.obtenerIdProducto(producto);
 
@@ -138,11 +74,13 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
 
         private void ConfigurarAutoCompletarProductos()
         {
-            ConexionMySQL conexion = new ConexionMySQL();
+            var conexion = new global::ConexionMySQL();
             AutoCompleteStringCollection coleccion = new AutoCompleteStringCollection();
 
             try
             {
+                MySqlConnection sqlConnection = conexion.establecerConexion();
+
                 MySqlConnection conn = conexion.establecerConexion(); // Usar la conexión devuelta
                 string query = "SELECT nombre FROM productos";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
@@ -169,7 +107,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
 
         private void ConfigurarAutoCompletarUsuarios()
         {
-            ConexionMySQL conexion = new ConexionMySQL();
+            var conexion = new global::ConexionMySQL();
             AutoCompleteStringCollection coleccion = new AutoCompleteStringCollection();
 
             try

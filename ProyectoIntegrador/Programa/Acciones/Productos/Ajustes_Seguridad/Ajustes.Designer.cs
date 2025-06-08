@@ -30,13 +30,6 @@
         {
             panel1 = new Panel();
             label2 = new Label();
-            panel2 = new Panel();
-            btnVentas = new Button();
-            btnInventario = new Button();
-            btnCerrarSesion = new Button();
-            btnPedidos = new Button();
-            btnAjustes = new Button();
-            btnProductos = new Button();
             label1 = new Label();
             textNuevaContraseña = new TextBox();
             textRepetirContraseña = new TextBox();
@@ -45,8 +38,8 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
+            btRegresar = new Button();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -67,92 +60,6 @@
             label2.Size = new Size(127, 32);
             label2.TabIndex = 0;
             label2.Text = "AJUSTES";
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(btnVentas);
-            panel2.Controls.Add(btnInventario);
-            panel2.Controls.Add(btnCerrarSesion);
-            panel2.Controls.Add(btnPedidos);
-            panel2.Controls.Add(btnAjustes);
-            panel2.Controls.Add(btnProductos);
-            panel2.Location = new Point(-1, 85);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(129, 368);
-            panel2.TabIndex = 1;
-            // 
-            // btnVentas
-            // 
-            btnVentas.BackColor = Color.Chocolate;
-            btnVentas.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVentas.Location = new Point(4, 58);
-            btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(122, 49);
-            btnVentas.TabIndex = 5;
-            btnVentas.Text = "VENTAS";
-            btnVentas.UseVisualStyleBackColor = false;
-            btnVentas.Click += btnVentas_Click;
-            // 
-            // btnInventario
-            // 
-            btnInventario.BackColor = Color.Chocolate;
-            btnInventario.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnInventario.Location = new Point(3, 113);
-            btnInventario.Name = "btnInventario";
-            btnInventario.Size = new Size(122, 49);
-            btnInventario.TabIndex = 4;
-            btnInventario.Text = "INVENTARIO";
-            btnInventario.UseVisualStyleBackColor = false;
-            btnInventario.Click += btnInventario_Click;
-            // 
-            // btnCerrarSesion
-            // 
-            btnCerrarSesion.BackColor = Color.Chocolate;
-            btnCerrarSesion.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCerrarSesion.Location = new Point(4, 304);
-            btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(122, 49);
-            btnCerrarSesion.TabIndex = 2;
-            btnCerrarSesion.Text = "CERRAR SESIÓN";
-            btnCerrarSesion.UseVisualStyleBackColor = false;
-            btnCerrarSesion.Click += btnCerrarSesion_Click;
-            // 
-            // btnPedidos
-            // 
-            btnPedidos.BackColor = Color.Chocolate;
-            btnPedidos.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPedidos.Location = new Point(3, 160);
-            btnPedidos.Name = "btnPedidos";
-            btnPedidos.Size = new Size(122, 49);
-            btnPedidos.TabIndex = 1;
-            btnPedidos.Text = "PEDIDOS";
-            btnPedidos.UseVisualStyleBackColor = false;
-            btnPedidos.Click += btnPedidos_Click;
-            // 
-            // btnAjustes
-            // 
-            btnAjustes.BackColor = Color.Chocolate;
-            btnAjustes.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAjustes.Location = new Point(3, 215);
-            btnAjustes.Name = "btnAjustes";
-            btnAjustes.Size = new Size(122, 49);
-            btnAjustes.TabIndex = 3;
-            btnAjustes.Text = "AJUSTES";
-            btnAjustes.UseVisualStyleBackColor = false;
-            btnAjustes.Click += btnAjustes_Click;
-            // 
-            // btnProductos
-            // 
-            btnProductos.BackColor = Color.Chocolate;
-            btnProductos.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnProductos.Location = new Point(4, 7);
-            btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(122, 49);
-            btnProductos.TabIndex = 0;
-            btnProductos.Text = "PRODUCTOS";
-            btnProductos.UseVisualStyleBackColor = false;
-            btnProductos.Click += btnProductos_Click;
             // 
             // label1
             // 
@@ -231,12 +138,25 @@
             label5.TabIndex = 10;
             label5.Text = "¿CONFUSIONES CON EL SISTEMA?";
             // 
+            // btRegresar
+            // 
+            btRegresar.BackColor = Color.SandyBrown;
+            btRegresar.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btRegresar.Location = new Point(12, 388);
+            btRegresar.Name = "btRegresar";
+            btRegresar.Size = new Size(159, 49);
+            btRegresar.TabIndex = 11;
+            btRegresar.Text = "REGRESAR";
+            btRegresar.UseVisualStyleBackColor = false;
+            btRegresar.Click += btRegresar_Click;
+            // 
             // Ajustes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(800, 450);
+            Controls.Add(btRegresar);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -245,13 +165,11 @@
             Controls.Add(textRepetirContraseña);
             Controls.Add(textNuevaContraseña);
             Controls.Add(label1);
-            Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "Ajustes";
             Text = "Ajustes";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -276,5 +194,6 @@
         private Label label4;
         private Label label5;
         private TextBox textRepetirContraseña;
+        private Button btRegresar;
     }
 }

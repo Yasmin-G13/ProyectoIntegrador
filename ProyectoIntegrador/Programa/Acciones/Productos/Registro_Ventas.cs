@@ -50,9 +50,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
 
         private void btn_Ajustes_Seguridad_Click(object sender, EventArgs e)
         {
-            Ajustes ajustes = new Ajustes();
-            ajustes.Show();
-            this.Close();
+            
         }
 
         private void btn_Cerrar_Sesion_Click(object sender, EventArgs e)

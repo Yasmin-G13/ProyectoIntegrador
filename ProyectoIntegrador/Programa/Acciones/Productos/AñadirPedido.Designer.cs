@@ -87,7 +87,7 @@
             label3.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(27, 207);
             label3.Name = "label3";
-            label3.Size = new Size(265, 23);
+            label3.Size = new Size(265, 29);
             label3.TabIndex = 4;
             label3.Text = "CANTIDAD:";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -154,6 +154,7 @@
             textNombredelcliente.Name = "textNombredelcliente";
             textNombredelcliente.Size = new Size(413, 27);
             textNombredelcliente.TabIndex = 9;
+            textNombredelcliente.TextChanged += textNombredelcliente_TextChanged;
             // 
             // textNombredelproducto
             // 
@@ -161,6 +162,7 @@
             textNombredelproducto.Name = "textNombredelproducto";
             textNombredelproducto.Size = new Size(413, 27);
             textNombredelproducto.TabIndex = 10;
+            textNombredelproducto.TextChanged += textNombredelproducto_TextChanged;
             // 
             // textCantidad
             // 
@@ -168,6 +170,7 @@
             textCantidad.Name = "textCantidad";
             textCantidad.Size = new Size(413, 27);
             textCantidad.TabIndex = 11;
+            textCantidad.TextChanged += textCantidad_TextChanged;
             // 
             // textDetalles
             // 
@@ -175,6 +178,7 @@
             textDetalles.Name = "textDetalles";
             textDetalles.Size = new Size(413, 27);
             textDetalles.TabIndex = 12;
+            textDetalles.TextChanged += textDetalles_TextChanged;
             // 
             // textStatus
             // 
@@ -182,13 +186,14 @@
             textStatus.Name = "textStatus";
             textStatus.Size = new Size(413, 27);
             textStatus.TabIndex = 13;
+            textStatus.TextChanged += textStatus_TextChanged;
             // 
             // AñadirPedido
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 456);
             Controls.Add(textStatus);
             Controls.Add(textDetalles);
             Controls.Add(textCantidad);

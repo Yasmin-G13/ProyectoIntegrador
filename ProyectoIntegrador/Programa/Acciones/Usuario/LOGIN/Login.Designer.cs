@@ -83,6 +83,7 @@
             textUsuario.Name = "textUsuario";
             textUsuario.Size = new Size(279, 27);
             textUsuario.TabIndex = 5;
+            textUsuario.Text = "Santiago";
             textUsuario.TextChanged += textUsuario_TextChanged;
             // 
             // label3
@@ -117,6 +118,7 @@
             textContraseña.Name = "textContraseña";
             textContraseña.Size = new Size(279, 27);
             textContraseña.TabIndex = 7;
+            textContraseña.Text = "3434";
             textContraseña.UseSystemPasswordChar = true;
             // 
             // label5
