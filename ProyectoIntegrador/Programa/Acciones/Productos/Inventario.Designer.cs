@@ -155,6 +155,7 @@
             dgvInventario.RowHeadersWidth = 51;
             dgvInventario.Size = new Size(721, 312);
             dgvInventario.TabIndex = 2;
+            //dgvInventario.CellContentClick += dgvInventario_CellContentClick;
             // 
             // Inventario
             // 

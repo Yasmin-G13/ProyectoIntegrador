@@ -13,7 +13,6 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos.Ajustes_Seguridad
 {
     public partial class Ajustes : Form
     {
-        string usuarioActual = "nombre_usuario_actual"; // En un sistema real, obtén esto al login
         public Ajustes()
         {
             InitializeComponent();
@@ -23,7 +22,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos.Ajustes_Seguridad
         private void btnProductos_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Productos productos = new Productos();
+            Productos productos = new Productos ();
             productos.Show();
         }
 
@@ -75,8 +74,8 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos.Ajustes_Seguridad
             }
 
             // Llamada para actualizar y verificar en base
-            ConexionMySQL conexion = new ConexionMySQL();
-            conexion.ActualizarContraseña(usuarioActual, nuevaContraseña);
+            //ConexionMySQL conexion = new ConexionMySQL();
+            //conexion.ActualizarContraseña(nuevaContraseña);
         }
 
     }

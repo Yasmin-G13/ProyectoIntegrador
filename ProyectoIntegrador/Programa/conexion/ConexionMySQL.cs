@@ -498,56 +498,91 @@ public class ConexionMySQL
         }
     }
 
-    //public void ActualizarContraseña(string nombreUsuario, string nuevaContra)
+    
+    //public void ActualizarContraseña(string usuario, string nuevaContraseña)
     //{
     //    try
     //    {
-    //        establecerConexion();
+    //        using (MySqlConnection conn = establecerConexion())
+    //        {
+    //            MessageBox.Show($"Correo: {usuario}, Nueva contraseña: {nuevaContraseña}");   
+    //            string query = "UPDATE usuarios SET contraseña = @nuevaContraseña WHERE nombre = @usuario";
+    //            MySqlCommand cmd = new MySqlCommand(query, conn);
+    //            cmd.Parameters.AddWithValue("@nuevaContraseña", nuevaContraseña);
+    //            cmd.Parameters.AddWithValue("@usuario", usuario);
 
-    //        string sql = "UPDATE usuarios SET contraseña = @nuevaContra WHERE usuario = @usuario";
-    //        MySqlCommand cmd = new MySqlCommand(sql, conexion);
-    //        cmd.Parameters.AddWithValue("@contraseña", nuevaContra);
-    //        cmd.Parameters.AddWithValue("@nombre", nombreUsuario);
+    //            int filasAfectadas = cmd.ExecuteNonQuery();
 
-    //        cmd.ExecuteNonQuery();
+    //            if (filasAfectadas > 0)
+    //            {
+    //                MessageBox.Show("Contraseña actualizada correctamente.");
+    //            }
+    //            else
+    //            {
+    //                MessageBox.Show("No se encontró el usuario o no se actualizó la contraseña.");
+    //            }
+    //        }
     //    }
     //    catch (Exception ex)
     //    {
-    //        MessageBox.Show("Error en actualización: " + ex.Message);
-    //    }
-    //    finally
-    //    {
-    //        cerrarConexion();
+    //        MessageBox.Show("Error al actualizar la contraseña: " + ex.Message);
     //    }
     //}
-    public void ActualizarContraseña(string usuario, string nuevaContraseña)
+    // Métodos para obtener IDs
+
+    public int obtenerIdProducto(string nombreProducto)
     {
+        int idProducto = -1;
         try
         {
-            using (MySqlConnection conn = establecerConexion())
-            {
-                MessageBox.Show($"Correo: {usuario}, Nueva contraseña: {nuevaContraseña}");
-                string query = "UPDATE usuarios SET contraseña = @nuevaContraseña WHERE nombre = @usuario";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@nuevaContraseña", nuevaContraseña);
-                cmd.Parameters.AddWithValue("@usuario", usuario);
+            establecerConexion();
+            string query = "SELECT id_producto FROM productos WHERE LOWER(TRIM(nombre)) = LOWER(TRIM(@nombre))";
+            MySqlCommand cmd = new MySqlCommand(query, conexion);
+            cmd.Parameters.AddWithValue("@nombre", nombreProducto);
 
-                int filasAfectadas = cmd.ExecuteNonQuery();
-
-                if (filasAfectadas > 0)
-                {
-                    MessageBox.Show("Contraseña actualizada correctamente.");
-                }
-                else
-                {
-                    MessageBox.Show("No se encontró el usuario o no se actualizó la contraseña.");
-                }
-            }
+            object result = cmd.ExecuteScalar();
+            if (result != null)
+                idProducto = Convert.ToInt32(result);
         }
         catch (Exception ex)
         {
-            MessageBox.Show("Error al actualizar la contraseña: " + ex.Message);
+            MessageBox.Show("Error al obtener el ID del producto: " + ex.Message);
+        }
+        finally
+        {
+            cerrarConexion();
+        }
+        return idProducto;
+    }
+
+
+
+
+    public void añadirVenta(string cliente, int idProducto,  int cantidad, decimal precio, string detalles, DateTime fechaVenta)
+    {
+        try
+        {
+            establecerConexion();
+            string sql = "INSERT INTO ventas (cliente, id_producto, cantidad, precio, detalles, fecha_venta) " +
+                         "VALUES (@cliente, @id_producto, @cantidad, @precio, @detalles, @fecha_venta)";
+            MySqlCommand cmd = new MySqlCommand(sql, conexion);
+            cmd.Parameters.AddWithValue("@cliente", cliente);
+            cmd.Parameters.AddWithValue("@id_producto", idProducto);
+            cmd.Parameters.AddWithValue("@cantidad", cantidad);
+            cmd.Parameters.AddWithValue("@precio", precio);
+            cmd.Parameters.AddWithValue("@detalles", detalles);
+            cmd.Parameters.AddWithValue("@fecha_venta", fechaVenta);
+            cmd.ExecuteNonQuery();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al añadir la venta: " + ex.Message);
+        }
+        finally
+        {
+            cerrarConexion();
         }
     }
+
 }
 

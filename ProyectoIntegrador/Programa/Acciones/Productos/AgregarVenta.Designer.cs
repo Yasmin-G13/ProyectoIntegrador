@@ -1,6 +1,6 @@
 ﻿namespace ProyectoIntegrador.Programa.Acciones.Productos
 {
-    partial class AgregarVenta
+    partial class AgregarVentas
     {
         /// <summary>
         /// Required designer variable.

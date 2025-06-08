@@ -20,8 +20,10 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
         {
             InitializeComponent();
             MostrarProductos();
+            this.Load += productos_load;
 
         }
+
 
         private void btnAñadirProducto_Click(object sender, EventArgs e)
         {

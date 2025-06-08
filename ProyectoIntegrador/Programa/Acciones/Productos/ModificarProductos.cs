@@ -115,7 +115,6 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
         public ModificarProductos(int idProducto)
         {
             InitializeComponent();
-
             idProductoSeleccionado = idProducto;
             CargarDatosProducto(idProducto);
         }

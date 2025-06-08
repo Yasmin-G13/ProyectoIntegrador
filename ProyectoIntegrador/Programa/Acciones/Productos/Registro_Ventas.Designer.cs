@@ -58,7 +58,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(706, 63);
+            panel1.Size = new Size(892, 63);
             panel1.TabIndex = 0;
             // 
             // label1
@@ -190,38 +190,39 @@
             // 
             panel4.BackColor = Color.SandyBrown;
             panel4.Controls.Add(label2);
-            panel4.Location = new Point(103, 344);
+            panel4.Location = new Point(103, 346);
             panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(603, 52);
+            panel4.Size = new Size(789, 50);
             panel4.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(90, 6);
+            label2.Location = new Point(215, 10);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(381, 40);
             label2.TabIndex = 0;
             label2.Text = "                                    Col. Los Pinitos\r\nContacto: 1545340116              mueblesnyas@gmail.com";
+            label2.Click += label2_Click;
             // 
             // dgvVentas
             // 
             dgvVentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvVentas.Location = new Point(121, 86);
+            dgvVentas.Location = new Point(104, 68);
             dgvVentas.Name = "dgvVentas";
             dgvVentas.RowHeadersWidth = 51;
-            dgvVentas.Size = new Size(561, 190);
+            dgvVentas.Size = new Size(787, 233);
             dgvVentas.TabIndex = 3;
             // 
             // btnAgregarVenta
             // 
             btnAgregarVenta.BackColor = Color.SandyBrown;
             btnAgregarVenta.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAgregarVenta.Location = new Point(121, 294);
+            btnAgregarVenta.Location = new Point(151, 307);
             btnAgregarVenta.Name = "btnAgregarVenta";
-            btnAgregarVenta.Size = new Size(561, 34);
+            btnAgregarVenta.Size = new Size(726, 34);
             btnAgregarVenta.TabIndex = 4;
             btnAgregarVenta.Text = "AGREGAR VENTA ";
             btnAgregarVenta.UseVisualStyleBackColor = false;
@@ -232,7 +233,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            ClientSize = new Size(702, 397);
+            ClientSize = new Size(903, 538);
             Controls.Add(btnAgregarVenta);
             Controls.Add(dgvVentas);
             Controls.Add(panel4);

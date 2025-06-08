@@ -67,24 +67,24 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
             string servidor = "localhost";
             string usuario = "root";
             string password = "tics";
-            string bd = "nyas"; // Asegúrate que sea igual a tu base
-            string puerto = "3306"; // Puerto predeterminado
+            string bd = "nyas"; 
+            string puerto = "3306"; 
             string cadenaConexion = $"Server={servidor};Port={puerto};Database={bd};Uid={usuario}; Pwd={password}";
 
-            string consulta = "SELECT nombre AS Producto,  categoria AS Categoria,  detalles AS Detalles,  precio AS Precio, cantidad AS Cantidad FROM  productos;";
+            string consulta = "SELECT nombre AS Producto,  detalles AS Detalles, cantidad AS Cantidad FROM  productos;";
 
             try
             {
                 using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
                 {
-                    conexion.Open(); // Muy importante: abrir la conexión
+                    conexion.Open(); 
 
                     using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                     {
                         using (MySqlDataReader lector = comando.ExecuteReader())
                         {
                             DataTable dt = new DataTable();
-                            dt.Load(lector); // Cargar los datos del DataReader al DataTable
+                            dt.Load(lector); 
                             dgvInventario.DataSource = dt;
                         }
                     }
@@ -97,7 +97,74 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
         }
         private void inventario_load(object sender, EventArgs e)
         {
-            MostrarInventario(); // Aquí llama a tu método que carga en la vista
+            CargarInventario(); 
+        }
+
+        //private void dgvInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    string servidor = "localhost";
+        //    string usuario = "root";
+        //    string password = "tics";
+        //    string bd = "nyas"; // Asegúrate que sea igual a tu base
+        //    string puerto = "3306"; // Puerto predeterminado
+        //    string cadenaConexion = $"Server={servidor};Port={puerto};Database={bd};Uid={usuario}; Pwd={password}";
+
+        //    string consulta = "SELECT nombre AS Nombre, cantidad AS Cantidad, detalles AS Detalles from productos where cantidad > 0";
+
+        //    try
+        //    {
+        //        using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+        //        {
+        //            conexion.Open(); // Muy importante: abrir la conexión
+
+        //            using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+        //            {
+        //                using (MySqlDataReader lector = comando.ExecuteReader())
+        //                {
+        //                    DataTable dt = new DataTable();
+        //                    dt.Load(lector); // Cargar los datos del DataReader al DataTable
+        //                    dgvInventario.DataSource = dt;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Ocurrió un error al cargar los datos: " + ex.Message);
+        //    }
+        //}
+        private void CargarInventario()
+        {
+            string servidor = "localhost";
+            string usuario = "root";
+            string password = "tics";
+            string bd = "nyas";
+            string puerto = "3306";
+            string cadenaConexion = $"Server={servidor};Port={puerto};Database={bd};Uid={usuario};Pwd={password}";
+
+            string consulta = "SELECT nombre AS Nombre, cantidad AS Cantidad, detalles AS Detalles FROM productos WHERE cantidad > 0";
+
+            try
+            {
+                using (MySqlConnection conexion = new MySqlConnection(cadenaConexion))
+                {
+                    conexion.Open();
+
+                    using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                    {
+                        using (MySqlDataReader lector = comando.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(lector);
+                            dgvInventario.DataSource = dt;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al cargar los datos: " + ex.Message);
+            }
         }
     }
 }
