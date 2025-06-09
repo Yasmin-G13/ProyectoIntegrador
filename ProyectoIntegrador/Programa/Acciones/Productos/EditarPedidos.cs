@@ -68,7 +68,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
 
         private void butnGuardar_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ConfigurarAutoCompletarProductos()
@@ -156,6 +156,13 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
 
             this.Hide();
             new Pedidos().Show();
+        }
+
+        private void butnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Pedidos pedidos = new Pedidos();
+            pedidos.Show();
         }
     }
 }

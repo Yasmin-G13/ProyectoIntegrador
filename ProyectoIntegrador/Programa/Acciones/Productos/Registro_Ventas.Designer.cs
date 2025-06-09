@@ -34,9 +34,7 @@
             panel3 = new Panel();
             panel2 = new Panel();
             btn_Cerrar_Sesion = new Button();
-            btn_Ajustes_Seguridad = new Button();
             btn_Pedidos = new Button();
-            btn_Inventario = new Button();
             btn_Ventas = new Button();
             btn_Catálogo_Productos = new Button();
             panel4 = new Panel();
@@ -58,27 +56,27 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(892, 63);
+            panel1.Size = new Size(780, 47);
             panel1.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Baskerville Old Face", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(174, 18);
+            label1.Location = new Point(152, 14);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(353, 34);
+            label1.Size = new Size(279, 27);
             label1.TabIndex = 1;
             label1.Text = "REGISTRO DE VENTAS ";
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Captura_de_pantalla_2025_05_12_204154;
-            pictureBox1.Location = new Point(626, 2);
+            pictureBox1.Location = new Point(548, 2);
             pictureBox1.Margin = new Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(73, 60);
+            pictureBox1.Size = new Size(64, 45);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
@@ -88,86 +86,58 @@
             panel3.BackColor = Color.White;
             panel3.Controls.Add(panel2);
             panel3.Controls.Add(btn_Cerrar_Sesion);
-            panel3.Controls.Add(btn_Ajustes_Seguridad);
             panel3.Controls.Add(btn_Pedidos);
-            panel3.Controls.Add(btn_Inventario);
             panel3.Controls.Add(btn_Ventas);
             panel3.Controls.Add(btn_Catálogo_Productos);
-            panel3.Location = new Point(0, 63);
+            panel3.Location = new Point(0, 47);
             panel3.Margin = new Padding(2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(101, 333);
+            panel3.Size = new Size(88, 167);
             panel3.TabIndex = 1;
             // 
             // panel2
             // 
             panel2.BackColor = Color.SandyBrown;
-            panel2.Location = new Point(103, 281);
+            panel2.Location = new Point(90, 211);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(579, 50);
+            panel2.Size = new Size(507, 38);
             panel2.TabIndex = 2;
             // 
             // btn_Cerrar_Sesion
             // 
             btn_Cerrar_Sesion.BackColor = Color.Chocolate;
             btn_Cerrar_Sesion.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Cerrar_Sesion.Location = new Point(0, 281);
+            btn_Cerrar_Sesion.Location = new Point(0, 126);
             btn_Cerrar_Sesion.Margin = new Padding(2);
             btn_Cerrar_Sesion.Name = "btn_Cerrar_Sesion";
-            btn_Cerrar_Sesion.Size = new Size(99, 52);
+            btn_Cerrar_Sesion.Size = new Size(87, 39);
             btn_Cerrar_Sesion.TabIndex = 5;
             btn_Cerrar_Sesion.Text = "CERRAR SESIÓN";
             btn_Cerrar_Sesion.UseVisualStyleBackColor = false;
             btn_Cerrar_Sesion.Click += btn_Cerrar_Sesion_Click;
             // 
-            // btn_Ajustes_Seguridad
-            // 
-            btn_Ajustes_Seguridad.BackColor = Color.Chocolate;
-            btn_Ajustes_Seguridad.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Ajustes_Seguridad.Location = new Point(-1, 218);
-            btn_Ajustes_Seguridad.Margin = new Padding(2);
-            btn_Ajustes_Seguridad.Name = "btn_Ajustes_Seguridad";
-            btn_Ajustes_Seguridad.Size = new Size(99, 58);
-            btn_Ajustes_Seguridad.TabIndex = 4;
-            btn_Ajustes_Seguridad.Text = "AJUSTES/\r\nSEGURIDAD\r\n";
-            btn_Ajustes_Seguridad.UseVisualStyleBackColor = false;
-            btn_Ajustes_Seguridad.Click += btn_Ajustes_Seguridad_Click;
-            // 
             // btn_Pedidos
             // 
             btn_Pedidos.BackColor = Color.Chocolate;
             btn_Pedidos.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Pedidos.Location = new Point(-1, 167);
+            btn_Pedidos.Location = new Point(0, 88);
             btn_Pedidos.Margin = new Padding(2);
             btn_Pedidos.Name = "btn_Pedidos";
-            btn_Pedidos.Size = new Size(99, 46);
+            btn_Pedidos.Size = new Size(87, 34);
             btn_Pedidos.TabIndex = 3;
             btn_Pedidos.Text = "PEDIDOS";
             btn_Pedidos.UseVisualStyleBackColor = false;
             btn_Pedidos.Click += btn_Pedidos_Click;
             // 
-            // btn_Inventario
-            // 
-            btn_Inventario.BackColor = Color.Chocolate;
-            btn_Inventario.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Inventario.Location = new Point(-1, 117);
-            btn_Inventario.Margin = new Padding(2);
-            btn_Inventario.Name = "btn_Inventario";
-            btn_Inventario.Size = new Size(99, 46);
-            btn_Inventario.TabIndex = 2;
-            btn_Inventario.Text = "INVENTARIO";
-            btn_Inventario.UseVisualStyleBackColor = false;
-            btn_Inventario.Click += btn_Inventario_Click;
-            // 
             // btn_Ventas
             // 
             btn_Ventas.BackColor = Color.Chocolate;
             btn_Ventas.Font = new Font("Times New Roman", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_Ventas.Location = new Point(0, 66);
+            btn_Ventas.Location = new Point(0, 50);
             btn_Ventas.Margin = new Padding(2);
             btn_Ventas.Name = "btn_Ventas";
-            btn_Ventas.Size = new Size(99, 46);
+            btn_Ventas.Size = new Size(87, 34);
             btn_Ventas.TabIndex = 1;
             btn_Ventas.Text = "VENTAS";
             btn_Ventas.UseVisualStyleBackColor = false;
@@ -180,7 +150,7 @@
             btn_Catálogo_Productos.Location = new Point(0, 0);
             btn_Catálogo_Productos.Margin = new Padding(2);
             btn_Catálogo_Productos.Name = "btn_Catálogo_Productos";
-            btn_Catálogo_Productos.Size = new Size(99, 62);
+            btn_Catálogo_Productos.Size = new Size(87, 46);
             btn_Catálogo_Productos.TabIndex = 0;
             btn_Catálogo_Productos.Text = "CATÁLOGO/\r\nPRODUCTO";
             btn_Catálogo_Productos.UseVisualStyleBackColor = false;
@@ -190,19 +160,19 @@
             // 
             panel4.BackColor = Color.SandyBrown;
             panel4.Controls.Add(label2);
-            panel4.Location = new Point(103, 346);
+            panel4.Location = new Point(90, 260);
             panel4.Margin = new Padding(2);
             panel4.Name = "panel4";
-            panel4.Size = new Size(789, 50);
+            panel4.Size = new Size(690, 38);
             panel4.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(215, 10);
+            label2.Location = new Point(188, 8);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(381, 40);
+            label2.Size = new Size(301, 30);
             label2.TabIndex = 0;
             label2.Text = "                                    Col. Los Pinitos\r\nContacto: 1545340116              mueblesnyas@gmail.com";
             label2.Click += label2_Click;
@@ -210,19 +180,21 @@
             // dgvVentas
             // 
             dgvVentas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvVentas.Location = new Point(104, 68);
+            dgvVentas.Location = new Point(91, 51);
+            dgvVentas.Margin = new Padding(3, 2, 3, 2);
             dgvVentas.Name = "dgvVentas";
             dgvVentas.RowHeadersWidth = 51;
-            dgvVentas.Size = new Size(787, 233);
+            dgvVentas.Size = new Size(689, 175);
             dgvVentas.TabIndex = 3;
             // 
             // btnAgregarVenta
             // 
             btnAgregarVenta.BackColor = Color.SandyBrown;
             btnAgregarVenta.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAgregarVenta.Location = new Point(151, 307);
+            btnAgregarVenta.Location = new Point(132, 230);
+            btnAgregarVenta.Margin = new Padding(3, 2, 3, 2);
             btnAgregarVenta.Name = "btnAgregarVenta";
-            btnAgregarVenta.Size = new Size(726, 34);
+            btnAgregarVenta.Size = new Size(635, 26);
             btnAgregarVenta.TabIndex = 4;
             btnAgregarVenta.Text = "AGREGAR VENTA ";
             btnAgregarVenta.UseVisualStyleBackColor = false;
@@ -230,10 +202,10 @@
             // 
             // Registro_Ventas
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
-            ClientSize = new Size(903, 538);
+            ClientSize = new Size(790, 404);
             Controls.Add(btnAgregarVenta);
             Controls.Add(dgvVentas);
             Controls.Add(panel4);
@@ -261,9 +233,7 @@
         private Panel panel3;
         private Button btn_Catálogo_Productos;
         private Button btn_Cerrar_Sesion;
-        private Button btn_Ajustes_Seguridad;
         private Button btn_Pedidos;
-        private Button btn_Inventario;
         private Button btn_Ventas;
         private Panel panel2;
         private Panel panel4;

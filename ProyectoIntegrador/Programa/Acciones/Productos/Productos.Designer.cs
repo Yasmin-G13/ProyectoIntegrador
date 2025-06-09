@@ -35,7 +35,6 @@
             dgvProductos = new DataGridView();
             btnProductos = new Button();
             btnVentas = new Button();
-            btnInventario = new Button();
             btnCerrarSesion = new Button();
             btnAñadirProducto = new Button();
             btnModificarProducto = new Button();
@@ -81,7 +80,7 @@
             label1.Font = new Font("Baskerville Old Face", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(456, 20);
             label1.Name = "label1";
-            label1.Size = new Size(189, 32);
+            label1.Size = new Size(150, 25);
             label1.TabIndex = 0;
             label1.Text = "PRODUCTOS";
             // 
@@ -112,7 +111,7 @@
             // 
             btnVentas.BackColor = Color.Chocolate;
             btnVentas.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnVentas.Location = new Point(3, 79);
+            btnVentas.Location = new Point(-3, 62);
             btnVentas.Margin = new Padding(3, 2, 3, 2);
             btnVentas.Name = "btnVentas";
             btnVentas.Size = new Size(127, 57);
@@ -121,24 +120,11 @@
             btnVentas.UseVisualStyleBackColor = false;
             btnVentas.Click += btnVentas_Click;
             // 
-            // btnInventario
-            // 
-            btnInventario.BackColor = Color.Chocolate;
-            btnInventario.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnInventario.Location = new Point(3, 152);
-            btnInventario.Margin = new Padding(3, 2, 3, 2);
-            btnInventario.Name = "btnInventario";
-            btnInventario.Size = new Size(127, 57);
-            btnInventario.TabIndex = 4;
-            btnInventario.Text = "INVENTARIO";
-            btnInventario.UseVisualStyleBackColor = false;
-            btnInventario.Click += btnInventario_Click;
-            // 
             // btnCerrarSesion
             // 
             btnCerrarSesion.BackColor = Color.Chocolate;
             btnCerrarSesion.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnCerrarSesion.Location = new Point(3, 387);
+            btnCerrarSesion.Location = new Point(-3, 186);
             btnCerrarSesion.Margin = new Padding(3, 2, 3, 2);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(127, 57);
@@ -189,19 +175,18 @@
             panel2.Controls.Add(btnPedidos);
             panel2.Controls.Add(btnProductos);
             panel2.Controls.Add(btnVentas);
-            panel2.Controls.Add(btnInventario);
             panel2.Controls.Add(btnCerrarSesion);
             panel2.Location = new Point(-2, 77);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(127, 480);
+            panel2.Size = new Size(127, 247);
             panel2.TabIndex = 10;
             // 
             // btnPedidos
             // 
             btnPedidos.BackColor = Color.Chocolate;
             btnPedidos.Font = new Font("Times New Roman", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPedidos.Location = new Point(3, 237);
+            btnPedidos.Location = new Point(0, 124);
             btnPedidos.Name = "btnPedidos";
             btnPedidos.Size = new Size(124, 57);
             btnPedidos.TabIndex = 12;
@@ -220,10 +205,6 @@
             dataGridView1.Size = new Size(696, 237);
             dataGridView1.TabIndex = 11;
             // 
-            // conexionMySQLBindingSource
-            // 
-            conexionMySQLBindingSource.DataSource = typeof(ConexionMySQL);
-            // 
             // button1
             // 
             button1.BackColor = Color.Chocolate;
@@ -237,7 +218,7 @@
             // 
             // Productos
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(6F, 12F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(1016, 626);
@@ -267,7 +248,6 @@
         private Label label1;
         private Button btnProductos;
         private Button btnVentas;
-        private Button btnInventario;
         private Button btnCerrarSesion;
         private Button btnAñadirProducto;
         private Button btnModificarProducto;

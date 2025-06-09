@@ -43,7 +43,7 @@ namespace ProyectoIntegrador.Programa.Acciones.Productos
 
         private void btn_Pedidos_Click(object sender, EventArgs e)
         {
-            Inventario pedidos = new Inventario();
+            Pedidos pedidos = new Pedidos();
             pedidos.Show();
             this.Close();
         }
